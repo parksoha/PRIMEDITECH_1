@@ -1,0 +1,463 @@
+/* ==========================================================================
+   PRIMEDITECH Custom Theme - Responsive Styles
+   ========================================================================== */
+
+/* ==========================================================================
+   태블릿 스타일 (768px - 1024px)
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .section-title {
+        font-size: 2.25rem;
+    }
+    
+    .about-content {
+        gap: 3rem;
+    }
+    
+    .contact-content {
+        gap: 3rem;
+    }
+}
+
+/* ==========================================================================
+   모바일 스타일 (768px 이하)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    /* 헤더 모바일 스타일 */
+    .header-content {
+        padding: 0.75rem 0;
+    }
+    
+    .nav-menu {
+        display: none;
+    }
+    
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    .header-utilities {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .language-switcher {
+        display: none;
+    }
+    
+    /* 히어로 섹션 모바일 */
+    .hero-section {
+        min-height: 80vh;
+        padding: 2rem 0;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.125rem;
+        margin-bottom: 2rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    /* 섹션 타이틀 모바일 */
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+    }
+    
+    /* 서비스 그리드 모바일 */
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .service-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    /* 제품 그리드 모바일 */
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    /* 회사 소개 모바일 */
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .about-text .section-title {
+        text-align: center;
+    }
+    
+    .about-stats {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .image-placeholder {
+        width: 100%;
+        height: 250px;
+        font-size: 4rem;
+    }
+    
+    /* 뉴스 그리드 모바일 */
+    .news-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    /* 문의 섹션 모바일 */
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .contact-info .section-title {
+        text-align: center;
+    }
+    
+    .contact-form {
+        padding: 2rem 1.5rem;
+    }
+    
+    /* 푸터 모바일 */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .footer-bottom-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-links {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    /* 스크롤 투 탑 모바일 */
+    .scroll-to-top {
+        bottom: 1rem;
+        right: 1rem;
+        width: 45px;
+        height: 45px;
+    }
+    
+    /* 채팅 플러그인 모바일 */
+    .chat-plugin-area {
+        bottom: 1rem;
+        left: 1rem;
+    }
+}
+
+/* ==========================================================================
+   작은 모바일 스타일 (480px 이하)
+   ========================================================================== */
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px;
+    }
+    
+    /* 히어로 섹션 작은 모바일 */
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    /* 섹션 타이틀 작은 모바일 */
+    .section-title {
+        font-size: 1.75rem;
+    }
+    
+    /* 서비스 카드 작은 모바일 */
+    .service-card {
+        padding: 1.5rem 1rem;
+    }
+    
+    .service-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .service-title {
+        font-size: 1.25rem;
+    }
+    
+    /* 제품 카드 작은 모바일 */
+    .product-content {
+        padding: 1.5rem;
+    }
+    
+    .product-title {
+        font-size: 1.25rem;
+    }
+    
+    /* 회사 소개 작은 모바일 */
+    .about-description {
+        font-size: 1rem;
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+    }
+    
+    .image-placeholder {
+        height: 200px;
+        font-size: 3rem;
+    }
+    
+    /* 뉴스 카드 작은 모바일 */
+    .news-content {
+        padding: 1.5rem;
+    }
+    
+    .news-title {
+        font-size: 1.125rem;
+    }
+    
+    /* 문의 폼 작은 모바일 */
+    .contact-form {
+        padding: 1.5rem 1rem;
+    }
+    
+    .contact-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .contact-item i {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    /* 버튼 작은 모바일 */
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    /* 푸터 작은 모바일 */
+    .footer {
+        padding: 1.5rem 0;
+    }
+    
+    .footer-section h3 {
+        font-size: 1.125rem;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+    
+    .social-link {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+}
+
+/* ==========================================================================
+   큰 데스크톱 스타일 (1200px 이상)
+   ========================================================================== */
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1400px;
+    }
+    
+    .hero-title {
+        font-size: 4rem;
+    }
+    
+    .section-title {
+        font-size: 3rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .news-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ==========================================================================
+   초대형 화면 (1600px 이상)
+   ========================================================================== */
+
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1600px;
+    }
+    
+    .hero-title {
+        font-size: 4.5rem;
+    }
+    
+    .section-title {
+        font-size: 3.5rem;
+    }
+}
+
+/* ==========================================================================
+   가로 모드 모바일 최적화
+   ========================================================================== */
+
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero-section {
+        min-height: 100vh;
+        padding: 1rem 0;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: row;
+        gap: 1rem;
+    }
+    
+    .hero-buttons .btn {
+        width: auto;
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+/* ==========================================================================
+   고해상도 디스플레이 최적화
+   ========================================================================== */
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .hero-background {
+        background-image: url('../assets/images/hero-bg@2x.jpg');
+    }
+}
+
+/* ==========================================================================
+   다크 모드 지원 (선택사항)
+   ========================================================================== */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #1a1a1a;
+        --text-color: #ffffff;
+        --card-bg: #2d2d2d;
+        --border-color: #404040;
+    }
+    
+    body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+    }
+    
+    .service-card,
+    .product-card,
+    .news-card,
+    .contact-form {
+        background-color: var(--card-bg);
+        border: 1px solid var(--border-color);
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        background-color: var(--card-bg);
+        color: var(--text-color);
+        border-color: var(--border-color);
+    }
+}
+
+/* ==========================================================================
+   접근성 개선
+   ========================================================================== */
+
+/* 포커스 표시 개선 */
+.btn:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 2px solid #2c5aa0;
+    outline-offset: 2px;
+}
+
+/* 키보드 네비게이션 */
+.nav-menu a:focus,
+.mobile-nav-menu a:focus {
+    background-color: rgba(44, 90, 160, 0.1);
+    border-radius: 4px;
+}
+
+/* 스크린 리더 전용 텍스트 */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* 애니메이션 감소 설정 */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

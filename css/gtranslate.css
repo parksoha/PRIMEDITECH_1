@@ -1,0 +1,372 @@
+/* ==========================================================================
+   PRIMEDITECH Custom Theme - GTranslate Plugin Customization
+   ========================================================================== */
+
+/* ==========================================================================
+   GTranslate 기본 스타일 커스터마이징
+   ========================================================================== */
+
+.gtranslate_wrapper {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+.gtranslate_wrapper select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: #fff;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    padding: 8px 35px 8px 12px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 120px;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 16px;
+}
+
+.gtranslate_wrapper select:hover {
+    border-color: #2c5aa0;
+    box-shadow: 0 0 0 3px rgba(44, 90, 160, 0.1);
+}
+
+.gtranslate_wrapper select:focus {
+    outline: none;
+    border-color: #2c5aa0;
+    box-shadow: 0 0 0 3px rgba(44, 90, 160, 0.2);
+}
+
+/* ==========================================================================
+   헤더 언어 전환 스타일
+   ========================================================================== */
+
+.header .language-switcher .gtranslate_wrapper select {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    font-size: 13px;
+    padding: 6px 30px 6px 10px;
+    min-width: 100px;
+}
+
+.header .language-switcher .gtranslate_wrapper select:hover {
+    border-color: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.header .language-switcher .gtranslate_wrapper select:focus {
+    border-color: #fff;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+}
+
+/* ==========================================================================
+   모바일 언어 전환 스타일
+   ========================================================================== */
+
+.mobile-language-switcher .gtranslate_wrapper select {
+    width: 100%;
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    padding: 12px 35px 12px 12px;
+    font-size: 16px;
+    color: #333;
+    margin-top: 1rem;
+}
+
+.mobile-language-switcher .gtranslate_wrapper select:hover {
+    border-color: #2c5aa0;
+    background: #fff;
+}
+
+.mobile-language-switcher .gtranslate_wrapper select:focus {
+    outline: none;
+    border-color: #2c5aa0;
+    box-shadow: 0 0 0 3px rgba(44, 90, 160, 0.1);
+}
+
+/* ==========================================================================
+   GTranslate 플래그 스타일
+   ========================================================================== */
+
+.gtranslate_wrapper .gt_selector {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.gtranslate_wrapper .gt_selector img {
+    width: 20px;
+    height: 15px;
+    border-radius: 2px;
+    object-fit: cover;
+}
+
+.gtranslate_wrapper .gt_selector .gt_selector_text {
+    font-size: 13px;
+    font-weight: 500;
+    color: inherit;
+}
+
+/* ==========================================================================
+   GTranslate 드롭다운 스타일
+   ========================================================================== */
+
+.gtranslate_wrapper .gt_selector_list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    max-height: 200px;
+    overflow-y: auto;
+    margin-top: 4px;
+}
+
+.gtranslate_wrapper .gt_selector_list .gt_selector_option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.gtranslate_wrapper .gt_selector_list .gt_selector_option:last-child {
+    border-bottom: none;
+}
+
+.gtranslate_wrapper .gt_selector_list .gt_selector_option:hover {
+    background-color: #f8f9fa;
+}
+
+.gtranslate_wrapper .gt_selector_list .gt_selector_option.selected {
+    background-color: #2c5aa0;
+    color: #fff;
+}
+
+.gtranslate_wrapper .gt_selector_list .gt_selector_option img {
+    width: 20px;
+    height: 15px;
+    border-radius: 2px;
+    object-fit: cover;
+}
+
+.gtranslate_wrapper .gt_selector_list .gt_selector_option .gt_selector_text {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   GTranslate 플로팅 버튼 스타일
+   ========================================================================== */
+
+.goog-te-gadget {
+    font-family: inherit !important;
+}
+
+.goog-te-gadget .goog-te-combo {
+    background: #2c5aa0 !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 8px 12px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+}
+
+.goog-te-gadget .goog-te-combo:hover {
+    background: #1e3d6f !important;
+    transform: translateY(-1px) !important;
+}
+
+.goog-te-gadget .goog-te-combo:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(44, 90, 160, 0.2) !important;
+}
+
+/* ==========================================================================
+   GTranslate 번역 결과 스타일
+   ========================================================================== */
+
+.goog-te-banner-frame {
+    display: none !important;
+}
+
+.goog-te-gadget .goog-te-gadget-simple {
+    background: transparent !important;
+    border: none !important;
+    font-size: 14px !important;
+}
+
+.goog-te-gadget .goog-te-gadget-simple .goog-te-menu-value span:first-child {
+    color: #333 !important;
+}
+
+.goog-te-gadget .goog-te-gadget-simple .goog-te-menu-value span:last-child {
+    color: #666 !important;
+}
+
+/* ==========================================================================
+   다국어 콘텐츠 스타일
+   ========================================================================== */
+
+/* 언어별 폰트 최적화 */
+[lang="ko"] {
+    font-family: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+}
+
+[lang="en"] {
+    font-family: 'Noto Sans', 'Arial', sans-serif;
+}
+
+[lang="zh"] {
+    font-family: 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+}
+
+[lang="ja"] {
+    font-family: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+}
+
+[lang="de"] {
+    font-family: 'Noto Sans', 'Arial', sans-serif;
+}
+
+[lang="fr"] {
+    font-family: 'Noto Sans', 'Arial', sans-serif;
+}
+
+/* RTL 언어 지원 (필요시) */
+[dir="rtl"] {
+    text-align: right;
+}
+
+[dir="rtl"] .container {
+    direction: rtl;
+}
+
+/* ==========================================================================
+   언어 전환 애니메이션
+   ========================================================================== */
+
+.gtranslate_wrapper {
+    transition: all 0.3s ease;
+}
+
+.gtranslate_wrapper.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.gtranslate_wrapper.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    margin: -8px 0 0 -8px;
+    border: 2px solid #2c5aa0;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   접근성 개선
+   ========================================================================== */
+
+.gtranslate_wrapper select:focus {
+    outline: 2px solid #2c5aa0;
+    outline-offset: 2px;
+}
+
+.gtranslate_wrapper .gt_selector_option:focus {
+    outline: 2px solid #2c5aa0;
+    outline-offset: -2px;
+}
+
+/* 스크린 리더를 위한 숨김 텍스트 */
+.gtranslate_wrapper .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ==========================================================================
+   다크 모드 지원
+   ========================================================================== */
+
+@media (prefers-color-scheme: dark) {
+    .gtranslate_wrapper select {
+        background: #2d2d2d;
+        border-color: #404040;
+        color: #fff;
+    }
+    
+    .gtranslate_wrapper select:hover {
+        border-color: #2c5aa0;
+        background: #3d3d3d;
+    }
+    
+    .gtranslate_wrapper .gt_selector_list {
+        background: #2d2d2d;
+        border-color: #404040;
+    }
+    
+    .gtranslate_wrapper .gt_selector_list .gt_selector_option:hover {
+        background-color: #3d3d3d;
+    }
+    
+    .gtranslate_wrapper .gt_selector_list .gt_selector_option.selected {
+        background-color: #2c5aa0;
+        color: #fff;
+    }
+}
+
+/* ==========================================================================
+   고해상도 디스플레이 최적화
+   ========================================================================== */
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .gtranslate_wrapper .gt_selector_option img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* ==========================================================================
+   인쇄 스타일
+   ========================================================================== */
+
+@media print {
+    .gtranslate_wrapper {
+        display: none !important;
+    }
+}
