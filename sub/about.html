@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO 메타 태그 -->
+    <meta name="description" content="PRIMEDITECH - About Us. Leading medical technology company providing innovative solutions for healthcare professionals worldwide.">
+    <meta name="keywords" content="PRIMEDITECH, 프리메디텍, 의료기기, 의료기술, About">
+    <meta name="author" content="PRIMEDITECH">
+    
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- CSS 파일들 -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/gtranslate.css">
+    
+    <title>About PRIMEDITECH - Innovative Medical Technology Solutions</title>
+</head>
+
+<body class="about-page">
+    <!-- 헤더 영역 -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- 로고 -->
+                <div class="logo-section">
+                    <a href="../index-standalone.html" class="logo">
+                        <img src="../img/mainlogo.png" alt="PRIMEDITECH" class="logo-image">
+                    </a>
+                </div>
+                
+                <!-- 네비게이션 메뉴 -->
+                <nav class="main-navigation" id="main-navigation">
+                    <ul class="nav-menu">
+                        <li><a href="about.html" class="active">About</a></li>
+                        <li><a href="facility.html">Facility</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- 언어 전환 및 유틸리티 -->
+                <div class="header-utilities">
+                    <!-- 언어 전환 -->
+                    <div class="language-switcher">
+                        <select class="language-select" onchange="changeLanguage(this.value)">
+                            <option value="ko" selected>한국어</option>
+                            <option value="en">English</option>
+                            <option value="zh">中文</option>
+                            <option value="ja">日本語</option>
+                            <option value="de">Deutsch</option>
+                            <option value="fr">Français</option>
+                        </select>
+                    </div>
+                    
+                    <!-- 모바일 메뉴 토글 버튼 -->
+                    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴 열기/닫기">
+                        <span class="hamburger">
+                            <span class="hamburger-line"></span>
+                            <span class="hamburger-line"></span>
+                            <span class="hamburger-line"></span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 모바일 메뉴 -->
+        <div class="mobile-menu" id="mobile-menu">
+            <div class="mobile-menu-content">
+                <ul class="mobile-nav-menu">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="facility.html">Facility</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                
+                <!-- 모바일 언어 전환 -->
+                <div class="mobile-language-switcher">
+                    <select class="mobile-language-select" onchange="changeLanguage(this.value)">
+                        <option value="ko" selected>한국어</option>
+                        <option value="en">English</option>
+                        <option value="zh">中文</option>
+                        <option value="ja">日本語</option>
+                        <option value="de">Deutsch</option>
+                        <option value="fr">Français</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 메인 콘텐츠 시작 -->
+    <main class="main-content" id="main-content">
+
+    <!-- 히어로 배너 섹션 -->
+    <section class="hero-banner">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">About</h1>
+                <nav class="breadcrumb">
+                    <a href="../index-standalone.html" class="breadcrumb-item">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                    <span class="breadcrumb-separator">></span>
+                    <span class="breadcrumb-current">About</span>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+        <!-- 서브 네비게이션 -->
+        <section class="sub-navigation">
+            <div class="container">
+                <nav class="sub-nav">
+                    <ul class="sub-nav-menu">
+                        <li><a href="#about" class="sub-nav-link active" data-section="about">About</a></li>
+                        <li><a href="#history" class="sub-nav-link" data-section="history">History</a></li>
+                        <li><a href="#certification" class="sub-nav-link" data-section="certification">Certification</a></li>
+                        <li><a href="#client" class="sub-nav-link" data-section="client">Client</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+
+        <!-- About 섹션 -->
+        <section id="about" class="about-section active">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">About Us</h2>
+                </div>
+                
+                <div class="about-intro-content">
+                    <div class="about-intro-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                    <div class="about-intro-text">
+                        <h3>About PRIMEDITECH</h3>
+                        <p>
+                            Primeditech is a leading force in Korea's precision engineering industry, trusted by global leaders across the medical, aerospace, and high-end industrial sectors.
+                        </p>
+                        <p>
+                            With a foundation built on technical expertise and relentless innovation, we specialize in delivering high-precision components that meet the most demanding international standards.
+                        </p>
+                        <p>
+                            Our team of skilled engineers and state-of-the-art manufacturing capabilities ensure that every part we produce reflects the highest level of quality, reliability, and performance.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- 핵심 가치 섹션 -->
+                <div class="core-values">
+                <div class="section-header">
+                    <h3 class="section-title">Core Values</h3>
+                </div>
+                    
+                    <div class="values-visual">
+                        <div class="value-ring ring-innovation"><span>Innovation</span></div>
+                        <div class="value-ring ring-excellence"><span>Excellence</span></div>
+                        <div class="value-ring ring-agility"><span>Agility</span></div>
+                    </div>
+
+                    <div class="values-list">
+                        <div class="value-item">
+                            <div class="value-num">1</div>
+                            <div class="value-text">
+                                <h4>Absolute Quality Without Compromise</h4>
+                                <p>At Primeditech, quality is non-negotiable. We implement rigorous, comprehensive quality control systems and relentless improvement practices, ensuring zero-defect precision and guaranteeing that each delivered component surpasses the highest global standards.</p>
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-num">2</div>
+                            <div class="value-text">
+                                <h4>Innovation‑Driven Precision Engineering</h4>
+                                <p>By integrating cutting‑edge technologies with ongoing research and development, Primeditech achieves unmatched precision. Our innovative approach continuously evolves, addressing the ever‑changing demands of medical, aerospace, and industrial challenges.</p>
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-num">3</div>
+                            <div class="value-text">
+                                <h4>Customer‑Centric Adaptability</h4>
+                                <p>We deeply understand the diverse needs of our global clients. Our adaptive, creative, and flexible mindset ensures tailored precision solutions, significantly enhancing our clients’ competitiveness while staying closely aligned with their strategic vision.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- History 섹션 -->
+        <section id="history" class="about-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Our History</h2>
+                    <p class="section-subtitle">
+                        Key milestones in our company history
+                    </p>
+                </div>
+                
+                <!-- 회사 통계 섹션 -->
+                <div class="company-stats">
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number">18+</div>
+                            <div class="stat-label">Years of Innovation</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">850+</div>
+                            <div class="stat-label">Healthcare Partners</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">65+</div>
+                            <div class="stat-label">Countries Worldwide</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">2,500+</div>
+                            <div class="stat-label">Systems Installed</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 연혁 섹션 -->
+                <div class="timeline-section">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-year">2006</div>
+                            <div class="timeline-content">
+                                <h3>PRIMEDITECH 설립</h3>
+                                <p>의료기기 혁신을 통해 의료진의 진단 능력을 향상시키겠다는 비전으로 회사를 설립했습니다.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-year">2010</div>
+                            <div class="timeline-content">
+                                <h3>PRIME-VISION X-Ray 출시</h3>
+                                <p>첫 번째 플래그십 제품인 4K 디지털 X-ray 시스템을 출시하여 진단 정확도를 혁신했습니다.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-year">2015</div>
+                            <div class="timeline-content">
+                                <h3>글로벌 진출</h3>
+                                <p>아시아, 유럽, 아메리카 30개국으로 사업을 확장하여 글로벌 의료기기 시장에 진출했습니다.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-year">2019</div>
+                            <div class="timeline-content">
+                                <h3>AI 진단 시스템 통합</h3>
+                                <p>인공지능 기반 진단 시스템을 도입하여 진단 정확도를 95%까지 향상시켰습니다.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-year">2022</div>
+                            <div class="timeline-content">
+                                <h3>PRIME-AI 플랫폼 출시</h3>
+                                <p>종합적인 디지털 헬스 플랫폼을 출시하여 환자와 의료진을 연결하는 혁신을 이뤘습니다.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-year">2024</div>
+                            <div class="timeline-content">
+                                <h3>글로벌 의료기기 혁신상 수상</h3>
+                                <p>PRIME-VISION X-Ray System이 세계 의료기기 혁신상을 수상하며 기술력이 인정받았습니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 팀 섹션 -->
+                <div class="team-section">
+                    <div class="section-header">
+                        <h3 class="section-title">Our Team</h3>
+                        <p class="section-subtitle">
+                            Meet the experts behind our success
+                        </p>
+                    </div>
+                    
+                    <div class="team-grid">
+                        <div class="team-member">
+                            <div class="member-photo">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="member-info">
+                                <h4 class="member-name">김민준 대표이사</h4>
+                                <p class="member-position">CEO & Founder</p>
+                                <p class="member-bio">
+                                    서울대 의공학과 졸업, 25년 의료기기 산업 경험을 바탕으로 PRIMEDITECH를 이끌고 있습니다.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="team-member">
+                            <div class="member-photo">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="member-info">
+                                <h4 class="member-name">박지영 CTO</h4>
+                                <p class="member-position">Chief Technology Officer</p>
+                                <p class="member-bio">
+                                    MIT 전기공학 박사, 의료영상 기술 분야의 세계적인 전문가로 AI 진단 시스템 개발을 주도합니다.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="team-member">
+                            <div class="member-photo">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="member-info">
+                                <h4 class="member-name">이상호 연구소장</h4>
+                                <p class="member-position">Head of Research</p>
+                                <p class="member-bio">
+                                    KAIST 생명과학과 박사, 정밀의료기기 개발과 임상연구를 총괄하며 혁신적인 기술을 개발하고 있습니다.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certification 섹션 -->
+        <section id="certification" class="about-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Certification & Awards</h2>
+                    <p class="section-subtitle">
+                        Recognition for our commitment to excellence
+                    </p>
+                </div>
+                
+                <div class="certifications-grid">
+                    <div class="cert-item">
+                        <div class="cert-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h3>ISO 13485:2016</h3>
+                        <p>Medical Device Quality Management System</p>
+                    </div>
+                    
+                    <div class="cert-item">
+                        <div class="cert-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h3>FDA Approval</h3>
+                        <p>US Food and Drug Administration Clearance</p>
+                    </div>
+                    
+                    <div class="cert-item">
+                        <div class="cert-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <h3>CE Marking</h3>
+                        <p>European Conformity Certification</p>
+                    </div>
+                    
+                    <div class="cert-item">
+                        <div class="cert-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3>Innovation Award 2023</h3>
+                        <p>Medical Technology Innovation Excellence</p>
+                    </div>
+                    
+                    <div class="cert-item">
+                        <div class="cert-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>KFDA Approval</h3>
+                        <p>Korean Food and Drug Administration</p>
+                    </div>
+                    
+                    <div class="cert-item">
+                        <div class="cert-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3>WHO Prequalification</h3>
+                        <p>World Health Organization Certification</p>
+                    </div>
+                </div>
+                
+                <!-- 품질 관리 시스템 -->
+                <div class="quality-system">
+                    <div class="section-header">
+                        <h3 class="section-title">Quality Management System</h3>
+                        <p class="section-subtitle">
+                            Ensuring the highest standards in every product
+                        </p>
+                    </div>
+                    
+                    <div class="quality-grid">
+                        <div class="quality-item">
+                            <div class="quality-icon">
+                                <i class="fas fa-microscope"></i>
+                            </div>
+                            <h4>Research & Development</h4>
+                            <p>Cutting-edge R&D facilities with advanced testing equipment and expert researchers.</p>
+                        </div>
+                        
+                        <div class="quality-item">
+                            <div class="quality-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <h4>Manufacturing Excellence</h4>
+                            <p>State-of-the-art manufacturing processes with rigorous quality control measures.</p>
+                        </div>
+                        
+                        <div class="quality-item">
+                            <div class="quality-icon">
+                                <i class="fas fa-clipboard-check"></i>
+                            </div>
+                            <h4>Quality Assurance</h4>
+                            <p>Comprehensive testing and validation procedures to ensure product reliability.</p>
+                        </div>
+                        
+                        <div class="quality-item">
+                            <div class="quality-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <h4>Customer Support</h4>
+                            <p>24/7 technical support and training programs for optimal product performance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Client 섹션 -->
+        <section id="client" class="about-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Our Clients</h2>
+                    <p class="section-subtitle">
+                        Trusted by leading healthcare institutions worldwide
+                    </p>
+                </div>
+                
+                <!-- 주요 고객사 -->
+                <div class="clients-section">
+                    <div class="section-header">
+                        <h3 class="section-title">Major Healthcare Partners</h3>
+                        <p class="section-subtitle">
+                            We serve over 850 healthcare institutions across 65 countries
+                        </p>
+                    </div>
+                    
+                    <div class="clients-grid">
+                        <div class="client-category">
+                            <div class="category-header">
+                                <i class="fas fa-hospital"></i>
+                                <h4>Hospitals & Medical Centers</h4>
+                            </div>
+                            <div class="client-list">
+                                <div class="client-item">
+                                    <h5>Seoul National University Hospital</h5>
+                                    <p>Leading academic medical center in South Korea</p>
+                                </div>
+                                <div class="client-item">
+                                    <h5>Johns Hopkins Hospital</h5>
+                                    <p>World-renowned medical institution, USA</p>
+                                </div>
+                                <div class="client-item">
+                                    <h5>Charité - Universitätsmedizin Berlin</h5>
+                                    <p>One of Europe's largest university hospitals</p>
+                                </div>
+                                <div class="client-item">
+                                    <h5>Singapore General Hospital</h5>
+                                    <p>Premier healthcare institution in Southeast Asia</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="client-category">
+                            <div class="category-header">
+                                <i class="fas fa-university"></i>
+                                <h4>Research Institutions</h4>
+                            </div>
+                            <div class="client-list">
+                                <div class="client-item">
+                                    <h5>Mayo Clinic</h5>
+                                    <p>Leading medical research and education center</p>
+                                </div>
+                                <div class="client-item">
+                                    <h5>Cleveland Clinic</h5>
+                                    <p>Innovative healthcare delivery and research</p>
+                                </div>
+                                <div class="client-item">
+                                    <h5>Massachusetts General Hospital</h5>
+                                    <p>Harvard Medical School's largest teaching hospital</p>
+                                </div>
+                                <div class="client-item">
+                                    <h5>University College London Hospital</h5>
+                                    <p>Leading research and teaching hospital in UK</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="client-category">
+                            <div class="category-header">
+                                <i class="fas fa-clinic-medical"></i>
+                                <h4>Private Clinics & Practices</h4>
+                            </div>
+                            <div class="client-list">
+                                <div class="client-item">
+                                    <h5>Diagnostic Imaging Centers</h5>
+                                    <p>Over 200 imaging centers worldwide</p>
+                                </div>
+                                <div class="client-item">
+                                    <h5>Specialty Clinics</h5>
+                                    <p>Cardiology, Radiology, and Orthopedic clinics</p>
+                                </div>
+                                <div class="client-item">
+                                    <h5>Dental Practices</h5>
+                                    <p>Advanced dental imaging solutions</p>
+                                </div>
+                                <div class="client-item">
+                                    <h5>Veterinary Clinics</h5>
+                                    <p>Animal healthcare imaging systems</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 고객 만족도 -->
+                <div class="client-satisfaction">
+                    <div class="section-header">
+                        <h3 class="section-title">Client Satisfaction</h3>
+                        <p class="section-subtitle">
+                            Our commitment to excellence is reflected in our client feedback
+                        </p>
+                    </div>
+                    
+                    <div class="satisfaction-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">98%</div>
+                            <div class="stat-label">Client Satisfaction Rate</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">95%</div>
+                            <div class="stat-label">Product Reliability</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">99%</div>
+                            <div class="stat-label">Technical Support Rating</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">92%</div>
+                            <div class="stat-label">Would Recommend</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 고객 후기 -->
+                <div class="client-testimonials">
+                    <div class="section-header">
+                        <h3 class="section-title">What Our Clients Say</h3>
+                        <p class="section-subtitle">
+                            Testimonials from healthcare professionals worldwide
+                        </p>
+                    </div>
+                    
+                    <div class="testimonials-grid">
+                        <div class="testimonial-item">
+                            <div class="testimonial-content">
+                                <p>"PRIMEDITECH's X-ray system has revolutionized our diagnostic capabilities. The image quality is exceptional and the AI integration has significantly improved our diagnostic accuracy."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-info">
+                                    <h5>Dr. Sarah Johnson</h5>
+                                    <span>Chief Radiologist, Mayo Clinic</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial-item">
+                            <div class="testimonial-content">
+                                <p>"The technical support team is outstanding. They respond quickly to any issues and provide comprehensive training. Our staff feels confident using the system."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-info">
+                                    <h5>Prof. Michael Chen</h5>
+                                    <span>Director, Singapore General Hospital</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial-item">
+                            <div class="testimonial-content">
+                                <p>"We've been using PRIMEDITECH products for over 10 years. Their commitment to innovation and quality is unmatched in the industry."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-info">
+                                    <h5>Dr. Anna Müller</h5>
+                                    <span>Medical Director, Charité Berlin</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+    </main>
+    <!-- 메인 콘텐츠 끝 -->
+
+    <!-- 푸터 영역 -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- 회사 정보 -->
+                <div class="footer-section company-info">
+                    <h3>PRIMEDITECH</h3>
+                    <p>Leading medical technology company providing innovative solutions for healthcare professionals worldwide.</p>
+                    
+                    <!-- 소셜 미디어 링크 -->
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 빠른 링크 -->
+                <div class="footer-section quick-links">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-menu">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="facility.html">Facility</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- 서비스 -->
+                <div class="footer-section services">
+                    <h3>Facility</h3>
+                    <ul class="footer-menu">
+                        <li><a href="facility.html">Medical Devices</a></li>
+                        <li><a href="facility.html">Consulting</a></li>
+                        <li><a href="facility.html">Training</a></li>
+                        <li><a href="facility.html">Support</a></li>
+                    </ul>
+                </div>
+                
+                <!-- 연락처 정보 -->
+                <div class="footer-section contact-info">
+                    <h3>Contact Info</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Medical Tech Street, Seoul, Korea</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+82-2-1234-5678</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@prmtec.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Mon-Fri: 9:00-18:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 푸터 하단 -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div class="copyright">
+                            <p>&copy; 2025 PRIMEDITECH. All rights reserved.</p>
+                    </div>
+                    
+                    <div class="footer-links">
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <a href="terms-of-service.html">Terms of Service</a>
+                        <a href="sitemap.html">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 스크롤 투 탑 버튼 -->
+    <button class="scroll-to-top" id="scroll-to-top" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- JavaScript 파일들 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/gtranslate.js"></script>
+
+    <!-- 언어 전환 JavaScript -->
+    <script>
+    function changeLanguage(lang) {
+        // 언어 변경 로직
+        if (lang === 'ko') {
+            window.location.href = 'about.html';
+        } else {
+            window.location.href = 'about.html?lang=' + lang;
+        }
+    }
+
+    // 스크롤 투 탑 기능
+    document.addEventListener('DOMContentLoaded', function() {
+        const scrollToTopBtn = document.getElementById('scroll-to-top');
+        
+        if (scrollToTopBtn) {
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollToTopBtn.classList.add('show');
+                } else {
+                    scrollToTopBtn.classList.remove('show');
+                }
+            });
+            
+            scrollToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+        
+        // 모바일 메뉴 토글
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuToggle && mobileMenu) {
+            mobileMenuToggle.addEventListener('click', function() {
+                mobileMenu.classList.toggle('active');
+                this.classList.toggle('active');
+            });
+        }
+        
+        // 서브 네비게이션 기능
+        const subNavLinks = document.querySelectorAll('.sub-nav-link');
+        const aboutSections = document.querySelectorAll('.about-section');
+        
+        // 서브 네비게이션 클릭 이벤트
+        subNavLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetSection = this.getAttribute('data-section');
+                
+                // 활성 클래스 업데이트
+                subNavLinks.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+                
+                // 섹션 표시/숨김
+                aboutSections.forEach(section => {
+                    section.classList.remove('active');
+                    if (section.id === targetSection) {
+                        section.classList.add('active');
+                    }
+                });
+                
+                // 부드러운 스크롤
+                const targetElement = document.getElementById(targetSection);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // 스크롤에 따른 자동 네비게이션 업데이트
+        let isScrolling = false;
+        window.addEventListener('scroll', function() {
+            if (isScrolling) return;
+            
+            const scrollPosition = window.scrollY + 200; // 헤더 높이 고려
+            
+            aboutSections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    const sectionId = section.id;
+                    const correspondingLink = document.querySelector(`[data-section="${sectionId}"]`);
+                    
+                    if (correspondingLink && !correspondingLink.classList.contains('active')) {
+                        subNavLinks.forEach(l => l.classList.remove('active'));
+                        correspondingLink.classList.add('active');
+                        
+                        aboutSections.forEach(s => s.classList.remove('active'));
+                        section.classList.add('active');
+                    }
+                }
+            });
+        });
+        
+        // 초기 로드 시 첫 번째 섹션 활성화
+        if (aboutSections.length > 0) {
+            aboutSections.forEach((section, index) => {
+                if (index === 0) {
+                    section.classList.add('active');
+                } else {
+                    section.classList.remove('active');
+                }
+            });
+        }
+    });
+    </script>
+
+</body>
+</html>
+
+

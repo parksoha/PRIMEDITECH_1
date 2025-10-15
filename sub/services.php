@@ -16,6 +16,11 @@
 <section class="services-overview">
     <div class="container">
         <div class="overview-content">
+            <div class="overview-image">
+                <div class="image-placeholder">
+                    <i class="fas fa-stethoscope"></i>
+                </div>
+            </div>
             <div class="overview-text">
                 <h2><?php _e('Comprehensive Healthcare Solutions', 'prmtec'); ?></h2>
                 <p>
@@ -24,11 +29,6 @@
                 <p>
                     <?php _e('From advanced medical devices to comprehensive training programs, we provide everything you need to transform your healthcare practice and deliver exceptional patient outcomes.', 'prmtec'); ?>
                 </p>
-            </div>
-            <div class="overview-image">
-                <div class="image-placeholder">
-                    <i class="fas fa-stethoscope"></i>
-                </div>
             </div>
         </div>
     </div>
@@ -332,22 +332,6 @@
     </div>
 </section>
 
-<!-- CTA 섹션 -->
-<section class="cta-section">
-    <div class="container">
-        <div class="cta-content">
-            <h2><?php _e('Ready to Transform Your Healthcare Practice?', 'prmtec'); ?></h2>
-            <p><?php _e('Contact us today to discuss your specific needs and discover how our solutions can benefit your organization.', 'prmtec'); ?></p>
-            <div class="cta-buttons">
-                <a href="<?php echo home_url('/contact/'); ?>" class="btn btn-primary">
-                    <?php _e('Get a Quote', 'prmtec'); ?>
-                </a>
-                <a href="<?php echo home_url('/products/'); ?>" class="btn btn-secondary">
-                    <?php _e('View Products', 'prmtec'); ?>
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
+ 
 
 <?php get_footer(); ?>

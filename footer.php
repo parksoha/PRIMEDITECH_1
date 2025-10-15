@@ -100,8 +100,12 @@
 <!-- 채팅 플러그인 영역 -->
 <div class="chat-plugin-area">
     <?php
-    // 채팅 플러그인이 있다면 여기에 표시
-    if (function_exists('chat_plugin_shortcode')) {
+    // Channel.io 플러그인이 있다면 여기에 표시
+    if (function_exists('channel_plugin_script') || is_plugin_active('channel-io/channel_plugin.php')) {
+        // Channel.io는 자동으로 로드됨
+        echo '<!-- Channel.io 채팅 위젯 활성화됨 -->';
+    } else {
+        // Channel.io 플러그인이 없을 때 대체 채팅 위젯
         echo do_shortcode('[chat_plugin]');
     }
     ?>
@@ -167,9 +171,8 @@ document.addEventListener('DOMContentLoaded', function() {
 function prmtec_footer_fallback_menu() {
     ?>
     <ul class="footer-menu">
-        <li><a href="<?php echo home_url(); ?>"><?php _e('Home', 'prmtec'); ?></a></li>
         <li><a href="<?php echo home_url('/about/'); ?>"><?php _e('About', 'prmtec'); ?></a></li>
-        <li><a href="<?php echo home_url('/services/'); ?>"><?php _e('Services', 'prmtec'); ?></a></li>
+        <li><a href="<?php echo home_url('/facility/'); ?>"><?php _e('Facility', 'prmtec'); ?></a></li>
         <li><a href="<?php echo home_url('/products/'); ?>"><?php _e('Products', 'prmtec'); ?></a></li>
         <li><a href="<?php echo home_url('/contact/'); ?>"><?php _e('Contact', 'prmtec'); ?></a></li>
     </ul>

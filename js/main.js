@@ -207,15 +207,111 @@
                 entries.forEach(function(entry) {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('animate-in');
+                        
+                        // 통계 숫자 카운트업 애니메이션
+                        if (entry.target.classList.contains('stat-number')) {
+                            animateCountUp(entry.target);
+                        }
                     }
                 });
             }, observerOptions);
 
             // 애니메이션 대상 요소들
-            $('.service-card, .product-card, .news-card, .about-stats .stat-item').each(function() {
+            $('.service-card, .product-card, .news-card, .about-stats .stat-item, .stat-number, .timeline-item').each(function() {
                 observer.observe(this);
             });
         }
+        
+        // 페이지 로드 애니메이션
+        initPageLoadAnimations();
+        
+        // 스크롤 기반 애니메이션
+        initScrollAnimations();
+    }
+    
+    /**
+     * 페이지 로드 애니메이션
+     */
+    function initPageLoadAnimations() {
+        // 로딩 오버레이 제거
+        setTimeout(function() {
+            $('.loading-overlay').addClass('fade-out');
+            setTimeout(function() {
+                $('.loading-overlay').remove();
+            }, 500);
+        }, 1000);
+        
+        // 히어로 섹션 순차 애니메이션
+        $('.hero-title, .hero-subtitle, .hero-buttons').each(function(index) {
+            $(this).css({
+                'opacity': '0',
+                'transform': 'translateY(30px)'
+            });
+            
+            setTimeout(() => {
+                $(this).animate({
+                    'opacity': '1'
+                }, 600).css('transform', 'translateY(0)');
+            }, 300 + (index * 200));
+        });
+    }
+    
+    /**
+     * 스크롤 기반 애니메이션
+     */
+    function initScrollAnimations() {
+        let ticking = false;
+        
+        function updateScrollAnimations() {
+            const scrollY = window.scrollY;
+            const windowHeight = window.innerHeight;
+            
+            // 패럴랙스 효과 (선택사항)
+            $('.hero-background').css('transform', `translateY(${scrollY * 0.5}px)`);
+            
+            // 스크롤 진행률 표시
+            const scrollProgress = scrollY / (document.documentElement.scrollHeight - windowHeight);
+            $('.scroll-progress').css('width', (scrollProgress * 100) + '%');
+            
+            ticking = false;
+        }
+        
+        function requestTick() {
+            if (!ticking) {
+                requestAnimationFrame(updateScrollAnimations);
+                ticking = true;
+            }
+        }
+        
+        window.addEventListener('scroll', requestTick);
+    }
+    
+    /**
+     * 숫자 카운트업 애니메이션
+     */
+    function animateCountUp(element) {
+        const finalValue = parseInt(element.textContent.replace(/\D/g, ''));
+        const duration = 2000;
+        const startTime = performance.now();
+        
+        function updateCount(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            
+            // 이징 함수 (easeOutCubic)
+            const easedProgress = 1 - Math.pow(1 - progress, 3);
+            const currentValue = Math.floor(easedProgress * finalValue);
+            
+            element.textContent = currentValue.toLocaleString();
+            
+            if (progress < 1) {
+                requestAnimationFrame(updateCount);
+            } else {
+                element.textContent = finalValue.toLocaleString();
+            }
+        }
+        
+        requestAnimationFrame(updateCount);
     }
 
     /**

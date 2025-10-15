@@ -93,6 +93,79 @@ function prmtec_gtranslate_integration() {
 add_action('wp_enqueue_scripts', 'prmtec_gtranslate_integration');
 
 /**
+ * Greenshift Animation 효과 연동
+ */
+function prmtec_greenshift_animation_integration() {
+    // Greenshift 플러그인이 활성화되어 있는지 확인
+    if (is_plugin_active('greenshift-animation-and-page-builder-blocks/greenshift.php') || function_exists('gspb_get_version')) {
+        // Greenshift 애니메이션 스크립트 로드
+        wp_enqueue_script('greenshift-swiper', 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js', array(), '8.0.0', true);
+        wp_enqueue_script('greenshift-scroll-timeline', get_template_directory_uri() . '/js/scroll-timeline.js', array('jquery'), '1.0.0', true);
+        wp_enqueue_script('greenshift-interaction', get_template_directory_uri() . '/js/interaction-layer.js', array('jquery'), '1.0.0', true);
+        
+        // Greenshift 애니메이션 설정
+        add_action('wp_footer', 'prmtec_greenshift_config');
+    }
+}
+add_action('wp_enqueue_scripts', 'prmtec_greenshift_animation_integration');
+
+/**
+ * Greenshift 애니메이션 설정
+ */
+function prmtec_greenshift_config() {
+    if (is_plugin_active('greenshift-animation-and-page-builder-blocks/greenshift.php')) {
+        ?>
+        <script>
+        // Greenshift 애니메이션 초기화
+        document.addEventListener('DOMContentLoaded', function() {
+            // 스크롤 애니메이션 설정
+            if (typeof gsap !== 'undefined') {
+                gsap.registerPlugin(ScrollTrigger);
+                
+                // 섹션별 페이드인 애니메이션
+                gsap.utils.toArray('.service-card, .product-card, .news-card').forEach(function(element) {
+                    gsap.fromTo(element, 
+                        { opacity: 0, y: 50 },
+                        { 
+                            opacity: 1, 
+                            y: 0, 
+                            duration: 0.8,
+                            scrollTrigger: {
+                                trigger: element,
+                                start: "top 80%",
+                                end: "bottom 20%",
+                                toggleActions: "play none none reverse"
+                            }
+                        }
+                    );
+                });
+                
+                // 통계 숫자 카운트업 애니메이션
+                gsap.utils.toArray('.stat-number').forEach(function(element) {
+                    const endValue = parseInt(element.textContent.replace(/\D/g, ''));
+                    gsap.fromTo(element, 
+                        { textContent: 0 },
+                        { 
+                            textContent: endValue,
+                            duration: 2,
+                            ease: "power2.out",
+                            snap: { textContent: 1 },
+                            scrollTrigger: {
+                                trigger: element,
+                                start: "top 80%",
+                                toggleActions: "play none none reverse"
+                            }
+                        }
+                    );
+                });
+            }
+        });
+        </script>
+        <?php
+    }
+}
+
+/**
  * GTranslate 설정
  */
 function prmtec_gtranslate_config() {
@@ -225,6 +298,63 @@ function prmtec_admin_page() {
                 <p style="color: red;">✗ GTranslate Plugin is not active</p>
             <?php endif; ?>
         </div>
+        
+        <div class="card">
+            <h2><?php _e('Channel.io Plugin Status', 'prmtec'); ?></h2>
+            <?php if (function_exists('channel_plugin_script') || is_plugin_active('channel-io/channel_plugin.php')): ?>
+                <p style="color: green;">✓ Channel.io Plugin is active</p>
+                <p><strong><?php _e('Plugin Key', 'prmtec'); ?>:</strong> <?php echo get_option('channel_plugin_key', 'Not configured'); ?></p>
+            <?php else: ?>
+                <p style="color: red;">✗ Channel.io Plugin is not active</p>
+                <p><?php _e('Please install and configure Channel.io plugin for chat functionality.', 'prmtec'); ?></p>
+            <?php endif; ?>
+        </div>
+        
+        <div class="card">
+            <h2><?php _e('WP Statistics Plugin Status', 'prmtec'); ?></h2>
+            <?php if (is_plugin_active('wp-statistics/wp-statistics.php') || function_exists('wp_statistics_install')): ?>
+                <p style="color: green;">✓ WP Statistics Plugin is active</p>
+                <p><?php _e('Real-time visitor tracking and analytics enabled.', 'prmtec'); ?></p>
+            <?php else: ?>
+                <p style="color: red;">✗ WP Statistics Plugin is not active</p>
+                <p><?php _e('Please install WP Statistics plugin for visitor analytics.', 'prmtec'); ?></p>
+            <?php endif; ?>
+        </div>
+        
+        <div class="card">
+            <h2><?php _e('Greenshift Animation Plugin Status', 'prmtec'); ?></h2>
+            <?php if (is_plugin_active('greenshift-animation-and-page-builder-blocks/greenshift.php') || function_exists('gspb_get_version')): ?>
+                <p style="color: green;">✓ Greenshift Animation Plugin is active</p>
+                <p><?php _e('Advanced animations and page builder blocks available.', 'prmtec'); ?></p>
+            <?php else: ?>
+                <p style="color: red;">✗ Greenshift Animation Plugin is not active</p>
+                <p><?php _e('Please install Greenshift plugin for enhanced animations.', 'prmtec'); ?></p>
+            <?php endif; ?>
+        </div>
+        
+        <div class="card">
+            <h2><?php _e('Recommended Plugins Summary', 'prmtec'); ?></h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                <div>
+                    <h4><?php _e('Essential Plugins', 'prmtec'); ?></h4>
+                    <ul>
+                        <li>✅ GTranslate</li>
+                        <li>✅ Channel.io</li>
+                        <li>✅ WP Statistics</li>
+                        <li>✅ Contact Form 7</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4><?php _e('Enhanced Features', 'prmtec'); ?></h4>
+                    <ul>
+                        <li>✅ Greenshift Animation</li>
+                        <li>✅ Yoast SEO</li>
+                        <li>✅ Elementor</li>
+                        <li>✅ WP Rocket</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
     <?php
 }
@@ -246,6 +376,130 @@ function prmtec_customize_register($wp_customize) {
     )));
 }
 add_action('customize_register', 'prmtec_customize_register');
+
+/**
+ * Channel.io 채팅 위젯 연동
+ */
+function prmtec_channel_io_integration() {
+    // Channel.io 플러그인이 활성화되어 있는지 확인
+    if (function_exists('channel_plugin_script') || is_plugin_active('channel-io/channel_plugin.php')) {
+        // Channel.io 스크립트와 스타일 로드
+        wp_enqueue_style('channel-io-icons', 'https://cdn.channel.io/plugin/channel-icons.css', array(), '6.8.3');
+        wp_enqueue_script('channel-io-plugin', 'https://cdn.channel.io/plugin/channel_plugin_script.js', array(), '6.8.3', true);
+        
+        // Channel.io 설정
+        add_action('wp_footer', 'prmtec_channel_io_config');
+    }
+}
+add_action('wp_enqueue_scripts', 'prmtec_channel_io_integration');
+
+/**
+ * WP Statistics 플러그인 연동
+ */
+function prmtec_wp_statistics_integration() {
+    // WP Statistics 플러그인이 활성화되어 있는지 확인
+    if (is_plugin_active('wp-statistics/wp-statistics.php') || function_exists('wp_statistics_install')) {
+        // WP Statistics 자동 통계 수집 활성화
+        add_action('wp_head', 'prmtec_wp_statistics_tracker');
+        
+        // 관리자 페이지에 통계 표시
+        add_action('wp_dashboard_setup', 'prmtec_statistics_dashboard_widget');
+    }
+}
+add_action('wp_enqueue_scripts', 'prmtec_wp_statistics_integration');
+
+/**
+ * WP Statistics 트래커 코드
+ */
+function prmtec_wp_statistics_tracker() {
+    if (is_plugin_active('wp-statistics/wp-statistics.php')) {
+        // WP Statistics 자동 트래킹 (플러그인이 자동으로 처리)
+        echo '<!-- WP Statistics Tracking Active -->';
+    }
+}
+
+/**
+ * WP Statistics 대시보드 위젯
+ */
+function prmtec_statistics_dashboard_widget() {
+    if (current_user_can('manage_options') && is_plugin_active('wp-statistics/wp-statistics.php')) {
+        wp_add_dashboard_widget(
+            'prmtec_statistics_widget',
+            __('PRIMEDITECH Website Statistics', 'prmtec'),
+            'prmtec_statistics_widget_content'
+        );
+    }
+}
+
+/**
+ * 통계 위젯 콘텐츠
+ */
+function prmtec_statistics_widget_content() {
+    if (is_plugin_active('wp-statistics/wp-statistics.php')) {
+        echo '<div class="prmtec-stats-widget">';
+        echo '<h4>' . __('Today\'s Visitors', 'prmtec') . '</h4>';
+        echo '<p>' . __('Real-time visitor tracking active', 'prmtec') . '</p>';
+        echo '<p><a href="' . admin_url('admin.php?page=wp-statistics/overview') . '">' . __('View Full Statistics', 'prmtec') . '</a></p>';
+        echo '</div>';
+    }
+}
+
+/**
+ * Channel.io 설정
+ */
+function prmtec_channel_io_config() {
+    if (function_exists('channel_plugin_script') || is_plugin_active('channel-io/channel_plugin.php')) {
+        ?>
+        <script>
+        window.channelPluginSettings = {
+            "pluginKey": "YOUR_CHANNEL_PLUGIN_KEY", // 실제 키로 교체 필요
+            "memberId": "<?php echo get_current_user_id(); ?>",
+            "memberName": "<?php echo wp_get_current_user()->display_name; ?>",
+            "memberEmail": "<?php echo wp_get_current_user()->user_email; ?>",
+            "language": "<?php echo get_locale(); ?>",
+            "hideDefaultLauncher": false,
+            "zIndex": 999999
+        };
+        
+        (function() {
+            var w = window;
+            if (w.ChannelIO) {
+                return (window.console.error || window.console.log || function(){})('ChannelIO script included twice.');
+            }
+            var ch = function() {
+                ch.c(arguments);
+            };
+            ch.q = [];
+            ch.c = function(args) {
+                ch.q.push(args);
+            };
+            w.ChannelIO = ch;
+            function l() {
+                if (w.ChannelIOInitialized) {
+                    return;
+                }
+                w.ChannelIOInitialized = true;
+                var s = document.createElement('script');
+                s.type = 'text/javascript';
+                s.async = true;
+                s.src = 'https://cdn.channel.io/plugin/channel_plugin_script.js';
+                s.charset = 'UTF-8';
+                var x = document.getElementsByTagName('script')[0];
+                x.parentNode.insertBefore(s, x);
+            }
+            if (document.readyState === 'complete') {
+                l();
+            } else if (window.attachEvent) {
+                window.attachEvent('onload', l);
+            } else {
+                window.addEventListener('DOMContentLoaded', l, false);
+                window.addEventListener('load', l, false);
+            }
+        })();
+        </script>
+        <?php
+    }
+}
 
 /**
  * 보안 강화

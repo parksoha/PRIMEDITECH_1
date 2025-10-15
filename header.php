@@ -52,7 +52,7 @@
                 } else {
                     ?>
                     <a href="<?php echo home_url(); ?>" class="logo">
-                        PRIMEDITECH
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/mainlogo.png" alt="PRIMEDITECH" class="logo-image">
                     </a>
                     <?php
                 }
@@ -153,9 +153,8 @@
 function prmtec_fallback_menu() {
     ?>
     <ul class="nav-menu">
-        <li><a href="<?php echo home_url(); ?>"><?php _e('Home', 'prmtec'); ?></a></li>
         <li><a href="<?php echo home_url('/about/'); ?>"><?php _e('About', 'prmtec'); ?></a></li>
-        <li><a href="<?php echo home_url('/services/'); ?>"><?php _e('Services', 'prmtec'); ?></a></li>
+        <li><a href="<?php echo home_url('/facility/'); ?>"><?php _e('Facility', 'prmtec'); ?></a></li>
         <li><a href="<?php echo home_url('/products/'); ?>"><?php _e('Products', 'prmtec'); ?></a></li>
         <li><a href="<?php echo home_url('/contact/'); ?>"><?php _e('Contact', 'prmtec'); ?></a></li>
     </ul>

@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO 메타 태그 -->
+    <meta name="description" content="PRIMEDITECH - Leading medical technology company providing innovative solutions for healthcare professionals worldwide.">
+    <meta name="keywords" content="PRIMEDITECH, 프리메디텍, 의료기기, 의료기술, 다국어">
+    <meta name="author" content="PRIMEDITECH">
+    
+    <!-- Open Graph 메타 태그 -->
+    <meta property="og:title" content="PRIMEDITECH - Innovative Medical Technology Solutions">
+    <meta property="og:description" content="Leading the future of healthcare with cutting-edge medical devices and technology">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost/PRIMEDITECH_1/">
+    <meta property="og:site_name" content="PRIMEDITECH">
+    
+    <!-- Twitter Card 메타 태그 -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PRIMEDITECH - Innovative Medical Technology Solutions">
+    <meta name="twitter:description" content="Leading the future of healthcare with cutting-edge medical devices and technology">
+    
+    <!-- 파비콘 -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+    
+    <!-- 다국어 지원 -->
+    <link rel="alternate" hreflang="ko" href="http://localhost/PRIMEDITECH_1/">
+    <link rel="alternate" hreflang="en" href="http://localhost/PRIMEDITECH_1/en/">
+    <link rel="alternate" hreflang="zh" href="http://localhost/PRIMEDITECH_1/zh/">
+    <link rel="alternate" hreflang="ja" href="http://localhost/PRIMEDITECH_1/ja/">
+    <link rel="alternate" hreflang="de" href="http://localhost/PRIMEDITECH_1/de/">
+    <link rel="alternate" hreflang="fr" href="http://localhost/PRIMEDITECH_1/fr/">
+    
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- CSS 파일들 -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/gtranslate.css">
+    
+    <title>PRIMEDITECH - Innovative Medical Technology Solutions</title>
+</head>
+
+<body>
+    <!-- 헤더 영역 -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- 로고 -->
+                <div class="logo-section">
+                    <a href="index-standalone.html" class="logo">
+                        <img src="img/mainlogo.png" alt="PRIMEDITECH" class="logo-image">
+                    </a>
+                </div>
+                
+                <!-- 네비게이션 메뉴 -->
+                <nav class="main-navigation" id="main-navigation">
+                    <ul class="nav-menu">
+                        <li><a href="sub/about.html">About</a></li>
+                        <li><a href="sub/facility.html">Facility</a></li>
+                        <li><a href="sub/products.html">Products</a></li>
+                        <li><a href="sub/contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- 언어 전환 및 유틸리티 -->
+                <div class="header-utilities">
+                    <!-- 언어 전환 -->
+                    <div class="language-switcher">
+                        <select class="language-select" onchange="changeLanguage(this.value)">
+                            <option value="ko" selected>한국어</option>
+                            <option value="en">English</option>
+                            <option value="zh">中文</option>
+                            <option value="ja">日本語</option>
+                            <option value="de">Deutsch</option>
+                            <option value="fr">Français</option>
+                        </select>
+                    </div>
+                    
+                    <!-- 모바일 메뉴 토글 버튼 -->
+                    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴 열기/닫기">
+                        <span class="hamburger">
+                            <span class="hamburger-line"></span>
+                            <span class="hamburger-line"></span> 
+                            <span class="hamburger-line"></span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 모바일 메뉴 -->
+        <div class="mobile-menu" id="mobile-menu">
+            <div class="mobile-menu-content">
+                <ul class="mobile-nav-menu">
+                    <li><a href="sub/about.html">About</a></li>
+                    <li><a href="sub/facility.html">Facility</a></li>
+                    <li><a href="sub/products.html">Products</a></li>
+                    <li><a href="sub/contact.html">Contact</a></li>
+                </ul>
+                
+                <!-- 모바일 언어 전환 -->
+                <div class="mobile-language-switcher">
+                    <select class="mobile-language-select" onchange="changeLanguage(this.value)">
+                        <option value="ko" selected>한국어</option>
+                        <option value="en">English</option>
+                        <option value="zh">中文</option>
+                        <option value="ja">日本語</option>
+                        <option value="de">Deutsch</option>
+                        <option value="fr">Français</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 메인 콘텐츠 시작 -->
+    <main class="main-content" id="main-content">
+
+        <!-- 히어로 섹션 -->
+        <section class="hero-section" id="hero">
+            <div class="hero-background">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        Innovative Medical Technology Solutions
+                    </h1>
+                    <p class="hero-subtitle">
+                        Leading the future of healthcare with cutting-edge medical devices and technology
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="sub/about.html" class="btn btn-primary">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 서비스 섹션 -->
+        <section class="services-section" id="services">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Our Facility</h2>
+                    <p class="section-subtitle">
+                        Comprehensive medical technology solutions tailored to your needs
+                    </p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-stethoscope"></i>
+                        </div>
+                        <h3 class="service-title">Medical Devices</h3>
+                        <p class="service-description">
+                            State-of-the-art medical equipment designed for precision and reliability
+                        </p>
+                        <a href="sub/facility.html" class="service-link">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <h3 class="service-title">Professional Training</h3>
+                        <p class="service-description">
+                            Comprehensive training programs for healthcare professionals
+                        </p>
+                        <a href="sub/facility.html" class="service-link">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3 class="service-title">24/7 Support</h3>
+                        <p class="service-description">
+                            Round-the-clock technical support and maintenance services
+                        </p>
+                        <a href="sub/facility.html" class="service-link">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 제품 섹션 -->
+        <section class="products-section" id="products">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Featured Products</h2>
+                    <p class="section-subtitle">
+                        Discover our latest innovations in medical technology
+                    </p>
+                </div>
+                
+                <div class="products-grid">
+                    <!-- 기본 제품 카드들 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <i class="fas fa-x-ray"></i>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">Advanced Imaging System</h3>
+                            <div class="product-excerpt">
+                                <p>High-resolution medical imaging technology for accurate diagnosis</p>
+                            </div>
+                            <a href="#" class="product-link">
+                                View Details <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">Patient Monitoring</h3>
+                            <div class="product-excerpt">
+                                <p>Real-time patient monitoring systems for critical care</p>
+                            </div>
+                            <a href="#" class="product-link">
+                                View Details <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">Laboratory Equipment</h3>
+                            <div class="product-excerpt">
+                                <p>Precision laboratory instruments for research and diagnostics</p>
+                            </div>
+                            <a href="#" class="product-link">
+                                View Details <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section-footer">
+                    <a href="sub/products.html" class="btn btn-primary">
+                        View All Products
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 회사 소개 섹션 -->
+        <section class="about-section" id="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2 class="section-title">About PRIMEDITECH</h2>
+                        <p class="about-description">
+                            With over 15 years of experience in the medical technology industry, PRIMEDITECH has been at the forefront of innovation, providing cutting-edge solutions to healthcare professionals worldwide.
+                        </p>
+                        <p class="about-description">
+                            Our commitment to excellence and continuous innovation has made us a trusted partner in the global healthcare community.
+                        </p>
+                        
+                        <div class="about-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">15+</div>
+                                <div class="stat-label">Years Experience</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">500+</div>
+                                <div class="stat-label">Happy Clients</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">50+</div>
+                                <div class="stat-label">Countries Served</div>
+                            </div>
+                        </div>
+                        
+                        <a href="sub/about.html" class="btn btn-primary">
+                            Learn More About Us
+                        </a>
+                    </div>
+                    
+                    <div class="about-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-hospital"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 뉴스 섹션 -->
+        <section class="news-section" id="news">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Latest News</h2>
+                    <p class="section-subtitle">
+                        Stay updated with our latest developments and industry insights
+                    </p>
+                </div>
+                
+                <div class="news-grid">
+                    <!-- 기본 뉴스 카드들 -->
+                    <article class="news-card">
+                        <div class="news-image">
+                            <i class="fas fa-newspaper"></i>
+                        </div>
+                        <div class="news-content">
+                            <div class="news-meta">
+                                <span class="news-date">December 15, 2023</span>
+                                <span class="news-category">Company News</span>
+                            </div>
+                            <h3 class="news-title">
+                                <a href="#">PRIMEDITECH Launches New Product Line</a>
+                            </h3>
+                            <div class="news-excerpt">
+                                <p>We are excited to announce the launch of our latest medical technology solutions...</p>
+                            </div>
+                            <a href="#" class="news-link">
+                                Read More <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <article class="news-card">
+                        <div class="news-image">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div class="news-content">
+                            <div class="news-meta">
+                                <span class="news-date">December 10, 2023</span>
+                                <span class="news-category">Awards</span>
+                            </div>
+                            <h3 class="news-title">
+                                <a href="#">Innovation Award 2023</a>
+                            </h3>
+                            <div class="news-excerpt">
+                                <p>PRIMEDITECH receives recognition for excellence in medical technology innovation...</p>
+                            </div>
+                            <a href="#" class="news-link">
+                                Read More <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <article class="news-card">
+                        <div class="news-image">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="news-content">
+                            <div class="news-meta">
+                                <span class="news-date">December 5, 2023</span>
+                                <span class="news-category">Global Expansion</span>
+                            </div>
+                            <h3 class="news-title">
+                                <a href="#">Expanding to New Markets</a>
+                            </h3>
+                            <div class="news-excerpt">
+                                <p>PRIMEDITECH announces expansion into European healthcare markets...</p>
+                            </div>
+                            <a href="#" class="news-link">
+                                Read More <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+                
+                <div class="section-footer">
+                    <a href="sub/news.html" class="btn btn-primary">
+                        View All News
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 문의 섹션 -->
+        <section class="contact-section" id="contact">
+            <div class="container">
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h2 class="section-title">Get in Touch</h2>
+                        <p class="contact-description">
+                            Ready to transform your healthcare practice? Contact us today for a consultation.
+                        </p>
+                        
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <strong>Phone</strong>
+                                    <p>+82-2-1234-5678</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <strong>Email</strong>
+                                    <p>info@prmtec.com</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <strong>Address</strong>
+                                    <p>123 Medical Tech Street, Seoul, Korea</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form">
+                        <h3>Send us a Message</h3>
+                        <form class="contact-form-element" method="post">
+                            <div class="form-group">
+                                <input type="text" name="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="Your Email" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="subject" placeholder="Subject" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <!-- 메인 콘텐츠 끝 -->
+
+    <!-- 푸터 영역 -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- 회사 정보 -->
+                <div class="footer-section company-info">
+                    <h3>PRIMEDITECH</h3>
+                    <p>Leading medical technology company providing innovative solutions for healthcare professionals worldwide.</p>
+                    
+                    <!-- 소셜 미디어 링크 -->
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 빠른 링크 -->
+                <div class="footer-section quick-links">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-menu">
+                        <li><a href="sub/about.html">About</a></li>
+                        <li><a href="sub/facility.html">Facility</a></li>
+                        <li><a href="sub/products.html">Products</a></li>
+                        <li><a href="sub/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- 서비스 -->
+                <div class="footer-section services">
+                    <h3>Facility</h3>
+                    <ul class="footer-menu">
+                        <li><a href="sub/facility.html">Medical Devices</a></li>
+                        <li><a href="sub/facility.html">Consulting</a></li>
+                        <li><a href="sub/facility.html">Training</a></li>
+                        <li><a href="sub/facility.html">Support</a></li>
+                    </ul>
+                </div>
+                
+                <!-- 연락처 정보 -->
+                <div class="footer-section contact-info">
+                    <h3>Contact Info</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Medical Tech Street, Seoul, Korea</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+82-2-1234-5678</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@prmtec.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Mon-Fri: 9:00-18:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 푸터 하단 -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div class="copyright">
+                        <p>&copy; 2025 PRIMEDITECH. All rights reserved.</p>
+                    </div>
+                    
+                    <div class="footer-links">
+                        <a href="sub/privacy-policy.html">Privacy Policy</a>
+                        <a href="sub/terms-of-service.html">Terms of Service</a>
+                        <a href="sub/sitemap.html">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 스크롤 투 탑 버튼 -->
+    <button class="scroll-to-top" id="scroll-to-top" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- 채팅 플러그인 영역 -->
+    <div class="chat-plugin-area">
+        <!-- 채팅 플러그인이 있다면 여기에 표시 -->
+    </div>
+
+    <!-- JavaScript 파일들 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/gtranslate.js"></script>
+
+    <!-- 언어 전환 JavaScript -->
+    <script>
+    function changeLanguage(lang) {
+        // 언어 변경 로직
+        if (lang === 'ko') {
+            window.location.href = 'index-standalone.html';
+        } else {
+            window.location.href = 'index-standalone.html?lang=' + lang;
+        }
+    }
+
+    // 스크롤 투 탑 기능
+    document.addEventListener('DOMContentLoaded', function() {
+        const scrollToTopBtn = document.getElementById('scroll-to-top');
+        
+        if (scrollToTopBtn) {
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollToTopBtn.classList.add('show');
+                } else {
+                    scrollToTopBtn.classList.remove('show');
+                }
+            });
+            
+            scrollToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+        
+        // 모바일 메뉴 토글
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuToggle && mobileMenu) {
+            mobileMenuToggle.addEventListener('click', function() {
+                mobileMenu.classList.toggle('active');
+                this.classList.toggle('active');
+            });
+        }
+    });
+    </script>
+
+</body>
+</html>
+

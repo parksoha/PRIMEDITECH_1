@@ -17,9 +17,6 @@
                 <a href="<?php echo home_url('/about/'); ?>" class="btn btn-primary">
                     <?php _e('Learn More', 'prmtec'); ?>
                 </a>
-                <a href="<?php echo home_url('/contact/'); ?>" class="btn btn-secondary">
-                    <?php _e('Get in Touch', 'prmtec'); ?>
-                </a>
             </div>
         </div>
     </div>
@@ -124,17 +121,17 @@
                 wp_reset_postdata();
             else :
             ?>
-            <!-- 기본 제품 카드들 -->
+            <!-- PRIMEDITECH 핵심 제품들 -->
             <div class="product-card">
                 <div class="product-image">
                     <i class="fas fa-x-ray"></i>
                 </div>
                 <div class="product-content">
-                    <h3 class="product-title"><?php _e('Advanced Imaging System', 'prmtec'); ?></h3>
+                    <h3 class="product-title"><?php _e('PRIME-VISION X-Ray System', 'prmtec'); ?></h3>
                     <div class="product-excerpt">
-                        <p><?php _e('High-resolution medical imaging technology for accurate diagnosis', 'prmtec'); ?></p>
+                        <p><?php _e('4K 초고해상도 디지털 X-ray 시스템으로 정확한 진단을 위한 최첨단 의료영상 솔루션', 'prmtec'); ?></p>
                     </div>
-                    <a href="#" class="product-link">
+                    <a href="<?php echo home_url('/products/prime-vision-xray/'); ?>" class="product-link">
                         <?php _e('View Details', 'prmtec'); ?> <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
@@ -145,11 +142,11 @@
                     <i class="fas fa-heartbeat"></i>
                 </div>
                 <div class="product-content">
-                    <h3 class="product-title"><?php _e('Patient Monitoring', 'prmtec'); ?></h3>
+                    <h3 class="product-title"><?php _e('PRIME-MONITOR Vital System', 'prmtec'); ?></h3>
                     <div class="product-excerpt">
-                        <p><?php _e('Real-time patient monitoring systems for critical care', 'prmtec'); ?></p>
+                        <p><?php _e('실시간 환자 모니터링 시스템으로 중환자실과 일반병실에서 24시간 환자 상태 감시', 'prmtec'); ?></p>
                     </div>
-                    <a href="#" class="product-link">
+                    <a href="<?php echo home_url('/products/prime-monitor-vital/'); ?>" class="product-link">
                         <?php _e('View Details', 'prmtec'); ?> <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
@@ -160,11 +157,11 @@
                     <i class="fas fa-microscope"></i>
                 </div>
                 <div class="product-content">
-                    <h3 class="product-title"><?php _e('Laboratory Equipment', 'prmtec'); ?></h3>
+                    <h3 class="product-title"><?php _e('PRIME-LAB Analyzer Series', 'prmtec'); ?></h3>
                     <div class="product-excerpt">
-                        <p><?php _e('Precision laboratory instruments for research and diagnostics', 'prmtec'); ?></p>
+                        <p><?php _e('정밀 검사실 분석기로 임상검사와 연구개발을 위한 고성능 실험실 장비', 'prmtec'); ?></p>
                     </div>
-                    <a href="#" class="product-link">
+                    <a href="<?php echo home_url('/products/prime-lab-analyzer/'); ?>" class="product-link">
                         <?php _e('View Details', 'prmtec'); ?> <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
@@ -195,16 +192,16 @@
                 
                 <div class="about-stats">
                     <div class="stat-item">
-                        <div class="stat-number">15+</div>
-                        <div class="stat-label"><?php _e('Years Experience', 'prmtec'); ?></div>
+                        <div class="stat-number">18+</div>
+                        <div class="stat-label"><?php _e('Years of Innovation', 'prmtec'); ?></div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">500+</div>
-                        <div class="stat-label"><?php _e('Happy Clients', 'prmtec'); ?></div>
+                        <div class="stat-number">850+</div>
+                        <div class="stat-label"><?php _e('Healthcare Partners', 'prmtec'); ?></div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">50+</div>
-                        <div class="stat-label"><?php _e('Countries Served', 'prmtec'); ?></div>
+                        <div class="stat-number">65+</div>
+                        <div class="stat-label"><?php _e('Countries Worldwide', 'prmtec'); ?></div>
                     </div>
                 </div>
                 
@@ -273,22 +270,64 @@
                 endwhile;
                 wp_reset_postdata();
             else :
-            ?>
-            <!-- 기본 뉴스 카드들 -->
+            ?>ㅋㅋㅋ
+            <!-- PRIMEDITECH 최신 뉴스 -->
             <article class="news-card">
                 <div class="news-image">
-                    <i class="fas fa-newspaper"></i>
+                    <i class="fas fa-award"></i>
                 </div>
                 <div class="news-content">
                     <div class="news-meta">
                         <span class="news-date"><?php echo date('F j, Y'); ?></span>
-                        <span class="news-category"><?php _e('Company News', 'prmtec'); ?></span>
+                        <span class="news-category"><?php _e('Awards & Recognition', 'prmtec'); ?></span>
                     </div>
                     <h3 class="news-title">
-                        <a href="#"><?php _e('PRIMEDITECH Launches New Product Line', 'prmtec'); ?></a>
+                        <a href="#"><?php _e('PRIMEDITECH Wins Global Medical Innovation Award 2024', 'prmtec'); ?></a>
                     </h3>
                     <div class="news-excerpt">
-                        <p><?php _e('We are excited to announce the launch of our latest medical technology solutions...', 'prmtec'); ?></p>
+                        <p><?php _e('PRIME-VISION X-Ray System이 세계 의료기기 혁신상을 수상하며 의료영상 기술의 새로운 기준을 제시했습니다.', 'prmtec'); ?></p>
+                    </div>
+                    <a href="#" class="news-link">
+                        <?php _e('Read More', 'prmtec'); ?> <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+            
+            <article class="news-card">
+                <div class="news-image">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <div class="news-content">
+                    <div class="news-meta">
+                        <span class="news-date"><?php echo date('F j, Y', strtotime('-7 days')); ?></span>
+                        <span class="news-category"><?php _e('Global Expansion', 'prmtec'); ?></span>
+                    </div>
+                    <h3 class="news-title">
+                        <a href="#"><?php _e('PRIMEDITECH Expands to European Healthcare Market', 'prmtec'); ?></a>
+                    </h3>
+                    <div class="news-excerpt">
+                        <p><?php _e('독일, 프랑스, 네덜란드 등 유럽 주요 시장 진출을 통해 글로벌 의료기기 시장에서의 입지를 강화했습니다.', 'prmtec'); ?></p>
+                    </div>
+                    <a href="#" class="news-link">
+                        <?php _e('Read More', 'prmtec'); ?> <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+            
+            <article class="news-card">
+                <div class="news-image">
+                    <i class="fas fa-microscope"></i>
+                </div>
+                <div class="news-content">
+                    <div class="news-meta">
+                        <span class="news-date"><?php echo date('F j, Y', strtotime('-14 days')); ?></span>
+                        <span class="news-category"><?php _e('Technology', 'prmtec'); ?></span>
+                    </div>
+                    <h3 class="news-title">
+                        <a href="#"><?php _e('AI-Powered Diagnostic System Integration', 'prmtec'); ?></a>
+                    </h3>
+                    <div class="news-excerpt">
+                        <p><?php _e('인공지능 기반 진단 시스템을 통합한 새로운 PRIME-AI 플랫폼을 출시하여 진단 정확도를 95% 향상시켰습니다.', 'prmtec'); ?></p>
                     </div>
                     <a href="#" class="news-link">
                         <?php _e('Read More', 'prmtec'); ?> <i class="fas fa-arrow-right"></i>
