@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO 메타 태그 -->
+    <meta name="description" content="PRIMEDITECH - Industries. Precision engineering solutions for Medical, Industrial, Robotics, and Aerospace components.">
+    <meta name="keywords" content="PRIMEDITECH, 프리메디텍, 산업별, 의료, 산업용, 로봇, 항공우주">
+    <meta name="author" content="PRIMEDITECH">
+    
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- CSS 파일들 -->
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/industries.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/gtranslate.css">
+    
+    <title>Industries - PRIMEDITECH | Industry-Specific Solutions</title>
+</head>
+
+<body class="industries-page">
+    <!-- 헤더 영역 -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- 로고 -->
+                <div class="logo-section">
+                    <a href="../index-standalone.html" class="logo">
+                        <img src="../img/mainlogo.png" alt="PRIMEDITECH" class="logo-image">
+                    </a>
+                </div>
+                
+                <!-- 네비게이션 메뉴 -->
+                <nav class="main-navigation" id="main-navigation">
+                    <ul class="nav-menu">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="industries.html" class="active">Industries</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- 언어 전환 및 유틸리티 -->
+                <div class="header-utilities">
+                    <!-- 언어 전환 -->
+                    <div class="language-switcher">
+                        <select class="language-select" onchange="changeLanguage(this.value)">
+                            <option value="ko" selected>한국어</option>
+                            <option value="en">English</option>
+                            <option value="zh">中文</option>
+                            <option value="ja">日本語</option>
+                            <option value="de">Deutsch</option>
+                            <option value="fr">Français</option>
+                        </select>
+                    </div>
+                    
+                    <!-- 모바일 메뉴 토글 버튼 -->
+                    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴 열기/닫기">
+                        <span class="hamburger">
+                            <span class="hamburger-line"></span>
+                            <span class="hamburger-line"></span>
+                            <span class="hamburger-line"></span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 모바일 메뉴 -->
+        <div class="mobile-menu" id="mobile-menu">
+            <div class="mobile-menu-content">
+                <ul class="mobile-nav-menu">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="industries.html">Industries</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                
+                <!-- 모바일 언어 전환 -->
+                <div class="mobile-language-switcher">
+                    <select class="mobile-language-select" onchange="changeLanguage(this.value)">
+                        <option value="ko" selected>한국어</option>
+                        <option value="en">English</option>
+                        <option value="zh">中文</option>
+                        <option value="ja">日本語</option>
+                        <option value="de">Deutsch</option>
+                        <option value="fr">Français</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 메인 콘텐츠 시작 -->
+    <main class="main-content" id="main-content">
+
+    <!-- 히어로 배너 섹션 -->
+    <section class="hero-banner">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Industries</h1>
+                <nav class="breadcrumb">
+                    <a href="../index-standalone.html" class="breadcrumb-item">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                    <span class="breadcrumb-separator">></span>
+                    <span class="breadcrumb-current">Industries</span>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- 서브 네비게이션 -->
+    <section class="sub-navigation">
+        <div class="container">
+            <nav class="sub-nav">
+                <ul class="sub-nav-menu">
+                    <li><a href="#medical" class="sub-nav-link active" data-section="medical">Medical</a></li>
+                    <li><a href="#industrial" class="sub-nav-link" data-section="industrial">Industrial</a></li>
+                    <li><a href="#robotics" class="sub-nav-link" data-section="robotics">Robotics</a></li>
+                    <li><a href="#aerospace" class="sub-nav-link" data-section="aerospace">Aerospace Components</a></li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Medical 섹션 -->
+    <section id="medical" class="industries-section active">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Medical Industry</h2>
+                <p class="section-subtitle">
+                    Precision components for life-saving medical devices and equipment
+                </p>
+            </div>
+            
+            <div class="industry-overview">
+                <div class="overview-content">
+                    <div class="overview-text">
+                        <h3>Medical Device Manufacturing</h3>
+                        <p>We specialize in manufacturing precision components for medical devices that require the highest levels of accuracy and reliability. Our medical-grade components are used in surgical instruments, diagnostic equipment, and implantable devices.</p>
+                        
+                        <div class="key-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>Biocompatible materials (Titanium, Stainless Steel 316L)</li>
+                                <li>Ultra-precise tolerances (±0.001mm)</li>
+                                <li>Clean room manufacturing environment</li>
+                                <li>FDA and CE compliance</li>
+                                <li>Traceability and documentation</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="overview-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-heartbeat"></i>
+                            <span>Medical Components</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="applications-grid">
+                <div class="application-item">
+                    <div class="app-icon">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <h4>Surgical Instruments</h4>
+                    <p>Precision-machined surgical tools and instruments for minimally invasive procedures.</p>
+                </div>
+                
+                <div class="application-item">
+                    <div class="app-icon">
+                        <i class="fas fa-x-ray"></i>
+                    </div>
+                    <h4>Diagnostic Equipment</h4>
+                    <p>Critical components for MRI, CT, and X-ray imaging systems.</p>
+                </div>
+                
+                <div class="application-item">
+                    <div class="app-icon">
+                        <i class="fas fa-prosthetic-hand"></i>
+                    </div>
+                    <h4>Implantable Devices</h4>
+                    <p>Biocompatible components for pacemakers, stents, and orthopedic implants.</p>
+                </div>
+                
+                <div class="application-item">
+                    <div class="app-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h4>Laboratory Equipment</h4>
+                    <p>High-precision parts for analytical instruments and laboratory automation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industrial 섹션 -->
+    <section id="industrial" class="industries-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Industrial Applications</h2>
+                <p class="section-subtitle">
+                    Robust components for demanding industrial environments
+                </p>
+            </div>
+            
+            <div class="industry-overview">
+                <div class="overview-content">
+                    <div class="overview-text">
+                        <h3>Industrial Manufacturing</h3>
+                        <p>Our industrial components are designed to withstand harsh operating conditions while maintaining precision and reliability. We serve various industrial sectors with custom-engineered solutions.</p>
+                        
+                        <div class="key-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>High-strength materials (Tool Steel, Inconel, Hastelloy)</li>
+                                <li>Corrosion-resistant coatings</li>
+                                <li>High-temperature applications</li>
+                                <li>Heavy-duty construction</li>
+                                <li>Custom engineering solutions</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="overview-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-industry"></i>
+                            <span>Industrial Components</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="applications-grid">
+                <div class="application-item">
+                    <div class="app-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h4>Manufacturing Equipment</h4>
+                    <p>Precision parts for CNC machines, presses, and production equipment.</p>
+                </div>
+                
+                <div class="application-item">
+                    <div class="app-icon">
+                        <i class="fas fa-oil-can"></i>
+                    </div>
+                    <h4>Oil & Gas</h4>
+                    <p>Corrosion-resistant components for drilling and refining operations.</p>
+                </div>
+                
+                <div class="application-item">
+                    <div class="app-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h4>Power Generation</h4>
+                    <p>High-temperature components for turbines and power generation systems.</p>
+                </div>
+                
+                <div class="application-item">
+                    <div class="app-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h4>Automotive</h4>
+                    <p>Precision components for engines, transmissions, and braking systems.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Robotics 섹션 -->
+    <section id="robotics" class="industries-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Robotics & Automation</h2>
+                <p class="section-subtitle">
+                    Precision components for next-generation robotic systems
+                </p>
+            </div>
+            
+            <div class="industry-overview">
+                <div class="overview-content">
+                    <div class="overview-text">
+                        <h3>Robotic Systems</h3>
+                        <p>We manufacture critical components for robotic systems that require exceptional precision and reliability. Our components enable advanced automation in various industries.</p>
+                        
+                        <div class="key-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>Ultra-lightweight materials (Aluminum, Carbon Fiber)</li>
+                                <li>High-precision bearings and joints</li>
+                                <li>Low-friction surfaces</li>
+                                <li>Modular design capabilities</li>
+                                <li>Real-time quality monitoring</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="overview-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-robot"></i>
+                            <span>Robotic Components</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="applications-grid">
+                <div class="application-item">
+                    <div class="app-icon">
+                        <i class="fas fa-hand-paper"></i>
+                    </div>
+                    <h4>Robotic Arms</h4>
+                    <p>Precision joints, actuators, and end-effectors for industrial robots.</p>
+                </div>
+                
+                <div class="application-item">
+                        <div class="app-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h4>Vision Systems</h4>
+                        <p>Optical components and housings for machine vision applications.</p>
+                    </div>
+                
+                <div class="application-item">
+                    <div class="app-icon">
+                        <i class="fas fa-walking"></i>
+                    </div>
+                    <h4>Mobile Robots</h4>
+                    <p>Lightweight structural components for autonomous mobile platforms.</p>
+                </div>
+                
+                <div class="application-item">
+                    <div class="app-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h4>Sensor Integration</h4>
+                    <p>Precision housings and mounts for various sensor technologies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aerospace Components 섹션 -->
+    <section id="aerospace" class="industries-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Aerospace Components</h2>
+                <p class="section-subtitle">
+                    Mission-critical components for aerospace and defense applications
+                </p>
+            </div>
+            
+            <div class="industry-overview">
+                <div class="overview-content">
+                    <div class="overview-text">
+                        <h3>Aerospace Manufacturing</h3>
+                        <p>We manufacture aerospace-grade components that meet the most stringent requirements for safety, reliability, and performance. Our components are used in commercial aircraft, defense systems, and space applications.</p>
+                        
+                        <div class="key-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>Aerospace-grade materials (Titanium, Inconel, Aluminum)</li>
+                                <li>AS9100D certification</li>
+                                <li>Non-destructive testing (NDT)</li>
+                                <li>Full traceability documentation</li>
+                                <li>Environmental testing capabilities</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="overview-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-plane"></i>
+                            <span>Aerospace Components</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="applications-grid">
+                <div class="application-item">
+                    <div class="app-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <h4>Commercial Aircraft</h4>
+                    <p>Structural components, fasteners, and systems for commercial aviation.</p>
+                </div>
+                
+                <div class="application-item">
+                    <div class="app-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h4>Space Systems</h4>
+                    <p>Critical components for satellites, launch vehicles, and space exploration.</p>
+                </div>
+                
+                <div class="application-item">
+                    <div class="app-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>Defense Systems</h4>
+                    <p>Mission-critical components for military aircraft and defense applications.</p>
+                </div>
+                
+                <div class="application-item">
+                    <div class="app-icon">
+                        <i class="fas fa-helicopter"></i>
+                    </div>
+                    <h4>Helicopter Systems</h4>
+                    <p>Precision components for rotor systems and flight control mechanisms.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    </main>
+    <!-- 메인 콘텐츠 끝 -->
+
+    <!-- 푸터 영역 -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- 회사 정보 -->
+                <div class="footer-section company-info">
+                    <div class="footer-logo">
+                        <img src="../img/mainlogo.png" alt="PRIMEDITECH" class="footer-logo-image">
+                    </div>
+                    <p>5-axis CNC precision processing company</p>
+                    
+                    <!-- 소셜 미디어 링크 -->
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Blog">
+                            <i class="fas fa-blog"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 빠른 링크 -->
+                <div class="footer-section quick-links">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-menu">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="industries.html">Industries</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- 연락처 정보 -->
+                <div class="footer-section contact-info">
+                    <h3>Contact Info</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>KR Mob : 010-6364-7284</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Mob : +82 10-5956-7284</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>Tel : +82 31-455-2770</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>Email : pmkt@prmtec.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 푸터 하단 -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div class="copyright">
+                        <p>&copy; 2025 PRIMEDITECH. All rights reserved.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 스크롤 투 탑 버튼 -->
+    <button class="scroll-to-top" id="scroll-to-top" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- JavaScript 파일들 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/gtranslate.js"></script>
+
+    <!-- 언어 전환 JavaScript -->
+    <script>
+    function changeLanguage(lang) {
+        // 언어 변경 로직
+        if (lang === 'ko') {
+            window.location.href = 'industries.html';
+        } else {
+            window.location.href = 'industries.html?lang=' + lang;
+        }
+    }
+
+    // 스크롤 투 탑 기능
+    document.addEventListener('DOMContentLoaded', function() {
+        const scrollToTopBtn = document.getElementById('scroll-to-top');
+        
+        if (scrollToTopBtn) {
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollToTopBtn.classList.add('show');
+                } else {
+                    scrollToTopBtn.classList.remove('show');
+                }
+            });
+            
+            scrollToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+        
+        // 모바일 메뉴 토글
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuToggle && mobileMenu) {
+            mobileMenuToggle.addEventListener('click', function() {
+                mobileMenu.classList.toggle('active');
+                this.classList.toggle('active');
+            });
+        }
+        
+        // 서브 네비게이션 기능
+        const subNavLinks = document.querySelectorAll('.sub-nav-link');
+        const industriesSections = document.querySelectorAll('.industries-section');
+        
+        // 서브 네비게이션 클릭 이벤트
+        subNavLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetSection = this.getAttribute('data-section');
+                
+                // 활성 클래스 업데이트
+                subNavLinks.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+                
+                // 섹션 표시/숨김
+                industriesSections.forEach(section => {
+                    section.classList.remove('active');
+                    if (section.id === targetSection) {
+                        section.classList.add('active');
+                    }
+                });
+                
+                // 부드러운 스크롤
+                const targetElement = document.getElementById(targetSection);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // 스크롤에 따른 자동 네비게이션 업데이트
+        let isScrolling = false;
+        window.addEventListener('scroll', function() {
+            if (isScrolling) return;
+            
+            const scrollPosition = window.scrollY + 200; // 헤더 높이 고려
+            
+            industriesSections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    const sectionId = section.id;
+                    const correspondingLink = document.querySelector(`[data-section="${sectionId}"]`);
+                    
+                    if (correspondingLink && !correspondingLink.classList.contains('active')) {
+                        subNavLinks.forEach(l => l.classList.remove('active'));
+                        correspondingLink.classList.add('active');
+                        
+                        industriesSections.forEach(s => s.classList.remove('active'));
+                        section.classList.add('active');
+                    }
+                }
+            });
+        });
+        
+        // 초기 로드 시 첫 번째 섹션 활성화
+        if (industriesSections.length > 0) {
+            industriesSections.forEach((section, index) => {
+                if (index === 0) {
+                    section.classList.add('active');
+                } else {
+                    section.classList.remove('active');
+                }
+            });
+        }
+    });
+    </script>
+
+</body>
+</html>

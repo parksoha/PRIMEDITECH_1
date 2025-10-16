@@ -17,8 +17,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <!-- CSS 파일들 -->
+    <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/facility.css">
     <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="../css/gtranslate.css">
     
@@ -41,8 +43,8 @@
                 <nav class="main-navigation" id="main-navigation">
                     <ul class="nav-menu">
                         <li><a href="about.html">About</a></li>
-                        <li><a href="facility.html" class="active">Facility</a></li>
-                        <li><a href="products.html">Products</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="industries.html">Industries</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </nav>
@@ -78,8 +80,8 @@
             <div class="mobile-menu-content">
                 <ul class="mobile-nav-menu">
                     <li><a href="about.html">About</a></li>
-                    <li><a href="facility.html">Facility</a></li>
-                    <li><a href="products.html">Products</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="industries.html">Industries</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
                 
@@ -415,20 +417,9 @@
                     <h3>Quick Links</h3>
                     <ul class="footer-menu">
                         <li><a href="about.html">About</a></li>
-                        <li><a href="facility.html">Facility</a></li>
-                        <li><a href="products.html">Products</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="industries.html">Industries</a></li>
                         <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <!-- 시설 정보 -->
-                <div class="footer-section facility">
-                    <h3>Facility</h3>
-                    <ul class="footer-menu">
-                        <li><a href="facility.html">Manufacturing</a></li>
-                        <li><a href="facility.html">Research & Development</a></li>
-                        <li><a href="facility.html">Quality Control</a></li>
-                        <li><a href="facility.html">Testing & Validation</a></li>
                     </ul>
                 </div>
                 
@@ -488,9 +479,9 @@
     function changeLanguage(lang) {
         // 언어 변경 로직
         if (lang === 'ko') {
-            window.location.href = 'facility.html';
+            window.location.href = 'services.html';
         } else {
-            window.location.href = 'facility.html?lang=' + lang;
+            window.location.href = 'services.html?lang=' + lang;
         }
     }
 

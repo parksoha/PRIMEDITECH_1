@@ -154,8 +154,8 @@ function prmtec_fallback_menu() {
     ?>
     <ul class="nav-menu">
         <li><a href="<?php echo home_url('/about/'); ?>"><?php _e('About', 'prmtec'); ?></a></li>
-        <li><a href="<?php echo home_url('/facility/'); ?>"><?php _e('Facility', 'prmtec'); ?></a></li>
-        <li><a href="<?php echo home_url('/products/'); ?>"><?php _e('Products', 'prmtec'); ?></a></li>
+        <li><a href="<?php echo home_url('/services/'); ?>"><?php _e('Services', 'prmtec'); ?></a></li>
+        <li><a href="<?php echo home_url('/industries/'); ?>"><?php _e('Industries', 'prmtec'); ?></a></li>
         <li><a href="<?php echo home_url('/contact/'); ?>"><?php _e('Contact', 'prmtec'); ?></a></li>
     </ul>
     <?php

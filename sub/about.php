@@ -38,10 +38,11 @@ get_header();
         <div class="container">
             <nav class="sub-nav">
                 <ul class="sub-nav-menu">
-                    <li><a href="#about" class="sub-nav-link active" data-section="about"><?php _e('About', 'prmtec'); ?></a></li>
-                    <li><a href="#history" class="sub-nav-link" data-section="history"><?php _e('History', 'prmtec'); ?></a></li>
-                    <li><a href="#certification" class="sub-nav-link" data-section="certification"><?php _e('Certification', 'prmtec'); ?></a></li>
-                    <li><a href="#client" class="sub-nav-link" data-section="client"><?php _e('Client', 'prmtec'); ?></a></li>
+                    <li><a href="#about" class="sub-nav-link active" data-section="about"><?php _e('Company Introduction', 'prmtec'); ?></a></li>
+                    <li><a href="#history" class="sub-nav-link" data-section="history"><?php _e('Company History', 'prmtec'); ?></a></li>
+                    <li><a href="#certification" class="sub-nav-link" data-section="certification"><?php _e('Certifications', 'prmtec'); ?></a></li>
+                    <li><a href="#client" class="sub-nav-link" data-section="client"><?php _e('Major Clients', 'prmtec'); ?></a></li>
+                    <li><a href="<?php echo home_url('/facility/'); ?>" class="sub-nav-link"><?php _e('Facilities', 'prmtec'); ?></a></li>
                 </ul>
             </nav>
         </div>

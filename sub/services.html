@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO 메타 태그 -->
+    <meta name="description" content="PRIMEDITECH - Services. Comprehensive precision engineering services including CNC processing, surface treatment, and quality inspection.">
+    <meta name="keywords" content="PRIMEDITECH, 프리메디텍, 서비스, CNC, 표면처리, 품질검사">
+    <meta name="author" content="PRIMEDITECH">
+    
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- CSS 파일들 -->
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/services.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/gtranslate.css">
+    
+    <title>Services - PRIMEDITECH | Precision Engineering Solutions</title>
+</head>
+
+<body class="services-page">
+    <!-- 헤더 영역 -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- 로고 -->
+                <div class="logo-section">
+                    <a href="../index-standalone.html" class="logo">
+                        <img src="../img/mainlogo.png" alt="PRIMEDITECH" class="logo-image">
+                    </a>
+                </div>
+                
+                <!-- 네비게이션 메뉴 -->
+                <nav class="main-navigation" id="main-navigation">
+                    <ul class="nav-menu">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html" class="active">Services</a></li>
+                        <li><a href="industries.html">Industries</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- 언어 전환 및 유틸리티 -->
+                <div class="header-utilities">
+                    <!-- 언어 전환 -->
+                    <div class="language-switcher">
+                        <select class="language-select" onchange="changeLanguage(this.value)">
+                            <option value="ko" selected>한국어</option>
+                            <option value="en">English</option>
+                            <option value="zh">中文</option>
+                            <option value="ja">日本語</option>
+                            <option value="de">Deutsch</option>
+                            <option value="fr">Français</option>
+                        </select>
+                    </div>
+                    
+                    <!-- 모바일 메뉴 토글 버튼 -->
+                    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴 열기/닫기">
+                        <span class="hamburger">
+                            <span class="hamburger-line"></span>
+                            <span class="hamburger-line"></span>
+                            <span class="hamburger-line"></span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 모바일 메뉴 -->
+        <div class="mobile-menu" id="mobile-menu">
+            <div class="mobile-menu-content">
+                <ul class="mobile-nav-menu">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="industries.html">Industries</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                
+                <!-- 모바일 언어 전환 -->
+                <div class="mobile-language-switcher">
+                    <select class="mobile-language-select" onchange="changeLanguage(this.value)">
+                        <option value="ko" selected>한국어</option>
+                        <option value="en">English</option>
+                        <option value="zh">中文</option>
+                        <option value="ja">日本語</option>
+                        <option value="de">Deutsch</option>
+                        <option value="fr">Français</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 메인 콘텐츠 시작 -->
+    <main class="main-content" id="main-content">
+
+    <!-- 히어로 배너 섹션 -->
+    <section class="hero-banner">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Services</h1>
+                <nav class="breadcrumb">
+                    <a href="../index-standalone.html" class="breadcrumb-item">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                    <span class="breadcrumb-separator">></span>
+                    <span class="breadcrumb-current">Services</span>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- 서브 네비게이션 -->
+    <section class="sub-navigation">
+        <div class="container">
+            <nav class="sub-nav">
+                <ul class="sub-nav-menu">
+                    <li><a href="#detailed-process" class="sub-nav-link active" data-section="detailed-process">Detailed Process</a></li>
+                    <li><a href="#cnc-processing" class="sub-nav-link" data-section="cnc-processing">CNC Processing</a></li>
+                    <li><a href="#surface-treatment" class="sub-nav-link" data-section="surface-treatment">Surface Treatment</a></li>
+                    <li><a href="#quality-inspection" class="sub-nav-link" data-section="quality-inspection">Quality Inspection</a></li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    </main>
+    <!-- 메인 콘텐츠 끝 -->
+
+    <!-- Detailed Process 섹션 -->
+    <section id="detailed-process" class="service-detail-section active">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">작업 프로세스</h2>
+                <p class="section-subtitle">체계적인 품질 관리 시스템으로 완벽한 가공 결과를 보장합니다</p>
+            </div>
+            
+            <div class="work-process-flowchart">
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>견적 및 상담</h3>
+                        <p class="step-description">도면 검토 및 가공 가능성 분석</p>
+                        <ul class="step-features">
+                            <li>도면 검토</li>
+                            <li>가공 가능성 분석</li>
+                            <li>견적서 제공</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="step-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>CNC 가공</h3>
+                        <p class="step-description">고정밀 CNC 장비를 이용한 정밀 가공</p>
+                        <ul class="step-features">
+                            <li>CNC 밀링/터닝</li>
+                            <li>복합 가공</li>
+                            <li>±0.001mm 정밀도</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="step-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>표면처리</h3>
+                        <p class="step-description">다양한 표면 처리 기술 적용</p>
+                        <ul class="step-features">
+                            <li>알루미나 블라스팅</li>
+                            <li>진공 열처리</li>
+                            <li>코팅 처리</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="step-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3>품질검사</h3>
+                        <p class="step-description">CMM을 이용한 정밀 치수 측정</p>
+                        <ul class="step-features">
+                            <li>CMM 측정</li>
+                            <li>표면 거칠기 측정</li>
+                            <li>품질 보고서</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="step-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">05</div>
+                    <div class="step-content">
+                        <h3>납품</h3>
+                        <p class="step-description">안전한 포장 및 정시 납품</p>
+                        <ul class="step-features">
+                            <li>안전 포장</li>
+                            <li>정시 납품</li>
+                            <li>납품 보고서</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CNC Processing 섹션 -->
+    <section id="cnc-processing" class="service-detail-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">CNC Processing</h2>
+                <p class="section-subtitle">Advanced CNC machining capabilities for complex precision components</p>
+            </div>
+            
+            <div class="process-content">
+                <div class="process-description">
+                    <h3>5-Axis CNC Machining</h3>
+                    <p>Our state-of-the-art 5-axis CNC machines provide unmatched precision and flexibility for complex component manufacturing. We can handle the most demanding applications with exceptional accuracy.</p>
+                    
+                    <ul class="process-features">
+                        <li><i class="fas fa-check"></i> ±0.001mm Precision Tolerance</li>
+                        <li><i class="fas fa-check"></i> Complex Geometry Capabilities</li>
+                        <li><i class="fas fa-check"></i> Multi-Material Processing</li>
+                        <li><i class="fas fa-check"></i> Automated Quality Control</li>
+                        <li><i class="fas fa-check"></i> 24/7 Production Capability</li>
+                    </ul>
+                </div>
+                
+                <div class="process-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-industry"></i>
+                        <span>CNC Machine</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Surface Treatment 섹션 -->
+    <section id="surface-treatment" class="service-detail-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Surface Treatment</h2>
+                <p class="section-subtitle">Advanced surface treatment technologies for enhanced performance</p>
+            </div>
+            
+            <div class="process-content">
+                <div class="process-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Surface Treatment</span>
+                    </div>
+                </div>
+                
+                <div class="process-description">
+                    <h3>Surface Enhancement Technologies</h3>
+                    <p>Our advanced surface treatment processes enhance the performance, durability, and appearance of precision components. We offer a comprehensive range of surface treatment solutions.</p>
+                    
+                    <ul class="process-features">
+                        <li><i class="fas fa-check"></i> Anodizing & Hard Coating</li>
+                        <li><i class="fas fa-check"></i> Plating & Electroplating</li>
+                        <li><i class="fas fa-check"></i> Heat Treatment & Tempering</li>
+                        <li><i class="fas fa-check"></i> Passivation & Cleaning</li>
+                        <li><i class="fas fa-check"></i> Custom Surface Finishing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quality Inspection 섹션 -->
+    <section id="quality-inspection" class="service-detail-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Quality Inspection</h2>
+                <p class="section-subtitle">Comprehensive quality control and inspection services</p>
+            </div>
+            
+            <div class="process-content">
+                <div class="process-description">
+                    <h3>Quality Assurance Excellence</h3>
+                    <p>Our comprehensive quality inspection services ensure that every component meets the highest standards. We use advanced measurement equipment and rigorous testing protocols.</p>
+                    
+                    <ul class="process-features">
+                        <li><i class="fas fa-check"></i> CMM & 3D Measurement</li>
+                        <li><i class="fas fa-check"></i> Optical Inspection Systems</li>
+                        <li><i class="fas fa-check"></i> Material Testing & Analysis</li>
+                        <li><i class="fas fa-check"></i> Dimensional Verification</li>
+                        <li><i class="fas fa-check"></i> Certification & Documentation</li>
+                    </ul>
+                </div>
+                
+                <div class="process-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-search"></i>
+                        <span>Quality Control</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 영역 -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- 회사 정보 -->
+                <div class="footer-section company-info">
+                    <div class="footer-logo">
+                        <img src="../img/mainlogo.png" alt="PRIMEDITECH" class="footer-logo-image">
+                    </div>
+                    <p>5-axis CNC precision processing company</p>
+                    
+                    <!-- 소셜 미디어 링크 -->
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Blog">
+                            <i class="fas fa-blog"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 빠른 링크 -->
+                <div class="footer-section quick-links">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-menu">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="industries.html">Industries</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- 연락처 정보 -->
+                <div class="footer-section contact-info">
+                    <h3>Contact Info</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>KR Mob : 010-6364-7284</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Mob : +82 10-5956-7284</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>Tel : +82 31-455-2770</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>Email : pmkt@prmtec.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 푸터 하단 -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div class="copyright">
+                        <p>&copy; 2025 PRIMEDITECH. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 스크롤 투 탑 버튼 -->
+    <button class="scroll-to-top" id="scroll-to-top" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- JavaScript 파일들 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/gtranslate.js"></script>
+
+    <!-- 언어 전환 JavaScript -->
+    <script>
+    function changeLanguage(lang) {
+        // 언어 변경 로직
+        if (lang === 'ko') {
+            window.location.href = 'services.html';
+        } else {
+            window.location.href = 'services.html?lang=' + lang;
+        }
+    }
+
+    // 스크롤 투 탑 기능
+    document.addEventListener('DOMContentLoaded', function() {
+        const scrollToTopBtn = document.getElementById('scroll-to-top');
+        
+        if (scrollToTopBtn) {
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollToTopBtn.classList.add('show');
+                } else {
+                    scrollToTopBtn.classList.remove('show');
+                }
+            });
+            
+            scrollToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+        
+        // 모바일 메뉴 토글
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuToggle && mobileMenu) {
+            mobileMenuToggle.addEventListener('click', function() {
+                mobileMenu.classList.toggle('active');
+                this.classList.toggle('active');
+            });
+        }
+        
+        // 서비스 카드 호버 효과
+        const serviceCards = document.querySelectorAll('.service-card');
+        serviceCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+        
+        // 서브 네비게이션 토글 기능
+        const subNavLinks = document.querySelectorAll('.sub-nav-link[data-section]');
+        const serviceSections = document.querySelectorAll('.service-detail-section');
+        
+        // 페이지 로드 시 첫 번째 섹션 활성화
+        function initializeActiveSection() {
+            // 모든 섹션 비활성화
+            serviceSections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // 모든 링크 비활성화
+            subNavLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            // 첫 번째 섹션과 링크 활성화
+            if (serviceSections.length > 0) {
+                serviceSections[0].classList.add('active');
+                subNavLinks[0].classList.add('active');
+            }
+        }
+        
+        // 초기화 실행 (지연 실행으로 확실하게)
+        setTimeout(initializeActiveSection, 100);
+        
+        // 서브 네비게이션 링크 클릭 이벤트
+        subNavLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetSection = this.getAttribute('data-section');
+                
+                // 활성 클래스 업데이트
+                subNavLinks.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+                
+                // 섹션 표시/숨김
+                serviceSections.forEach(section => {
+                    section.classList.remove('active');
+                    if (section.id === targetSection) {
+                        section.classList.add('active');
+                    }
+                });
+            });
+        });
+    });
+    </script>
+
+</body>
+</html>

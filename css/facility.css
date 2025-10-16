@@ -1,0 +1,576 @@
+/* ==========================================================================
+   Facility Page Styles
+   ========================================================================== */
+
+/* ==========================================================================
+   시설 개요 섹션
+   ========================================================================== */
+
+.facility-overview {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #009245 0%, #007235 100%);
+    color: #fff;
+    text-align: center;
+}
+
+.facility-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* ==========================================================================
+   제조 시설 섹션
+   ========================================================================== */
+
+.manufacturing-facilities {
+    padding: 80px 0;
+    background: #fff;
+}
+
+.facility-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.facility-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.facility-card:hover {
+    transform: translateY(-5px);
+}
+
+.facility-image {
+    height: 250px;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.facility-placeholder {
+    font-size: 4rem;
+    color: #009245;
+    opacity: 0.3;
+}
+
+.facility-content {
+    padding: 30px;
+}
+
+.facility-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.facility-description {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.facility-features {
+    list-style: none;
+    padding: 0;
+}
+
+.facility-features li {
+    padding: 8px 0;
+    color: #555;
+    position: relative;
+    padding-left: 25px;
+}
+
+.facility-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #009245;
+    font-weight: bold;
+}
+
+/* ==========================================================================
+   품질 관리 섹션
+   ========================================================================== */
+
+.quality-control {
+    background: #f8f9fa;
+    padding: 80px 0;
+}
+
+.quality-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.quality-item {
+    background: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.quality-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #009245, #007235);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    color: #fff;
+    font-size: 2rem;
+}
+
+.quality-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.quality-description {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   연구 개발 섹션
+   ========================================================================== */
+
+.research-development {
+    padding: 80px 0;
+    background: #fff;
+}
+
+.research-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.research-category {
+    background: #fff;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.research-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.research-icon {
+    width: 60px;
+    height: 60px;
+    background: #009245;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.research-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.research-description {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.research-list {
+    list-style: none;
+    padding: 0;
+}
+
+.research-list li {
+    padding: 10px 0;
+    color: #555;
+    position: relative;
+    padding-left: 25px;
+}
+
+.research-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #009245;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* ==========================================================================
+   테스팅 시설 섹션
+   ========================================================================== */
+
+.testing-facilities {
+    background: #f8f9fa;
+    padding: 80px 0;
+}
+
+.testing-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.testing-category {
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.testing-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.testing-icon {
+    width: 50px;
+    height: 50px;
+    background: #009245;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.testing-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.testing-equipment {
+    list-style: none;
+    padding: 0;
+}
+
+.testing-equipment li {
+    padding: 8px 0;
+    color: #555;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.testing-equipment li:last-child {
+    border-bottom: none;
+}
+
+/* ==========================================================================
+   환경 친화적 시설
+   ========================================================================== */
+
+.environmental-facilities {
+    padding: 80px 0;
+    background: #fff;
+}
+
+.environmental-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.environmental-item {
+    background: linear-gradient(135deg, #e8f5e8, #f0f8f0);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    border: 2px solid #009245;
+}
+
+.environmental-icon {
+    width: 80px;
+    height: 80px;
+    background: #009245;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    color: #fff;
+    font-size: 2rem;
+}
+
+.environmental-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #009245;
+    margin-bottom: 15px;
+}
+
+.environmental-description {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   인증 및 표준
+   ========================================================================== */
+
+.certifications {
+    background: #f8f9fa;
+    padding: 80px 0;
+}
+
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.cert-item {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.cert-item:hover {
+    transform: translateY(-5px);
+}
+
+.cert-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #009245, #007235);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: #fff;
+    font-size: 1.8rem;
+}
+
+.cert-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.cert-description {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   보안 및 안전
+   ========================================================================== */
+
+.security-safety {
+    padding: 80px 0;
+    background: #fff;
+}
+
+.security-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.security-item {
+    background: #fff;
+    border: 2px solid #009245;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+}
+
+.security-icon {
+    width: 70px;
+    height: 70px;
+    background: #009245;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: #fff;
+    font-size: 1.8rem;
+}
+
+.security-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #009245;
+    margin-bottom: 15px;
+}
+
+.security-description {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   시설 투어 CTA
+   ========================================================================== */
+
+.facility-tour {
+    background: linear-gradient(135deg, #009245, #007235);
+    color: #fff;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.tour-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.tour-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.tour-description {
+    font-size: 1.125rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+.tour-button {
+    background: #fff;
+    color: #009245;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.tour-button:hover {
+    background: #f8f9fa;
+    color: #009245;
+    transform: translateY(-2px);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .facility-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .facility-grid,
+    .research-grid,
+    .environmental-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .quality-grid,
+    .testing-categories,
+    .certifications-grid,
+    .security-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    
+    .research-header,
+    .testing-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .research-icon,
+    .testing-icon {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .facility-overview,
+    .manufacturing-facilities,
+    .quality-control,
+    .research-development,
+    .testing-facilities,
+    .environmental-facilities,
+    .certifications,
+    .security-safety,
+    .facility-tour {
+        padding: 60px 0;
+    }
+    
+    .facility-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat-card {
+        padding: 20px;
+    }
+    
+    .facility-content,
+    .quality-item,
+    .research-category,
+    .testing-category,
+    .environmental-item,
+    .cert-item,
+    .security-item {
+        padding: 20px;
+    }
+    
+    .tour-title {
+        font-size: 2rem;
+    }
+}
+

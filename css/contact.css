@@ -1,0 +1,466 @@
+/* ==========================================================================
+   Contact Page Styles
+   ========================================================================== */
+
+/* ==========================================================================
+   연락처 정보 섹션
+   ========================================================================== */
+
+.contact-info-section {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.contact-info {
+    background: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.contact-info h3 {
+    color: #009245;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+    background: #e9ecef;
+    transform: translateX(5px);
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    background: #009245;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.contact-details h4 {
+    color: #333;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+.contact-details p {
+    color: #666;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   연락처 폼 섹션
+   ========================================================================== */
+
+.contact-form {
+    background: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #009245;
+}
+
+.form-group textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.submit-button {
+    background: #009245;
+    color: #fff;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.submit-button:hover {
+    background: #007235;
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   오피스 위치 섹션
+   ========================================================================== */
+
+.office-locations {
+    padding: 80px 0;
+    background: #fff;
+}
+
+.locations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.location-card {
+    background: #fff;
+    border: 2px solid #f0f0f0;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.location-card:hover {
+    border-color: #009245;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.location-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #009245, #007235);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    color: #fff;
+    font-size: 2rem;
+}
+
+.location-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.location-address {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.location-contact {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.location-contact li {
+    padding: 8px 0;
+    color: #555;
+    display: flex;
+    align-items: center;
+}
+
+.location-contact li i {
+    width: 20px;
+    margin-right: 10px;
+    color: #009245;
+}
+
+/* ==========================================================================
+   지도 섹션
+   ========================================================================== */
+
+.map-section {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.map-container {
+    position: relative;
+    height: 400px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.map-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #e9ecef, #dee2e6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-size: 1.2rem;
+}
+
+/* ==========================================================================
+   FAQ 섹션
+   ========================================================================== */
+
+.faq-section {
+    padding: 80px 0;
+    background: #fff;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.faq-item {
+    background: #f8f9fa;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.faq-question {
+    background: #009245;
+    color: #fff;
+    padding: 20px;
+    margin: 0;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-weight: 600;
+}
+
+.faq-question:hover {
+    background: #007235;
+}
+
+.faq-answer {
+    padding: 20px;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ==========================================================================
+   연락처 CTA 섹션
+   ========================================================================== */
+
+.contact-cta {
+    background: linear-gradient(135deg, #009245, #007235);
+    color: #fff;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.cta-description {
+    font-size: 1.125rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-white {
+    background: #fff;
+    color: #009245;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-white:hover {
+    background: #f8f9fa;
+    color: #009245;
+    transform: translateY(-2px);
+}
+
+.btn-outline-white {
+    background: transparent;
+    color: #fff;
+    padding: 15px 30px;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-white:hover {
+    background: #fff;
+    color: #009245;
+}
+
+/* ==========================================================================
+   응답 시간 섹션
+   ========================================================================== */
+
+.response-times {
+    background: #f8f9fa;
+    padding: 60px 0;
+}
+
+.response-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.response-item {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.response-icon {
+    width: 60px;
+    height: 60px;
+    background: #009245;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.response-time {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #009245;
+    margin-bottom: 10px;
+}
+
+.response-type {
+    color: #666;
+    font-weight: 500;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .locations-grid,
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn-white,
+    .btn-outline-white {
+        width: 250px;
+    }
+    
+    .response-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-info-section,
+    .office-locations,
+    .map-section,
+    .faq-section,
+    .contact-cta,
+    .response-times {
+        padding: 60px 0;
+    }
+    
+    .contact-info,
+    .contact-form,
+    .location-card {
+        padding: 20px;
+    }
+    
+    .cta-title {
+        font-size: 2rem;
+    }
+    
+    .response-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .map-container {
+        height: 300px;
+    }
+}
+

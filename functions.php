@@ -59,10 +59,25 @@ function prmtec_scripts() {
     // 메인 스타일시트
     wp_enqueue_style('prmtec-style', get_stylesheet_uri(), array(), '1.0.0');
     
-    // 추가 CSS 파일들
-    wp_enqueue_style('prmtec-main', get_template_directory_uri() . '/css/main.css', array('prmtec-style'), '1.0.0');
-    wp_enqueue_style('prmtec-responsive', get_template_directory_uri() . '/css/responsive.css', array('prmtec-main'), '1.0.0');
-    wp_enqueue_style('prmtec-gtranslate', get_template_directory_uri() . '/css/gtranslate.css', array('prmtec-main'), '1.0.0');
+    // 공통 CSS 파일들
+    wp_enqueue_style('prmtec-common', get_template_directory_uri() . '/css/common.css', array('prmtec-style'), '1.0.0');
+    wp_enqueue_style('prmtec-responsive', get_template_directory_uri() . '/css/responsive.css', array('prmtec-common'), '1.0.0');
+    wp_enqueue_style('prmtec-gtranslate', get_template_directory_uri() . '/css/gtranslate.css', array('prmtec-common'), '1.0.0');
+    
+    // 페이지별 CSS 파일들
+    if (is_front_page() || is_home()) {
+        wp_enqueue_style('prmtec-home', get_template_directory_uri() . '/css/home.css', array('prmtec-common'), '1.0.0');
+    } elseif (is_page('about')) {
+        wp_enqueue_style('prmtec-about', get_template_directory_uri() . '/css/about.css', array('prmtec-common'), '1.0.0');
+    } elseif (is_page('services')) {
+        wp_enqueue_style('prmtec-services', get_template_directory_uri() . '/css/services.css', array('prmtec-common'), '1.0.0');
+    } elseif (is_page('industries')) {
+        wp_enqueue_style('prmtec-industries', get_template_directory_uri() . '/css/industries.css', array('prmtec-common'), '1.0.0');
+    } elseif (is_page('facility')) {
+        wp_enqueue_style('prmtec-facility', get_template_directory_uri() . '/css/facility.css', array('prmtec-common'), '1.0.0');
+    } elseif (is_page('contact')) {
+        wp_enqueue_style('prmtec-contact', get_template_directory_uri() . '/css/contact.css', array('prmtec-common'), '1.0.0');
+    }
     
     // Google Fonts
     wp_enqueue_style('prmtec-fonts', 'https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap', array(), null);
@@ -247,16 +262,16 @@ function prmtec_custom_post_types() {
         'menu_icon' => 'dashicons-admin-tools',
     ));
     
-    // 제품 포스트 타입
-    register_post_type('products', array(
+    // 산업별 포트폴리오 포스트 타입
+    register_post_type('industries', array(
         'labels' => array(
-            'name' => __('Products', 'prmtec'),
-            'singular_name' => __('Product', 'prmtec'),
+            'name' => __('Industries', 'prmtec'),
+            'singular_name' => __('Industry', 'prmtec'),
         ),
         'public' => true,
         'has_archive' => true,
         'supports' => array('title', 'editor', 'thumbnail'),
-        'menu_icon' => 'dashicons-products',
+        'menu_icon' => 'dashicons-building',
     ));
 }
 add_action('init', 'prmtec_custom_post_types');

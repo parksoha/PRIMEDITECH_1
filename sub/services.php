@@ -1,337 +1,369 @@
-<?php get_header(); ?>
+<?php
+/**
+ * Template Name: Services Page
+ * 
+ * @package PRIMEDITECH
+ */
 
-<!-- 페이지 헤더 -->
-<section class="page-header">
-    <div class="container">
-        <div class="page-header-content">
-            <h1 class="page-title"><?php _e('Our Services', 'prmtec'); ?></h1>
-            <p class="page-subtitle">
-                <?php _e('Comprehensive medical technology solutions tailored to your needs', 'prmtec'); ?>
-            </p>
-        </div>
-    </div>
-</section>
+get_header(); ?>
 
-<!-- 서비스 개요 섹션 -->
-<section class="services-overview">
-    <div class="container">
-        <div class="overview-content">
-            <div class="overview-image">
-                <div class="image-placeholder">
-                    <i class="fas fa-stethoscope"></i>
-                </div>
-            </div>
-            <div class="overview-text">
-                <h2><?php _e('Comprehensive Healthcare Solutions', 'prmtec'); ?></h2>
-                <p>
-                    <?php _e('At PRIMEDITECH, we offer a complete range of medical technology services designed to enhance patient care, improve operational efficiency, and drive innovation in healthcare delivery. Our solutions are backed by cutting-edge technology and years of industry expertise.', 'prmtec'); ?>
-                </p>
-                <p>
-                    <?php _e('From advanced medical devices to comprehensive training programs, we provide everything you need to transform your healthcare practice and deliver exceptional patient outcomes.', 'prmtec'); ?>
-                </p>
-            </div>
+    <!-- 서브 네비게이션 -->
+    <section class="sub-navigation">
+        <div class="container">
+            <nav class="sub-nav">
+                <ul class="sub-nav-menu">
+                    <li><a href="#process" class="sub-nav-link active" data-section="process"><?php _e('Detailed Process', 'prmtec'); ?></a></li>
+                    <li><a href="#cnc" class="sub-nav-link" data-section="cnc"><?php _e('CNC Processing', 'prmtec'); ?></a></li>
+                    <li><a href="#surface" class="sub-nav-link" data-section="surface"><?php _e('Surface Treatment', 'prmtec'); ?></a></li>
+                    <li><a href="#quality" class="sub-nav-link" data-section="quality"><?php _e('Quality Inspection', 'prmtec'); ?></a></li>
+                </ul>
+            </nav>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- 주요 서비스 섹션 -->
-<section class="main-services">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-title"><?php _e('Our Main Services', 'prmtec'); ?></h2>
-            <p class="section-subtitle">
-                <?php _e('Specialized solutions for every aspect of healthcare', 'prmtec'); ?>
-            </p>
-        </div>
-        
-        <div class="services-grid">
-            <div class="service-card detailed">
-                <div class="service-icon">
-                    <i class="fas fa-x-ray"></i>
-                </div>
-                <h3 class="service-title"><?php _e('Medical Imaging Systems', 'prmtec'); ?></h3>
-                <p class="service-description">
-                    <?php _e('State-of-the-art imaging technology including MRI, CT, ultrasound, and X-ray systems with advanced AI-powered diagnostic capabilities.', 'prmtec'); ?>
+    <!-- Detailed Process 섹션 -->
+    <section id="process" class="services-section active">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title"><?php _e('Detailed Process', 'prmtec'); ?></h2>
+                <p class="section-subtitle">
+                    <?php _e('Our comprehensive manufacturing process ensures the highest quality and precision', 'prmtec'); ?>
                 </p>
-                <ul class="service-features">
-                    <li><?php _e('High-resolution imaging', 'prmtec'); ?></li>
-                    <li><?php _e('AI-powered diagnostics', 'prmtec'); ?></li>
-                    <li><?php _e('3D reconstruction', 'prmtec'); ?></li>
-                    <li><?php _e('Real-time analysis', 'prmtec'); ?></li>
-                </ul>
-                <a href="<?php echo home_url('/services/medical-imaging/'); ?>" class="service-link">
-                    <?php _e('Learn More', 'prmtec'); ?> <i class="fas fa-arrow-right"></i>
-                </a>
             </div>
             
-            <div class="service-card detailed">
-                <div class="service-icon">
-                    <i class="fas fa-heartbeat"></i>
-                </div>
-                <h3 class="service-title"><?php _e('Patient Monitoring', 'prmtec'); ?></h3>
-                <p class="service-description">
-                    <?php _e('Comprehensive patient monitoring solutions for critical care, intensive care units, and remote patient management.', 'prmtec'); ?>
-                </p>
-                <ul class="service-features">
-                    <li><?php _e('Real-time vital signs', 'prmtec'); ?></li>
-                    <li><?php _e('Remote monitoring', 'prmtec'); ?></li>
-                    <li><?php _e('Alert systems', 'prmtec'); ?></li>
-                    <li><?php _e('Data analytics', 'prmtec'); ?></li>
-                </ul>
-                <a href="<?php echo home_url('/services/patient-monitoring/'); ?>" class="service-link">
-                    <?php _e('Learn More', 'prmtec'); ?> <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-            
-            <div class="service-card detailed">
-                <div class="service-icon">
-                    <i class="fas fa-microscope"></i>
-                </div>
-                <h3 class="service-title"><?php _e('Laboratory Equipment', 'prmtec'); ?></h3>
-                <p class="service-description">
-                    <?php _e('Precision laboratory instruments and diagnostic equipment for research, clinical testing, and quality control.', 'prmtec'); ?>
-                </p>
-                <ul class="service-features">
-                    <li><?php _e('Automated analyzers', 'prmtec'); ?></li>
-                    <li><?php _e('Molecular diagnostics', 'prmtec'); ?></li>
-                    <li><?php _e('Quality control systems', 'prmtec'); ?></li>
-                    <li><?php _e('Data management', 'prmtec'); ?></li>
-                </ul>
-                <a href="<?php echo home_url('/services/laboratory-equipment/'); ?>" class="service-link">
-                    <?php _e('Learn More', 'prmtec'); ?> <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-            
-            <div class="service-card detailed">
-                <div class="service-icon">
-                    <i class="fas fa-user-md"></i>
-                </div>
-                <h3 class="service-title"><?php _e('Professional Training', 'prmtec'); ?></h3>
-                <p class="service-description">
-                    <?php _e('Comprehensive training programs for healthcare professionals on our medical devices and technologies.', 'prmtec'); ?>
-                </p>
-                <ul class="service-features">
-                    <li><?php _e('Hands-on training', 'prmtec'); ?></li>
-                    <li><?php _e('Certification programs', 'prmtec'); ?></li>
-                    <li><?php _e('Online learning', 'prmtec'); ?></li>
-                    <li><?php _e('Ongoing support', 'prmtec'); ?></li>
-                </ul>
-                <a href="<?php echo home_url('/services/training/'); ?>" class="service-link">
-                    <?php _e('Learn More', 'prmtec'); ?> <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-            
-            <div class="service-card detailed">
-                <div class="service-icon">
-                    <i class="fas fa-headset"></i>
-                </div>
-                <h3 class="service-title"><?php _e('Technical Support', 'prmtec'); ?></h3>
-                <p class="service-description">
-                    <?php _e('Round-the-clock technical support and maintenance services to ensure optimal performance of your equipment.', 'prmtec'); ?>
-                </p>
-                <ul class="service-features">
-                    <li><?php _e('24/7 support', 'prmtec'); ?></li>
-                    <li><?php _e('Preventive maintenance', 'prmtec'); ?></li>
-                    <li><?php _e('Remote diagnostics', 'prmtec'); ?></li>
-                    <li><?php _e('Parts and service', 'prmtec'); ?></li>
-                </ul>
-                <a href="<?php echo home_url('/services/support/'); ?>" class="service-link">
-                    <?php _e('Learn More', 'prmtec'); ?> <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-            
-            <div class="service-card detailed">
-                <div class="service-icon">
-                    <i class="fas fa-cogs"></i>
-                </div>
-                <h3 class="service-title"><?php _e('Custom Solutions', 'prmtec'); ?></h3>
-                <p class="service-description">
-                    <?php _e('Tailored medical technology solutions designed to meet your specific requirements and operational needs.', 'prmtec'); ?>
-                </p>
-                <ul class="service-features">
-                    <li><?php _e('Custom development', 'prmtec'); ?></li>
-                    <li><?php _e('System integration', 'prmtec'); ?></li>
-                    <li><?php _e('Workflow optimization', 'prmtec'); ?></li>
-                    <li><?php _e('Scalable solutions', 'prmtec'); ?></li>
-                </ul>
-                <a href="<?php echo home_url('/services/custom-solutions/'); ?>" class="service-link">
-                    <?php _e('Learn More', 'prmtec'); ?> <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- 서비스 프로세스 섹션 -->
-<section class="service-process">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-title"><?php _e('Our Service Process', 'prmtec'); ?></h2>
-            <p class="section-subtitle">
-                <?php _e('How we deliver exceptional results', 'prmtec'); ?>
-            </p>
-        </div>
-        
-        <div class="process-steps">
-            <div class="process-step">
-                <div class="step-number">1</div>
-                <div class="step-content">
-                    <h3><?php _e('Consultation', 'prmtec'); ?></h3>
-                    <p><?php _e('We begin with a thorough consultation to understand your specific needs, challenges, and objectives.', 'prmtec'); ?></p>
-                </div>
-            </div>
-            
-            <div class="process-step">
-                <div class="step-number">2</div>
-                <div class="step-content">
-                    <h3><?php _e('Solution Design', 'prmtec'); ?></h3>
-                    <p><?php _e('Our experts design a customized solution that perfectly fits your requirements and operational environment.', 'prmtec'); ?></p>
-                </div>
-            </div>
-            
-            <div class="process-step">
-                <div class="step-number">3</div>
-                <div class="step-content">
-                    <h3><?php _e('Implementation', 'prmtec'); ?></h3>
-                    <p><?php _e('We handle the complete implementation process, ensuring minimal disruption to your operations.', 'prmtec'); ?></p>
-                </div>
-            </div>
-            
-            <div class="process-step">
-                <div class="step-number">4</div>
-                <div class="step-content">
-                    <h3><?php _e('Training & Support', 'prmtec'); ?></h3>
-                    <p><?php _e('Comprehensive training and ongoing support ensure your team can maximize the benefits of our solutions.', 'prmtec'); ?></p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- 산업별 솔루션 섹션 -->
-<section class="industry-solutions">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-title"><?php _e('Industry Solutions', 'prmtec'); ?></h2>
-            <p class="section-subtitle">
-                <?php _e('Specialized solutions for different healthcare sectors', 'prmtec'); ?>
-            </p>
-        </div>
-        
-        <div class="industry-grid">
-            <div class="industry-card">
-                <div class="industry-icon">
-                    <i class="fas fa-hospital"></i>
-                </div>
-                <h3><?php _e('Hospitals', 'prmtec'); ?></h3>
-                <p><?php _e('Comprehensive medical technology solutions for large hospital systems and medical centers.', 'prmtec'); ?></p>
-                <ul>
-                    <li><?php _e('Integrated systems', 'prmtec'); ?></li>
-                    <li><?php _e('Scalable solutions', 'prmtec'); ?></li>
-                    <li><?php _e('Enterprise support', 'prmtec'); ?></li>
-                </ul>
-            </div>
-            
-            <div class="industry-card">
-                <div class="industry-icon">
-                    <i class="fas fa-clinic-medical"></i>
-                </div>
-                <h3><?php _e('Clinics', 'prmtec'); ?></h3>
-                <p><?php _e('Efficient and cost-effective solutions designed for outpatient clinics and medical practices.', 'prmtec'); ?></p>
-                <ul>
-                    <li><?php _e('Compact systems', 'prmtec'); ?></li>
-                    <li><?php _e('Easy operation', 'prmtec'); ?></li>
-                    <li><?php _e('Quick setup', 'prmtec'); ?></li>
-                </ul>
-            </div>
-            
-            <div class="industry-card">
-                <div class="industry-icon">
-                    <i class="fas fa-flask"></i>
-                </div>
-                <h3><?php _e('Research Labs', 'prmtec'); ?></h3>
-                <p><?php _e('Advanced research equipment and analytical instruments for medical research institutions.', 'prmtec'); ?></p>
-                <ul>
-                    <li><?php _e('Research-grade equipment', 'prmtec'); ?></li>
-                    <li><?php _e('Data analysis tools', 'prmtec'); ?></li>
-                    <li><?php _e('Custom configurations', 'prmtec'); ?></li>
-                </ul>
-            </div>
-            
-            <div class="industry-card">
-                <div class="industry-icon">
-                    <i class="fas fa-ambulance"></i>
-                </div>
-                <h3><?php _e('Emergency Care', 'prmtec'); ?></h3>
-                <p><?php _e('Rapid-response medical technology solutions for emergency departments and urgent care facilities.', 'prmtec'); ?></p>
-                <ul>
-                    <li><?php _e('Rapid deployment', 'prmtec'); ?></li>
-                    <li><?php _e('Portable systems', 'prmtec'); ?></li>
-                    <li><?php _e('Emergency protocols', 'prmtec'); ?></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- 고객 사례 섹션 -->
-<section class="case-studies">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-title"><?php _e('Success Stories', 'prmtec'); ?></h2>
-            <p class="section-subtitle">
-                <?php _e('Real results from our clients', 'prmtec'); ?>
-            </p>
-        </div>
-        
-        <div class="case-studies-grid">
-            <div class="case-study">
-                <div class="case-image">
-                    <i class="fas fa-hospital"></i>
-                </div>
-                <div class="case-content">
-                    <h3><?php _e('Seoul Medical Center', 'prmtec'); ?></h3>
-                    <p class="case-description">
-                        <?php _e('Implemented our advanced imaging system, resulting in 40% faster diagnosis times and improved patient outcomes.', 'prmtec'); ?>
-                    </p>
-                    <div class="case-results">
-                        <div class="result-item">
-                            <span class="result-number">40%</span>
-                            <span class="result-label"><?php _e('Faster Diagnosis', 'prmtec'); ?></span>
-                        </div>
-                        <div class="result-item">
-                            <span class="result-number">95%</span>
-                            <span class="result-label"><?php _e('Accuracy Rate', 'prmtec'); ?></span>
-                        </div>
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3><?php _e('Design & Planning', 'prmtec'); ?></h3>
+                        <p><?php _e('Initial design analysis and manufacturing planning to optimize production efficiency and quality.', 'prmtec'); ?></p>
                     </div>
                 </div>
-            </div>
-            
-            <div class="case-study">
-                <div class="case-image">
-                    <i class="fas fa-clinic-medical"></i>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3><?php _e('Material Selection', 'prmtec'); ?></h3>
+                        <p><?php _e('Careful selection of high-grade materials that meet specific industry requirements and standards.', 'prmtec'); ?></p>
+                    </div>
                 </div>
-                <div class="case-content">
-                    <h3><?php _e('Global Health Clinic', 'prmtec'); ?></h3>
-                    <p class="case-description">
-                        <?php _e('Deployed our patient monitoring system, enabling remote patient care and reducing readmission rates by 30%.', 'prmtec'); ?>
-                    </p>
-                    <div class="case-results">
-                        <div class="result-item">
-                            <span class="result-number">30%</span>
-                            <span class="result-label"><?php _e('Reduced Readmissions', 'prmtec'); ?></span>
-                        </div>
-                        <div class="result-item">
-                            <span class="result-number">24/7</span>
-                            <span class="result-label"><?php _e('Remote Monitoring', 'prmtec'); ?></span>
-                        </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3><?php _e('Precision Machining', 'prmtec'); ?></h3>
+                        <p><?php _e('Advanced CNC machining with state-of-the-art equipment for exceptional accuracy and consistency.', 'prmtec'); ?></p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3><?php _e('Quality Control', 'prmtec'); ?></h3>
+                        <p><?php _e('Comprehensive testing and inspection at every stage to ensure zero-defect production.', 'prmtec'); ?></p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3><?php _e('Final Inspection', 'prmtec'); ?></h3>
+                        <p><?php _e('Thorough final inspection and certification before delivery to guarantee customer satisfaction.', 'prmtec'); ?></p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
- 
+    <!-- CNC Processing 섹션 -->
+    <section id="cnc" class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title"><?php _e('CNC Processing', 'prmtec'); ?></h2>
+                <p class="section-subtitle">
+                    <?php _e('Advanced CNC machining capabilities for complex precision components', 'prmtec'); ?>
+                </p>
+            </div>
+            
+            <div class="cnc-capabilities">
+                <div class="capability-grid">
+                    <div class="capability-item">
+                        <div class="capability-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3><?php _e('5-Axis Machining', 'prmtec'); ?></h3>
+                        <p><?php _e('Complex geometries and intricate designs with our advanced 5-axis CNC machines.', 'prmtec'); ?></p>
+                    </div>
+                    
+                    <div class="capability-item">
+                        <div class="capability-icon">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <h3><?php _e('Micro Machining', 'prmtec'); ?></h3>
+                        <p><?php _e('Ultra-precise micro components with tolerances down to ±0.001mm for medical applications.', 'prmtec'); ?></p>
+                    </div>
+                    
+                    <div class="capability-item">
+                        <div class="capability-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3><?php _e('Swiss Turning', 'prmtec'); ?></h3>
+                        <p><?php _e('High-volume production of small, complex parts with exceptional precision and efficiency.', 'prmtec'); ?></p>
+                    </div>
+                    
+                    <div class="capability-item">
+                        <div class="capability-icon">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <h3><?php _e('Multi-Material Processing', 'prmtec'); ?></h3>
+                        <p><?php _e('Expertise in machining various materials including titanium, stainless steel, and exotic alloys.', 'prmtec'); ?></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="equipment-showcase">
+                <h3><?php _e('Our Equipment', 'prmtec'); ?></h3>
+                <div class="equipment-grid">
+                    <div class="equipment-item">
+                        <div class="equipment-image">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <h4><?php _e('DMG MORI NTX500', 'prmtec'); ?></h4>
+                        <p><?php _e('5-axis machining center for complex components', 'prmtec'); ?></p>
+                    </div>
+                    
+                    <div class="equipment-item">
+                        <div class="equipment-image">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                        <h4><?php _e('Swiss Turn Machines', 'prmtec'); ?></h4>
+                        <p><?php _e('High-precision turning for small parts', 'prmtec'); ?></p>
+                    </div>
+                    
+                    <div class="equipment-item">
+                        <div class="equipment-image">
+                            <i class="fas fa-hammer"></i>
+                        </div>
+                        <h4><?php _e('CNC Milling Centers', 'prmtec'); ?></h4>
+                        <p><?php _e('Versatile machining for various applications', 'prmtec'); ?></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Surface Treatment 섹션 -->
+    <section id="surface" class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title"><?php _e('Surface Treatment', 'prmtec'); ?></h2>
+                <p class="section-subtitle">
+                    <?php _e('Advanced surface treatment technologies for enhanced performance and durability', 'prmtec'); ?>
+                </p>
+            </div>
+            
+            <div class="treatment-methods">
+                <div class="method-grid">
+                    <div class="method-item">
+                        <div class="method-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3><?php _e('Anodizing', 'prmtec'); ?></h3>
+                        <p><?php _e('Aluminum anodizing for corrosion resistance and improved surface hardness.', 'prmtec'); ?></p>
+                        <ul>
+                            <li><?php _e('Type II Anodizing', 'prmtec'); ?></li>
+                            <li><?php _e('Type III Hard Anodizing', 'prmtec'); ?></li>
+                            <li><?php _e('Color Anodizing', 'prmtec'); ?></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="method-item">
+                        <div class="method-icon">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <h3><?php _e('Plating', 'prmtec'); ?></h3>
+                        <p><?php _e('Electroplating services for enhanced conductivity and corrosion resistance.', 'prmtec'); ?></p>
+                        <ul>
+                            <li><?php _e('Nickel Plating', 'prmtec'); ?></li>
+                            <li><?php _e('Chrome Plating', 'prmtec'); ?></li>
+                            <li><?php _e('Gold Plating', 'prmtec'); ?></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="method-item">
+                        <div class="method-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <h3><?php _e('Heat Treatment', 'prmtec'); ?></h3>
+                        <p><?php _e('Controlled heat treatment processes for optimal material properties.', 'prmtec'); ?></p>
+                        <ul>
+                            <li><?php _e('Annealing', 'prmtec'); ?></li>
+                            <li><?php _e('Hardening', 'prmtec'); ?></li>
+                            <li><?php _e('Tempering', 'prmtec'); ?></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="method-item">
+                        <div class="method-icon">
+                            <i class="fas fa-spray-can"></i>
+                        </div>
+                        <h3><?php _e('Coating', 'prmtec'); ?></h3>
+                        <p><?php _e('Specialized coating applications for specific performance requirements.', 'prmtec'); ?></p>
+                        <ul>
+                            <li><?php _e('PVD Coating', 'prmtec'); ?></li>
+                            <li><?php _e('DLC Coating', 'prmtec'); ?></li>
+                            <li><?php _e('Ceramic Coating', 'prmtec'); ?></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quality Inspection 섹션 -->
+    <section id="quality" class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title"><?php _e('Quality Inspection', 'prmtec'); ?></h2>
+                <p class="section-subtitle">
+                    <?php _e('Comprehensive quality control and inspection services', 'prmtec'); ?>
+                </p>
+            </div>
+            
+            <div class="inspection-methods">
+                <div class="inspection-grid">
+                    <div class="inspection-item">
+                        <div class="inspection-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3><?php _e('Dimensional Inspection', 'prmtec'); ?></h3>
+                        <p><?php _e('Precise measurement and verification of dimensional accuracy using advanced CMM technology.', 'prmtec'); ?></p>
+                    </div>
+                    
+                    <div class="inspection-item">
+                        <div class="inspection-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3><?php _e('Visual Inspection', 'prmtec'); ?></h3>
+                        <p><?php _e('Thorough visual examination for surface defects, finish quality, and cosmetic requirements.', 'prmtec'); ?></p>
+                    </div>
+                    
+                    <div class="inspection-item">
+                        <div class="inspection-icon">
+                            <i class="fas fa-magnet"></i>
+                        </div>
+                        <h3><?php _e('NDT Testing', 'prmtec'); ?></h3>
+                        <p><?php _e('Non-destructive testing methods including magnetic particle and liquid penetrant testing.', 'prmtec'); ?></p>
+                    </div>
+                    
+                    <div class="inspection-item">
+                        <div class="inspection-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h3><?php _e('Material Testing', 'prmtec'); ?></h3>
+                        <p><?php _e('Comprehensive material analysis and testing to verify composition and properties.', 'prmtec'); ?></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quality-standards">
+                <h3><?php _e('Quality Standards', 'prmtec'); ?></h3>
+                <div class="standards-grid">
+                    <div class="standard-item">
+                        <h4><?php _e('ISO 9001:2015', 'prmtec'); ?></h4>
+                        <p><?php _e('Quality Management System', 'prmtec'); ?></p>
+                    </div>
+                    <div class="standard-item">
+                        <h4><?php _e('ISO 13485:2016', 'prmtec'); ?></h4>
+                        <p><?php _e('Medical Device Quality Management', 'prmtec'); ?></p>
+                    </div>
+                    <div class="standard-item">
+                        <h4><?php _e('AS9100D', 'prmtec'); ?></h4>
+                        <p><?php _e('Aerospace Quality Management', 'prmtec'); ?></p>
+                    </div>
+                    <div class="standard-item">
+                        <h4><?php _e('IATF 16949', 'prmtec'); ?></h4>
+                        <p><?php _e('Automotive Quality Management', 'prmtec'); ?></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 서비스 페이지 JavaScript -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 서브 네비게이션 기능
+        const subNavLinks = document.querySelectorAll('.sub-nav-link');
+        const servicesSections = document.querySelectorAll('.services-section');
+        
+        // 서브 네비게이션 클릭 이벤트
+        subNavLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetSection = this.getAttribute('data-section');
+                
+                // 활성 클래스 업데이트
+                subNavLinks.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+                
+                // 섹션 표시/숨김
+                servicesSections.forEach(section => {
+                    section.classList.remove('active');
+                    if (section.id === targetSection) {
+                        section.classList.add('active');
+                    }
+                });
+                
+                // 부드러운 스크롤
+                const targetElement = document.getElementById(targetSection);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // 스크롤에 따른 자동 네비게이션 업데이트
+        let isScrolling = false;
+        window.addEventListener('scroll', function() {
+            if (isScrolling) return;
+            
+            const scrollPosition = window.scrollY + 200; // 헤더 높이 고려
+            
+            servicesSections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    const sectionId = section.id;
+                    const correspondingLink = document.querySelector(`[data-section="${sectionId}"]`);
+                    
+                    if (correspondingLink && !correspondingLink.classList.contains('active')) {
+                        subNavLinks.forEach(l => l.classList.remove('active'));
+                        correspondingLink.classList.add('active');
+                        
+                        servicesSections.forEach(s => s.classList.remove('active'));
+                        section.classList.add('active');
+                    }
+                }
+            });
+        });
+        
+        // 초기 로드 시 첫 번째 섹션 활성화
+        if (servicesSections.length > 0) {
+            servicesSections.forEach((section, index) => {
+                if (index === 0) {
+                    section.classList.add('active');
+                } else {
+                    section.classList.remove('active');
+                }
+            });
+        }
+    });
+    </script>
 
 <?php get_footer(); ?>
