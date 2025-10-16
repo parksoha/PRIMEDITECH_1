@@ -3,6 +3,136 @@
    ========================================================================== */
 
 /* ==========================================================================
+   Certification Carousel
+   ========================================================================== */
+
+.cert-carousel {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto 40px;
+    padding: 8px 12px; /* use more of the horizontal space */
+}
+
+.cert-track-wrapper {
+    overflow: hidden;
+    padding-top: 40px; /* space for scale-up without clipping */
+    padding-bottom: 40px;
+}
+
+.cert-track {
+    display: flex;
+    align-items: center;
+    gap: 0; /* ensure exactly 3 fit without extra spacing */
+    transition: transform 0.45s ease;
+    will-change: transform;
+}
+
+.cert-slide {
+    flex: 0 0 33.3333%; /* show exactly 3 at a time */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 12px; /* controlled inner spacing */
+    opacity: 0.6;
+    transition: opacity 0.25s ease;
+}
+
+.cert-slide.is-center {
+    opacity: 1;
+    z-index: 1;
+}
+
+.cert-image {
+    max-width: 100%;
+    height: 460px; /* fixed height to avoid distortion */
+    width: auto; /* preserve intrinsic width */
+    display: block;
+    margin: 0 auto; /* center inside slide */
+    border-radius: 8px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    background: #fff;
+    filter: grayscale(100%);
+    transform: scale(0.96);
+    transform-origin: center center;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.cert-slide.is-center .cert-image {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+
+.cert-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0,0,0,0.05);
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.cert-nav:hover { background: rgba(0,0,0,0.12); }
+
+.cert-prev { left: 2px; }
+.cert-next { right: 2px; }
+
+.cert-viewall-wrap {
+    text-align: center;
+    margin-top: 12px;
+}
+
+.cert-viewall-btn {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 6px;
+    background: #009245;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.cert-viewall-btn:hover { background: #007a38; }
+
+.cert-gallery {
+    display: none;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 28px; /* extra space from the button above */
+}
+
+.cert-gallery.show { display: grid; }
+
+.cert-gallery-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+@media (max-width: 992px) {
+    .cert-slide { flex: 0 0 50%; }
+    .cert-image { height: 360px; width: auto; }
+}
+
+@media (max-width: 600px) {
+    .cert-carousel { padding: 8px 16px; }
+    .cert-slide { flex: 0 0 80%; }
+    .cert-image { height: 280px; width: auto; }
+}
+
+/* ==========================================================================
    Core Values 섹션
    ========================================================================== */
 

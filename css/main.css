@@ -1581,18 +1581,29 @@
     flex-shrink: 0;
     height: 60px;
     width: auto;
-    opacity: 0.6;
+    opacity: 0.8;
     transition: opacity 0.3s ease;
-    filter: grayscale(100%);
     display: flex;
     align-items: center;
     justify-content: center;
     min-width: 120px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #90EE90 0%, #98FB98 100%);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 146, 69, 0.2);
 }
 
 .client-logo:hover {
     opacity: 1;
-    filter: grayscale(0%);
+}
+
+.client-logo-img {
+    max-height: 40px;
+    max-width: 100px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: all 0.3s ease;
 }
 
 @keyframes marquee {
@@ -1642,34 +1653,36 @@
     }
     
     .clients-track {
-        gap: 40px;
+        gap: 30px;
         animation-duration: 30s; /* 모바일에서는 더 빠르게 */
     }
     
     .client-logo {
         min-width: 100px;
         height: 50px;
+        padding: 8px 15px;
     }
     
-    .logo-placeholder {
-        font-size: 0.9rem;
-        padding: 8px 12px;
+    .client-logo-img {
+        max-height: 35px;
+        max-width: 80px;
     }
 }
 
 @media (max-width: 480px) {
     .clients-track {
-        gap: 30px;
+        gap: 20px;
         animation-duration: 25s;
     }
     
     .client-logo {
         min-width: 80px;
         height: 40px;
+        padding: 6px 12px;
     }
     
-    .logo-placeholder {
-        font-size: 0.8rem;
-        padding: 6px 10px;
+    .client-logo-img {
+        max-height: 30px;
+        max-width: 70px;
     }
 }

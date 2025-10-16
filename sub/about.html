@@ -127,10 +127,10 @@
             <div class="container">
                 <nav class="sub-nav">
                     <ul class="sub-nav-menu">
-                        <li><a href="#about" class="sub-nav-link active" data-section="about">Company Introduction</a></li>
-                        <li><a href="#history" class="sub-nav-link" data-section="history">Company History</a></li>
+                        <li><a href="#about" class="sub-nav-link active" data-section="about">Introduction</a></li>
+                        <li><a href="#history" class="sub-nav-link" data-section="history">History</a></li>
                         <li><a href="#certification" class="sub-nav-link" data-section="certification">Certifications</a></li>
-                        <li><a href="#client" class="sub-nav-link" data-section="client">Major Clients</a></li>
+                        <li><a href="#client" class="sub-nav-link" data-section="client">Clients</a></li>
                         <li><a href="facility.html" class="sub-nav-link">Facilities</a></li>
                     </ul>
                 </nav>
@@ -293,105 +293,79 @@
         <section id="certification" class="about-section">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Certification & Awards</h2>
+                    <h2 class="section-title">Certification</h2>
                     <p class="section-subtitle">
                         Recognition for our commitment to excellence
                     </p>
                 </div>
                 
-                <div class="certifications-grid">
-                    <div class="cert-item">
-                        <div class="cert-icon">
-                            <i class="fas fa-certificate"></i>
-                        </div>
-                        <h3>ISO 13485:2016</h3>
-                        <p>Medical Device Quality Management System</p>
+                <div class="cert-carousel" id="cert-carousel">
+                    <button class="cert-nav cert-prev" aria-label="Previous">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="cert-track-wrapper">
+                        <ul class="cert-track">
+                            <li class="cert-slide">
+                                <img src="../img/certification1.png" alt="Certification 1" class="cert-image">
+                            </li>
+                            <li class="cert-slide">
+                                <img src="../img/certification2.png" alt="Certification 2" class="cert-image">
+                            </li>
+                            <li class="cert-slide">
+                                <img src="../img/certification3.png" alt="Certification 3" class="cert-image">
+                            </li>
+                            <li class="cert-slide">
+                                <img src="../img/certification4.png" alt="Certification 4" class="cert-image">
+                            </li>
+                            <li class="cert-slide">
+                                <img src="../img/certification5.png" alt="Certification 5" class="cert-image">
+                            </li>
+                            <li class="cert-slide">
+                                <img src="../img/certification6.png" alt="Certification 6" class="cert-image">
+                            </li>
+                            <li class="cert-slide">
+                                <img src="../img/certification7.png" alt="Certification 7" class="cert-image">
+                            </li>
+                            <li class="cert-slide">
+                                <img src="../img/certification8.png" alt="Certification 8" class="cert-image">
+                            </li>
+                            <li class="cert-slide">
+                                <img src="../img/certification9.png" alt="Certification 9" class="cert-image">
+                            </li>
+                            <li class="cert-slide">
+                                <img src="../img/certification10.png" alt="Certification 10" class="cert-image">
+                            </li>
+                            <li class="cert-slide">
+                                <img src="../img/certification11.png" alt="Certification 11" class="cert-image">
+                            </li>
+                        </ul>
                     </div>
-                    
-                    <div class="cert-item">
-                        <div class="cert-icon">
-                            <i class="fas fa-award"></i>
-                        </div>
-                        <h3>FDA Approval</h3>
-                        <p>US Food and Drug Administration Clearance</p>
-                    </div>
-                    
-                    <div class="cert-item">
-                        <div class="cert-icon">
-                            <i class="fas fa-medal"></i>
-                        </div>
-                        <h3>CE Marking</h3>
-                        <p>European Conformity Certification</p>
-                    </div>
-                    
-                    <div class="cert-item">
-                        <div class="cert-icon">
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h3>Innovation Award 2023</h3>
-                        <p>Medical Technology Innovation Excellence</p>
-                    </div>
-                    
-                    <div class="cert-item">
-                        <div class="cert-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h3>KFDA Approval</h3>
-                        <p>Korean Food and Drug Administration</p>
-                    </div>
-                    
-                    <div class="cert-item">
-                        <div class="cert-icon">
-                            <i class="fas fa-globe"></i>
-                        </div>
-                        <h3>WHO Prequalification</h3>
-                        <p>World Health Organization Certification</p>
-                    </div>
+                    <button class="cert-nav cert-next" aria-label="Next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <!-- 모두 보기 버튼 -->
+                <div class="cert-viewall-wrap">
+                    <button id="cert-viewall" class="cert-viewall-btn" type="button">View all certifications</button>
+                </div>
+
+                <!-- 전체 인증서 갤러리 (초기에 숨김) -->
+                <div class="cert-gallery" id="cert-gallery" aria-hidden="true">
+                    <img src="../img/certification1.png" alt="Certification 1" class="cert-gallery-image">
+                    <img src="../img/certification2.png" alt="Certification 2" class="cert-gallery-image">
+                    <img src="../img/certification3.png" alt="Certification 3" class="cert-gallery-image">
+                    <img src="../img/certification4.png" alt="Certification 4" class="cert-gallery-image">
+                    <img src="../img/certification5.png" alt="Certification 5" class="cert-gallery-image">
+                    <img src="../img/certification6.png" alt="Certification 6" class="cert-gallery-image">
+                    <img src="../img/certification7.png" alt="Certification 7" class="cert-gallery-image">
+                    <img src="../img/certification8.png" alt="Certification 8" class="cert-gallery-image">
+                    <img src="../img/certification9.png" alt="Certification 9" class="cert-gallery-image">
+                    <img src="../img/certification10.png" alt="Certification 10" class="cert-gallery-image">
+                    <img src="../img/certification11.png" alt="Certification 11" class="cert-gallery-image">
                 </div>
                 
-                <!-- 품질 관리 시스템 -->
-                <div class="quality-system">
-                    <div class="section-header">
-                        <h3 class="section-title">Quality Management System</h3>
-                        <p class="section-subtitle">
-                            Ensuring the highest standards in every product
-                        </p>
-                    </div>
-                    
-                    <div class="quality-grid">
-                        <div class="quality-item">
-                            <div class="quality-icon">
-                                <i class="fas fa-microscope"></i>
-                            </div>
-                            <h4>Research & Development</h4>
-                            <p>Cutting-edge R&D facilities with advanced testing equipment and expert researchers.</p>
-                        </div>
-                        
-                        <div class="quality-item">
-                            <div class="quality-icon">
-                                <i class="fas fa-cogs"></i>
-                            </div>
-                            <h4>Manufacturing Excellence</h4>
-                            <p>State-of-the-art manufacturing processes with rigorous quality control measures.</p>
-                        </div>
-                        
-                        <div class="quality-item">
-                            <div class="quality-icon">
-                                <i class="fas fa-clipboard-check"></i>
-                            </div>
-                            <h4>Quality Assurance</h4>
-                            <p>Comprehensive testing and validation procedures to ensure product reliability.</p>
-                        </div>
-                        
-                        <div class="quality-item">
-                            <div class="quality-icon">
-                                <i class="fas fa-headset"></i>
-                            </div>
-                            <h4>Customer Support</h4>
-                            <p>24/7 technical support and training programs for optimal product performance.</p>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </section>
 
@@ -582,22 +556,21 @@
             <div class="footer-content">
                 <!-- 회사 정보 -->
                 <div class="footer-section company-info">
-                    <h3>PRIMEDITECH</h3>
-                    <p>Leading medical technology company providing innovative solutions for healthcare professionals worldwide.</p>
+                    <div class="footer-logo">
+                        <img src="../img/mainlogo.png" alt="PRIMEDITECH" class="footer-logo-image">
+                    </div>
+                    <p>5-axis CNC precision processing company</p>
                     
                     <!-- 소셜 미디어 링크 -->
                     <div class="social-links">
-                        <a href="#" class="social-link" aria-label="Facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
                         </a>
                         <a href="#" class="social-link" aria-label="YouTube">
                             <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Blog">
+                            <i class="fas fa-blog"></i>
                         </a>
                     </div>
                 </div>
@@ -618,20 +591,20 @@
                     <h3>Contact Info</h3>
                     <div class="contact-details">
                         <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>123 Medical Tech Street, Seoul, Korea</span>
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>KR Mob : 010-6364-7284</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Mob : +82 10-5956-7284</span>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-phone"></i>
-                            <span>+82-2-1234-5678</span>
+                            <span>Tel : +82 31-455-2770</span>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
-                            <span>info@prmtec.com</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-clock"></i>
-                            <span>Mon-Fri: 9:00-18:00</span>
+                            <span>Email : pmkt@prmtec.com</span>
                         </div>
                     </div>
                 </div>
@@ -641,13 +614,7 @@
             <div class="footer-bottom">
                 <div class="footer-bottom-content">
                     <div class="copyright">
-                            <p>&copy; 2025 PRIMEDITECH. All rights reserved.</p>
-                    </div>
-                    
-                    <div class="footer-links">
-                        <a href="privacy-policy.html">Privacy Policy</a>
-                        <a href="terms-of-service.html">Terms of Service</a>
-                        <a href="sitemap.html">Sitemap</a>
+                        <p>&copy; 2025 PRIMEDITECH. All rights reserved.</p>
                     </div>
                 </div>
             </div>

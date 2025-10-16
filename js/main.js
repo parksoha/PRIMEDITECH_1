@@ -17,6 +17,8 @@
         initAnimations();
         initLazyLoading();
         initAccessibility();
+        initCertificationCarousel();
+        initCertificationViewAll();
     });
 
     /**
@@ -357,6 +359,151 @@
 
         // 스킵 링크
         $('body').prepend('<a href="#main-content" class="skip-link">본문으로 건너뛰기</a>');
+    }
+
+    /**
+     * Certification 모두 보기 토글
+     */
+    function initCertificationViewAll() {
+        const $btn = $('#cert-viewall');
+        const $gallery = $('#cert-gallery');
+        if (!$btn.length || !$gallery.length) return;
+
+        $btn.on('click', function() {
+            const isShown = $gallery.hasClass('show');
+            $gallery.toggleClass('show', !isShown)
+                    .attr('aria-hidden', isShown ? 'true' : 'false');
+            $(this).text(isShown ? 'View all certifications' : 'Close');
+        });
+    }
+
+    /**
+     * 인증서 캐러셀 초기화 (센터 확대, 양옆 그레이스케일)
+     */
+    function initCertificationCarousel() {
+        const $carousel = $('#cert-carousel');
+        if (!$carousel.length) return;
+
+        const $track = $carousel.find('.cert-track');
+        const $slides = $track.find('.cert-slide');
+        const $prev = $carousel.find('.cert-prev');
+        const $next = $carousel.find('.cert-next');
+
+        if ($slides.length === 0) return;
+
+        // 복제하여 무한 루프 느낌 제공
+        const cloneCount = 2; // 앞뒤로 2개씩
+        for (let i = 0; i < cloneCount; i++) {
+            $track.append($slides.eq(i).clone(true));
+            $track.prepend($slides.eq($slides.length - 1 - i).clone(true));
+        }
+
+        const $allSlides = $track.find('.cert-slide');
+        let currentIndex = cloneCount; // 실 슬라이드의 첫 번째로 시작
+        let slideWidth = $allSlides.eq(0).outerWidth(true);
+
+        function updateSizes() {
+            slideWidth = $allSlides.eq(0).outerWidth(true);
+            goTo(currentIndex, false);
+            updateCenterState();
+        }
+
+        function goTo(index, animate = true) {
+            // Center the target slide precisely to the middle of the carousel
+            const $target = $allSlides.eq(index);
+            const slideLeft = $target.position().left; // relative to track
+            const slideW = $target.outerWidth(true);
+            const viewportW = $carousel.innerWidth();
+            const x = (viewportW / 2) - (slideLeft + slideW / 2);
+            $track.css('transition', animate ? 'transform 0.45s ease' : 'none');
+            $track.css('transform', `translateX(${x}px)`);
+        }
+
+        function updateCenterState() {
+            $allSlides.removeClass('is-center');
+            $allSlides.eq(currentIndex).addClass('is-center');
+        }
+
+        function next() {
+            currentIndex++;
+            goTo(currentIndex, true);
+            updateCenterState();
+            // 끝을 지나면 재정렬
+            if (currentIndex >= $allSlides.length - cloneCount) {
+                setTimeout(() => {
+                    currentIndex = cloneCount;
+                    goTo(currentIndex, false);
+                    updateCenterState();
+                }, 460);
+            }
+        }
+
+        function prev() {
+            currentIndex--;
+            goTo(currentIndex, true);
+            updateCenterState();
+            if (currentIndex < cloneCount) {
+                setTimeout(() => {
+                    currentIndex = $allSlides.length - cloneCount - 1;
+                    goTo(currentIndex, false);
+                    updateCenterState();
+                }, 460);
+            }
+        }
+
+        // 초기 위치 설정 (섹션이 숨겨져 있을 수 있으므로 가시성 체크)
+        function isVisible($el) {
+            const el = $el[0];
+            if (!el) return false;
+            const style = window.getComputedStyle(el);
+            return style.display !== 'none' && style.visibility !== 'hidden' && style.opacity !== '0';
+        }
+
+        function initOrDefer() {
+            // 이미지가 로드되지 않아도 슬라이드 컨테이너 폭이 0이면 지연
+            slideWidth = $allSlides.eq(0).outerWidth(true);
+            if (slideWidth === 0 || !isVisible($carousel)) {
+                // 섹션 활성화 감지 후 재시도
+                const section = document.getElementById('certification');
+                if (section) {
+                    const mo = new MutationObserver(() => {
+                        if (isVisible($carousel)) {
+                            mo.disconnect();
+                            updateSizes();
+                        }
+                    });
+                    mo.observe(section, { attributes: true, attributeFilter: ['class'] });
+                }
+                // 윈도우 로드 이후에도 재계산
+                $(window).on('load', updateSizes);
+                // 이미지 로드 시 재계산
+                $carousel.find('img').on('load', Utils.debounce(updateSizes, 50));
+            } else {
+                goTo(currentIndex, false);
+                updateCenterState();
+            }
+        }
+
+        initOrDefer();
+
+        // 이벤트 바인딩
+        $next.on('click', function(e) { e.preventDefault(); next(); });
+        $prev.on('click', function(e) { e.preventDefault(); prev(); });
+
+        // 리사이즈 대응
+        $(window).on('resize', Utils.debounce(updateSizes, 150));
+
+        // 오토플레이 (호버 시 일시정지)
+        let autoplayTimer = setInterval(next, 3500);
+        $carousel.on('mouseenter', function() { clearInterval(autoplayTimer); });
+        $carousel.on('mouseleave', function() { autoplayTimer = setInterval(next, 3500); });
+
+        // 키보드 접근성
+        $carousel.attr('tabindex', '0');
+        $carousel.on('keydown', function(e) {
+            if (e.key === 'ArrowRight') next();
+            if (e.key === 'ArrowLeft') prev();
+        });
     }
 
     /**
