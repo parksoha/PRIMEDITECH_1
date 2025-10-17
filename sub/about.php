@@ -9,8 +9,6 @@
 get_header();
 ?>
 
-<body class="about-page">
-
 <!-- 메인 콘텐츠 시작 -->
 <main class="main-content" id="main-content">
 
@@ -38,10 +36,10 @@ get_header();
         <div class="container">
             <nav class="sub-nav">
                 <ul class="sub-nav-menu">
-                    <li><a href="#about" class="sub-nav-link active" data-section="about"><?php _e('Company Introduction', 'prmtec'); ?></a></li>
-                    <li><a href="#history" class="sub-nav-link" data-section="history"><?php _e('Company History', 'prmtec'); ?></a></li>
+                    <li><a href="#about" class="sub-nav-link active" data-section="about"><?php _e('Introduction', 'prmtec'); ?></a></li>
+                    <li><a href="#history" class="sub-nav-link" data-section="history"><?php _e('History', 'prmtec'); ?></a></li>
                     <li><a href="#certification" class="sub-nav-link" data-section="certification"><?php _e('Certifications', 'prmtec'); ?></a></li>
-                    <li><a href="#client" class="sub-nav-link" data-section="client"><?php _e('Major Clients', 'prmtec'); ?></a></li>
+                    <li><a href="#client" class="sub-nav-link" data-section="client"><?php _e('Clients', 'prmtec'); ?></a></li>
                     <li><a href="<?php echo home_url('/facility/'); ?>" class="sub-nav-link"><?php _e('Facilities', 'prmtec'); ?></a></li>
                 </ul>
             </nav>
@@ -80,63 +78,41 @@ get_header();
                 <div class="section-header">
                     <h3 class="section-title"><?php _e('Core Values', 'prmtec'); ?></h3>
                 </div>
-                
+                <!-- 상단 원형 요소들 -->
                 <div class="values-visual">
-                    <div class="value-ring ring-innovation"><span><?php _e('Innovation', 'prmtec'); ?></span></div>
-                    <div class="value-ring ring-excellence"><span><?php _e('Excellence', 'prmtec'); ?></span></div>
-                    <div class="value-ring ring-agility"><span><?php _e('Agility', 'prmtec'); ?></span></div>
+                    <div class="value-circle innovation-circle">
+                        <span class="circle-text"><?php _e('Innovation', 'prmtec'); ?></span>
+                    </div>
+                    <div class="value-circle excellence-circle">
+                        <span class="circle-text"><?php _e('Excellence', 'prmtec'); ?></span>
+                    </div>
+                    <div class="value-circle agility-circle">
+                        <span class="circle-text"><?php _e('Agility', 'prmtec'); ?></span>
+                    </div>
                 </div>
 
+                <!-- 하단 번호 리스트 -->
                 <div class="values-list">
                     <div class="value-item">
-                        <div class="value-num">1</div>
-                        <div class="value-text">
-                            <h4><?php _e('Absolute Quality Without Compromise', 'prmtec'); ?></h4>
-                            <p><?php _e('At Primeditech, quality is non-negotiable. We implement rigorous, comprehensive quality control systems and relentless improvement practices, ensuring zero-defect precision and guaranteeing that each delivered component surpasses the highest global standards.', 'prmtec'); ?></p>
+                        <div class="value-number">1</div>
+                        <div class="value-content">
+                            <h4 class="value-title"><?php _e('Absolute Quality Without Compromise', 'prmtec'); ?></h4>
+                            <p class="value-description"><?php _e('At Primeditech, quality is non-negotiable. We implement rigorous, comprehensive quality control systems and relentless improvement practices, ensuring zero-defect precision and guaranteeing that each delivered component surpasses the highest global standards.', 'prmtec'); ?></p>
                         </div>
                     </div>
                     <div class="value-item">
-                        <div class="value-num">2</div>
-                        <div class="value-text">
-                            <h4><?php _e('Innovation‑Driven Precision Engineering', 'prmtec'); ?></h4>
-                            <p><?php _e('By integrating cutting‑edge technologies with ongoing research and development, Primeditech achieves unmatched precision. Our innovative approach continuously evolves, addressing the ever‑changing demands of medical, aerospace, and industrial challenges.', 'prmtec'); ?></p>
+                        <div class="value-number">2</div>
+                        <div class="value-content">
+                            <h4 class="value-title"><?php _e('Innovation‑Driven Precision Engineering', 'prmtec'); ?></h4>
+                            <p class="value-description"><?php _e('By integrating cutting‑edge technologies with ongoing research and development, Primeditech achieves unmatched precision. Our innovative approach continuously evolves, addressing the ever‑changing demands of medical, aerospace, and industrial challenges.', 'prmtec'); ?></p>
                         </div>
                     </div>
                     <div class="value-item">
-                        <div class="value-num">3</div>
-                        <div class="value-text">
-                            <h4><?php _e('Customer‑Centric Adaptability', 'prmtec'); ?></h4>
-                            <p><?php _e('We deeply understand the diverse needs of our global clients. Our adaptive, creative, and flexible mindset ensures tailored precision solutions, significantly enhancing our clients\' competitiveness while staying closely aligned with their strategic vision.', 'prmtec'); ?></p>
+                        <div class="value-number">3</div>
+                        <div class="value-content">
+                            <h4 class="value-title"><?php _e('Customer‑Centric Adaptability', 'prmtec'); ?></h4>
+                            <p class="value-description"><?php _e('We deeply understand the diverse needs of our global clients. Our adaptive, creative, and flexible mindset ensures tailored precision solutions, significantly enhancing our clients\' competitiveness while staying closely aligned with their strategic vision.', 'prmtec'); ?></p>
                         </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 회사 통계 -->
-            <div class="company-stats-section">
-                <div class="section-header">
-                    <h3 class="section-title"><?php _e('PRIMEDITECH in Numbers', 'prmtec'); ?></h3>
-                    <p class="section-subtitle">
-                        <?php _e('Our achievements reflect our commitment to excellence', 'prmtec'); ?>
-                    </p>
-                </div>
-                
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <div class="stat-number">18+</div>
-                        <div class="stat-label"><?php _e('Years of Innovation', 'prmtec'); ?></div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">850+</div>
-                        <div class="stat-label"><?php _e('Healthcare Partners', 'prmtec'); ?></div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">65+</div>
-                        <div class="stat-label"><?php _e('Countries Served', 'prmtec'); ?></div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">99.5%</div>
-                        <div class="stat-label"><?php _e('Customer Satisfaction', 'prmtec'); ?></div>
                     </div>
                 </div>
             </div>
@@ -148,60 +124,77 @@ get_header();
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title"><?php _e('Our History', 'prmtec'); ?></h2>
-                <p class="section-subtitle">
-                    <?php _e('A journey of innovation and growth in medical technology', 'prmtec'); ?>
-                </p>
             </div>
             
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-year">2006</div>
-                    <div class="timeline-content">
-                        <h4><?php _e('Company Founded', 'prmtec'); ?></h4>
-                        <p><?php _e('PRIMEDITECH 설립 및 의료기기 유통 사업 시작', 'prmtec'); ?></p>
+            
+            <!-- 연혁 섹션 -->
+            <div class="timeline-section">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">2025</div>
+                        <div class="timeline-content right">
+                            <h3><?php _e('PRIMEDITECH Headquarters Relocation', 'prmtec'); ?></h3>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-year">2010</div>
-                    <div class="timeline-content">
-                        <h4><?php _e('First Product Launch', 'prmtec'); ?></h4>
-                        <p><?php _e('자체 브랜드 디지털 X-ray 시스템 출시', 'prmtec'); ?></p>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">2024</div>
+                        <div class="timeline-content left">
+                            <h3><?php _e('Achieved Main-Biz Certification', 'prmtec'); ?></h3>
+                            <p><?php _e('Pioneered domestic introduction of DMG MORI NTX500 machining center', 'prmtec'); ?></p>
+                        </div>
+                        <div class="timeline-image right">
+                            <div class="image-placeholder">
+                                <i class="fas fa-cogs"></i>
+                                <span><?php _e('DMG MORI NTX500', 'prmtec'); ?></span>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-year">2015</div>
-                    <div class="timeline-content">
-                        <h4><?php _e('Global Expansion', 'prmtec'); ?></h4>
-                        <p><?php _e('아시아, 유럽, 중동 지역 수출 본격화 및 해외 파트너십 확대', 'prmtec'); ?></p>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">2023</div>
+                        <div class="timeline-content right">
+                            <h3><?php _e('Integrated Advanced Swiss Turn Equipment', 'prmtec'); ?></h3>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-year">2018</div>
-                    <div class="timeline-content">
-                        <h4><?php _e('Innovation Center Established', 'prmtec'); ?></h4>
-                        <p><?php _e('R&D 센터 설립 및 AI 기반 의료 영상 분석 기술 개발 시작', 'prmtec'); ?></p>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">2021</div>
+                        <div class="timeline-content left">
+                            <h3><?php _e('Achieved ISO 9001 and ISO 14001 certifications', 'prmtec'); ?></h3>
+                        </div>
+                        <div class="timeline-image right">
+                            <div class="image-placeholder">
+                                <i class="fas fa-certificate"></i>
+                                <span><?php _e('Quality Components', 'prmtec'); ?></span>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-year">2021</div>
-                    <div class="timeline-content">
-                        <h4><?php _e('Certification Milestone', 'prmtec'); ?></h4>
-                        <p><?php _e('ISO 13485, CE, FDA 인증 획득 및 품질 관리 체계 강화', 'prmtec'); ?></p>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">2020</div>
+                        <div class="timeline-content right">
+                            <h3><?php _e('Established In-House R&D Center', 'prmtec'); ?></h3>
+                            <p><?php _e('Certified as Specialized Component Manufacturer', 'prmtec'); ?></p>
+                            <p><?php _e('Integrated Advanced Swiss Turn Equipment', 'prmtec'); ?></p>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-year">2024</div>
-                    <div class="timeline-content">
-                        <h4><?php _e('Leading the Future', 'prmtec'); ?></h4>
-                        <p><?php _e('AI 기반 차세대 의료기기 출시 및 글로벌 시장 점유율 확대', 'prmtec'); ?></p>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">2019</div>
+                        <div class="timeline-content left">
+                            <h3><?php _e('Establishment of Primeditech Co., Ltd.', 'prmtec'); ?></h3>
+                        </div>
+                        <div class="timeline-image right">
+                            <div class="image-placeholder">
+                                <i class="fas fa-industry"></i>
+                                <span><?php _e('Manufacturing Equipment', 'prmtec'); ?></span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+            
         </div>
     </section>
 
@@ -209,90 +202,79 @@ get_header();
     <section id="certification" class="about-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title"><?php _e('Certifications & Quality', 'prmtec'); ?></h2>
+                <h2 class="section-title"><?php _e('Certification', 'prmtec'); ?></h2>
                 <p class="section-subtitle">
-                    <?php _e('Internationally recognized standards of excellence', 'prmtec'); ?>
+                    <?php _e('Recognition for our commitment to excellence', 'prmtec'); ?>
                 </p>
             </div>
             
-            <div class="certifications-grid">
-                <div class="certification-card">
-                    <div class="certification-icon">
-                        <i class="fas fa-certificate"></i>
-                    </div>
-                    <h3><?php _e('ISO 13485', 'prmtec'); ?></h3>
-                    <p><?php _e('Medical Devices Quality Management System', 'prmtec'); ?></p>
-                    <span class="cert-year"><?php _e('Certified: 2021', 'prmtec'); ?></span>
+            <div class="cert-carousel" id="cert-carousel">
+                <button class="cert-nav cert-prev" aria-label="<?php _e('Previous', 'prmtec'); ?>">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="cert-track-wrapper">
+                    <ul class="cert-track">
+                        <li class="cert-slide">
+                            <img src="<?php echo get_template_directory_uri(); ?>/img/certification1.png" alt="<?php _e('Certification 1', 'prmtec'); ?>" class="cert-image">
+                        </li>
+                        <li class="cert-slide">
+                            <img src="<?php echo get_template_directory_uri(); ?>/img/certification2.png" alt="<?php _e('Certification 2', 'prmtec'); ?>" class="cert-image">
+                        </li>
+                        <li class="cert-slide">
+                            <img src="<?php echo get_template_directory_uri(); ?>/img/certification3.png" alt="<?php _e('Certification 3', 'prmtec'); ?>" class="cert-image">
+                        </li>
+                        <li class="cert-slide">
+                            <img src="<?php echo get_template_directory_uri(); ?>/img/certification4.png" alt="<?php _e('Certification 4', 'prmtec'); ?>" class="cert-image">
+                        </li>
+                        <li class="cert-slide">
+                            <img src="<?php echo get_template_directory_uri(); ?>/img/certification5.png" alt="<?php _e('Certification 5', 'prmtec'); ?>" class="cert-image">
+                        </li>
+                        <li class="cert-slide">
+                            <img src="<?php echo get_template_directory_uri(); ?>/img/certification6.png" alt="<?php _e('Certification 6', 'prmtec'); ?>" class="cert-image">
+                        </li>
+                        <li class="cert-slide">
+                            <img src="<?php echo get_template_directory_uri(); ?>/img/certification7.png" alt="<?php _e('Certification 7', 'prmtec'); ?>" class="cert-image">
+                        </li>
+                        <li class="cert-slide">
+                            <img src="<?php echo get_template_directory_uri(); ?>/img/certification8.png" alt="<?php _e('Certification 8', 'prmtec'); ?>" class="cert-image">
+                        </li>
+                        <li class="cert-slide">
+                            <img src="<?php echo get_template_directory_uri(); ?>/img/certification9.png" alt="<?php _e('Certification 9', 'prmtec'); ?>" class="cert-image">
+                        </li>
+                        <li class="cert-slide">
+                            <img src="<?php echo get_template_directory_uri(); ?>/img/certification10.png" alt="<?php _e('Certification 10', 'prmtec'); ?>" class="cert-image">
+                        </li>
+                        <li class="cert-slide">
+                            <img src="<?php echo get_template_directory_uri(); ?>/img/certification11.png" alt="<?php _e('Certification 11', 'prmtec'); ?>" class="cert-image">
+                        </li>
+                    </ul>
                 </div>
-                
-                <div class="certification-card">
-                    <div class="certification-icon">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                    <h3><?php _e('CE Marking', 'prmtec'); ?></h3>
-                    <p><?php _e('European Conformity for Medical Devices', 'prmtec'); ?></p>
-                    <span class="cert-year"><?php _e('Certified: 2021', 'prmtec'); ?></span>
-                </div>
-                
-                <div class="certification-card">
-                    <div class="certification-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3><?php _e('FDA Approval', 'prmtec'); ?></h3>
-                    <p><?php _e('U.S. Food and Drug Administration', 'prmtec'); ?></p>
-                    <span class="cert-year"><?php _e('Approved: 2022', 'prmtec'); ?></span>
-                </div>
-                
-                <div class="certification-card">
-                    <div class="certification-icon">
-                        <i class="fas fa-flag"></i>
-                    </div>
-                    <h3><?php _e('KFDA Registration', 'prmtec'); ?></h3>
-                    <p><?php _e('Korea Food & Drug Administration', 'prmtec'); ?></p>
-                    <span class="cert-year"><?php _e('Registered: 2010', 'prmtec'); ?></span>
-                </div>
+                <button class="cert-nav cert-next" aria-label="<?php _e('Next', 'prmtec'); ?>">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <!-- 모두 보기 버튼 -->
+            <div class="cert-viewall-wrap">
+                <button id="cert-viewall" class="cert-viewall-btn" type="button"><?php _e('View all certifications', 'prmtec'); ?></button>
+            </div>
+
+            <!-- 전체 인증서 갤러리 (초기에 숨김) -->
+            <div class="cert-gallery" id="cert-gallery" aria-hidden="true">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/certification1.png" alt="<?php _e('Certification 1', 'prmtec'); ?>" class="cert-gallery-image">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/certification2.png" alt="<?php _e('Certification 2', 'prmtec'); ?>" class="cert-gallery-image">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/certification3.png" alt="<?php _e('Certification 3', 'prmtec'); ?>" class="cert-gallery-image">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/certification4.png" alt="<?php _e('Certification 4', 'prmtec'); ?>" class="cert-gallery-image">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/certification5.png" alt="<?php _e('Certification 5', 'prmtec'); ?>" class="cert-gallery-image">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/certification6.png" alt="<?php _e('Certification 6', 'prmtec'); ?>" class="cert-gallery-image">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/certification7.png" alt="<?php _e('Certification 7', 'prmtec'); ?>" class="cert-gallery-image">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/certification8.png" alt="<?php _e('Certification 8', 'prmtec'); ?>" class="cert-gallery-image">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/certification9.png" alt="<?php _e('Certification 9', 'prmtec'); ?>" class="cert-gallery-image">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/certification10.png" alt="<?php _e('Certification 10', 'prmtec'); ?>" class="cert-gallery-image">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/certification11.png" alt="<?php _e('Certification 11', 'prmtec'); ?>" class="cert-gallery-image">
             </div>
             
-            <!-- 품질 관리 시스템 -->
-            <div class="quality-system">
-                <div class="section-header">
-                    <h3 class="section-title"><?php _e('Quality Management System', 'prmtec'); ?></h3>
-                    <p class="section-subtitle">
-                        <?php _e('Comprehensive quality assurance at every stage', 'prmtec'); ?>
-                    </p>
-                </div>
-                
-                <div class="quality-grid">
-                    <div class="quality-item">
-                        <div class="quality-icon">
-                            <i class="fas fa-search"></i>
-                        </div>
-                        <h4><?php _e('Incoming Inspection', 'prmtec'); ?></h4>
-                        <p><?php _e('모든 원자재 및 부품에 대한 철저한 입고 검사', 'prmtec'); ?></p>
-                    </div>
-                    <div class="quality-item">
-                        <div class="quality-icon">
-                            <i class="fas fa-cogs"></i>
-                        </div>
-                        <h4><?php _e('In-Process Control', 'prmtec'); ?></h4>
-                        <p><?php _e('생산 공정 전반에 걸친 실시간 품질 모니터링', 'prmtec'); ?></p>
-                    </div>
-                    <div class="quality-item">
-                        <div class="quality-icon">
-                            <i class="fas fa-clipboard-check"></i>
-                        </div>
-                        <h4><?php _e('Final Inspection', 'prmtec'); ?></h4>
-                        <p><?php _e('출하 전 완제품에 대한 종합적인 최종 검사', 'prmtec'); ?></p>
-                    </div>
-                    <div class="quality-item">
-                        <div class="quality-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h4><?php _e('Continuous Improvement', 'prmtec'); ?></h4>
-                        <p><?php _e('데이터 분석 기반의 지속적인 품질 개선 활동', 'prmtec'); ?></p>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </section>
 
@@ -301,101 +283,72 @@ get_header();
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title"><?php _e('Our Clients', 'prmtec'); ?></h2>
-                <p class="section-subtitle">
-                    <?php _e('Trusted partners in healthcare excellence worldwide', 'prmtec'); ?>
-                </p>
             </div>
             
-            <div class="clients-grid">
-                <div class="client-category">
-                    <div class="category-header">
-                        <i class="fas fa-hospital"></i>
-                        <h4><?php _e('Major Hospitals', 'prmtec'); ?></h4>
-                    </div>
-                    <div class="client-list">
-                        <div class="client-item">
-                            <h5><?php _e('Seoul National University Hospital', 'prmtec'); ?></h5>
-                            <p><?php _e('Digital X-ray Systems & PACS Integration', 'prmtec'); ?></p>
-                        </div>
-                        <div class="client-item">
-                            <h5><?php _e('Samsung Medical Center', 'prmtec'); ?></h5>
-                            <p><?php _e('Advanced Imaging Solutions', 'prmtec'); ?></p>
-                        </div>
-                        <div class="client-item">
-                            <h5><?php _e('Asan Medical Center', 'prmtec'); ?></h5>
-                            <p><?php _e('Diagnostic Equipment & Maintenance', 'prmtec'); ?></p>
+            <!-- 클라이언트 인트로 섹션 -->
+            <div class="client-intro-section">
+                <div class="client-intro-content">
+                    <div class="client-intro-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-handshake"></i>
+                            <span><?php _e('Partnership', 'prmtec'); ?></span>
                         </div>
                     </div>
-                </div>
-                
-                <div class="client-category">
-                    <div class="category-header">
-                        <i class="fas fa-clinic-medical"></i>
-                        <h4><?php _e('Clinics & Private Practices', 'prmtec'); ?></h4>
-                    </div>
-                    <div class="client-list">
-                        <div class="client-item">
-                            <h5><?php _e('200+ Orthopedic Clinics', 'prmtec'); ?></h5>
-                            <p><?php _e('Portable X-ray Systems', 'prmtec'); ?></p>
-                        </div>
-                        <div class="client-item">
-                            <h5><?php _e('150+ Dental Clinics', 'prmtec'); ?></h5>
-                            <p><?php _e('Dental Imaging Equipment', 'prmtec'); ?></p>
-                        </div>
-                        <div class="client-item">
-                            <h5><?php _e('100+ General Practices', 'prmtec'); ?></h5>
-                            <p><?php _e('Point-of-Care Diagnostic Devices', 'prmtec'); ?></p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="client-category">
-                    <div class="category-header">
-                        <i class="fas fa-globe-asia"></i>
-                        <h4><?php _e('International Partners', 'prmtec'); ?></h4>
-                    </div>
-                    <div class="client-list">
-                        <div class="client-item">
-                            <h5><?php _e('Middle East Healthcare Providers', 'prmtec'); ?></h5>
-                            <p><?php _e('Medical Equipment Distribution', 'prmtec'); ?></p>
-                        </div>
-                        <div class="client-item">
-                            <h5><?php _e('Southeast Asia Hospitals', 'prmtec'); ?></h5>
-                            <p><?php _e('Regional Service & Support', 'prmtec'); ?></p>
-                        </div>
-                        <div class="client-item">
-                            <h5><?php _e('European Medical Centers', 'prmtec'); ?></h5>
-                            <p><?php _e('Advanced Technology Solutions', 'prmtec'); ?></p>
-                        </div>
+                    <div class="client-intro-text">
+                        <p>
+                            <?php _e('PRIMEDITECH은 국내외 다양한 산업군의 고객사와 함께 성장하고 있습니다.', 'prmtec'); ?>
+                        </p>
+                        <p>
+                            <?php _e('의료기기, 항공우주, 반도체, 로보틱스 등 고정밀 가공이 요구되는 산업 분야에서 축적된 기술력과 노하우를 바탕으로, 고객의 요구를 정확히 이해하고 최적의 솔루션을 제공합니다.', 'prmtec'); ?>
+                        </p>
+                        <p>
+                            <?php _e('단순한 가공을 넘어, 제품의 목적과 사용 환경을 고려한 정밀한 품질과 안정적인 납기로 고객의 기대를 뛰어넘는 결과를 만들어갑니다.', 'prmtec'); ?>
+                        </p>
+                        <p>
+                            <?php _e('PRIMEDITECH은 신뢰를 기반으로 한 장기적 파트너십을 목표로 합니다. 각 산업의 기술적 과제를 함께 해결하며, 고객의 성장과 함께 발전하는 글로벌 정밀가공 전문 기업으로 나아가고 있습니다.', 'prmtec'); ?>
+                        </p>
                     </div>
                 </div>
             </div>
             
-            <!-- 고객 만족도 -->
-            <div class="client-satisfaction">
-                <div class="section-header">
-                    <h3 class="section-title"><?php _e('Customer Satisfaction', 'prmtec'); ?></h3>
-                    <p class="section-subtitle">
-                        <?php _e('Our commitment to excellence in service and support', 'prmtec'); ?>
-                    </p>
-                </div>
-                
-                <div class="satisfaction-stats">
-                    <div class="stat-item">
-                        <div class="stat-number">99.5%</div>
-                        <div class="stat-label"><?php _e('Customer Satisfaction Rate', 'prmtec'); ?></div>
+            <!-- 클라이언트 로고 섹션 -->
+            <div class="clients-logo-section">
+                <div class="clients-logo-grid">
+                    <div class="client-logo-item">
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/client1.png" alt="<?php _e('Client 1', 'prmtec'); ?>" class="client-logo-img">
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-number">95%</div>
-                        <div class="stat-label"><?php _e('Repeat Customer Rate', 'prmtec'); ?></div>
+                    <div class="client-logo-item">
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/client2.png" alt="<?php _e('Client 2', 'prmtec'); ?>" class="client-logo-img">
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-number">24/7</div>
-                        <div class="stat-label"><?php _e('Technical Support', 'prmtec'); ?></div>
+                    <div class="client-logo-item">
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/client3.png" alt="<?php _e('Client 3', 'prmtec'); ?>" class="client-logo-img">
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-number">48hrs</div>
-                        <div class="stat-label"><?php _e('Average Response Time', 'prmtec'); ?></div>
+                    <div class="client-logo-item">
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/client4.png" alt="<?php _e('Client 4', 'prmtec'); ?>" class="client-logo-img">
+                    </div>
+                    <div class="client-logo-item">
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/client5.png" alt="<?php _e('Client 5', 'prmtec'); ?>" class="client-logo-img">
+                    </div>
+                    <div class="client-logo-item">
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/client6.png" alt="<?php _e('Client 6', 'prmtec'); ?>" class="client-logo-img">
+                    </div>
+                    <div class="client-logo-item">
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/client7.png" alt="<?php _e('Client 7', 'prmtec'); ?>" class="client-logo-img">
+                    </div>
+                    <div class="client-logo-item">
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/client8.png" alt="<?php _e('Client 8', 'prmtec'); ?>" class="client-logo-img">
+                    </div>
+                    <div class="client-logo-item">
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/client9.png" alt="<?php _e('Client 9', 'prmtec'); ?>" class="client-logo-img">
+                    </div>
+                    <div class="client-logo-item">
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/client10.png" alt="<?php _e('Client 10', 'prmtec'); ?>" class="client-logo-img">
+                    </div>
+                    <div class="client-logo-item">
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/client11.png" alt="<?php _e('Client 11', 'prmtec'); ?>" class="client-logo-img">
+                    </div>
+                    <div class="client-logo-item">
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/client12.png" alt="<?php _e('Client 12', 'prmtec'); ?>" class="client-logo-img">
                     </div>
                 </div>
             </div>
@@ -480,8 +433,68 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+    
+    // 인증서 캐러셀 기능
+    const certCarousel = document.getElementById('cert-carousel');
+    const certTrack = document.querySelector('.cert-track');
+    const certPrev = document.querySelector('.cert-prev');
+    const certNext = document.querySelector('.cert-next');
+    const certViewAll = document.getElementById('cert-viewall');
+    const certGallery = document.getElementById('cert-gallery');
+    
+    if (certCarousel && certTrack) {
+        let currentSlide = 0;
+        const totalSlides = certTrack.children.length;
+        const slidesToShow = 4; // 한 번에 보여줄 슬라이드 수
+        
+        // 다음 버튼
+        if (certNext) {
+            certNext.addEventListener('click', function() {
+                if (currentSlide < totalSlides - slidesToShow) {
+                    currentSlide++;
+                    updateCarousel();
+                }
+            });
+        }
+        
+        // 이전 버튼
+        if (certPrev) {
+            certPrev.addEventListener('click', function() {
+                if (currentSlide > 0) {
+                    currentSlide--;
+                    updateCarousel();
+                }
+            });
+        }
+        
+        function updateCarousel() {
+            const slideWidth = 100 / slidesToShow;
+            const translateX = -(currentSlide * slideWidth);
+            certTrack.style.transform = `translateX(${translateX}%)`;
+            
+            // 버튼 상태 업데이트
+            if (certPrev) {
+                certPrev.style.opacity = currentSlide === 0 ? '0.5' : '1';
+                certPrev.style.pointerEvents = currentSlide === 0 ? 'none' : 'auto';
+            }
+            if (certNext) {
+                certNext.style.opacity = currentSlide >= totalSlides - slidesToShow ? '0.5' : '1';
+                certNext.style.pointerEvents = currentSlide >= totalSlides - slidesToShow ? 'none' : 'auto';
+            }
+        }
+        
+        // 모두 보기 버튼
+        if (certViewAll && certGallery) {
+            certViewAll.addEventListener('click', function() {
+                const isHidden = certGallery.getAttribute('aria-hidden') === 'true';
+                certGallery.setAttribute('aria-hidden', !isHidden);
+                certGallery.style.display = isHidden ? 'grid' : 'none';
+                this.textContent = isHidden ? '<?php _e('Hide certifications', 'prmtec'); ?>' : '<?php _e('View all certifications', 'prmtec'); ?>';
+            });
+        }
+        
+        // 초기 설정
+        updateCarousel();
+    }
 });
 </script>
-
-</body>
-</html>

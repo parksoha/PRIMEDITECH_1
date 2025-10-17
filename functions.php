@@ -66,21 +66,39 @@ function prmtec_scripts() {
     
     // 페이지별 CSS 파일들
     if (is_front_page() || is_home()) {
+        wp_enqueue_style('prmtec-main', get_template_directory_uri() . '/css/main.css', array('prmtec-common'), '1.0.0');
         wp_enqueue_style('prmtec-home', get_template_directory_uri() . '/css/home.css', array('prmtec-common'), '1.0.0');
-    } elseif (is_page('about')) {
+    } else {
+        // 기본 스타일과 메인 스타일 항상 로드
+        wp_enqueue_style('prmtec-main', get_template_directory_uri() . '/css/main.css', array('prmtec-common'), '1.0.0');
+        wp_enqueue_style('prmtec-style', get_template_directory_uri() . '/css/style.css', array('prmtec-common'), '1.0.0');
+    }
+    
+    // 페이지별 CSS 파일들
+    if (is_page('about') || is_page_template('sub/about.php')) {
         wp_enqueue_style('prmtec-about', get_template_directory_uri() . '/css/about.css', array('prmtec-common'), '1.0.0');
-    } elseif (is_page('services')) {
+    }
+    if (is_page('services') || is_page_template('sub/services.php')) {
         wp_enqueue_style('prmtec-services', get_template_directory_uri() . '/css/services.css', array('prmtec-common'), '1.0.0');
-    } elseif (is_page('industries')) {
+    }
+    if (is_page('industries') || is_page_template('sub/industries.php')) {
         wp_enqueue_style('prmtec-industries', get_template_directory_uri() . '/css/industries.css', array('prmtec-common'), '1.0.0');
-    } elseif (is_page('facility')) {
+    }
+    if (is_page('facility') || is_page_template('sub/facility.php')) {
         wp_enqueue_style('prmtec-facility', get_template_directory_uri() . '/css/facility.css', array('prmtec-common'), '1.0.0');
-    } elseif (is_page('contact')) {
+    }
+    if (is_page('contact') || is_page_template('sub/contact.php')) {
         wp_enqueue_style('prmtec-contact', get_template_directory_uri() . '/css/contact.css', array('prmtec-common'), '1.0.0');
+    }
+    if (is_page('products') || is_page_template('sub/products.php')) {
+        wp_enqueue_style('prmtec-products', get_template_directory_uri() . '/css/products.css', array('prmtec-common'), '1.0.0');
     }
     
     // Google Fonts
     wp_enqueue_style('prmtec-fonts', 'https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap', array(), null);
+    
+    // Font Awesome
+    wp_enqueue_style('prmtec-fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css', array(), '6.0.0');
     
     // JavaScript 파일들
     wp_enqueue_script('prmtec-main', get_template_directory_uri() . '/js/main.js', array('jquery'), '1.0.0', true);

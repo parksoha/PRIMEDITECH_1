@@ -1588,9 +1588,12 @@
     justify-content: center;
     min-width: 120px;
     padding: 10px 20px;
-    background: linear-gradient(135deg, #90EE90 0%, #98FB98 100%);
+    background: #b1c5a4;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 146, 69, 0.2);
+    box-shadow: 0 2px 8px rgba(177, 197, 164, 0.3);
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    will-change: transform;
 }
 
 .client-logo:hover {
@@ -1604,6 +1607,11 @@
     height: auto;
     object-fit: contain;
     transition: all 0.3s ease;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    will-change: transform;
 }
 
 @keyframes marquee {
@@ -1622,6 +1630,8 @@
     width: 100%;
     transform: translateZ(0); /* 하드웨어 가속 */
     backface-visibility: hidden; /* 깜빡임 방지 */
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
 }
 
 /* 마퀴 일시정지 효과 */
