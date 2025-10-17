@@ -15,6 +15,8 @@
         initSmoothScroll();
         initFormValidation();
         initAnimations();
+        initProcessReveal();
+        initAverageCounter();
         initLazyLoading();
         initAccessibility();
         initCertificationCarousel();
@@ -64,6 +66,71 @@
                     mobileMenuToggle.focus();
                 }
             });
+        }
+    }
+
+    /**
+     * 평균 소요일 카운트업
+     */
+    function initAverageCounter() {
+        const $avg = $('.avg-number');
+        if (!$avg.length) return;
+
+        if ('IntersectionObserver' in window) {
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        countUpElement(entry.target);
+                        io.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.6 });
+            $avg.each(function() { io.observe(this); });
+        } else {
+            $avg.each(function() { countUpElement(this); });
+        }
+    }
+
+    function countUpElement(el) {
+        const target = parseInt(el.getAttribute('data-target'), 10) || 0;
+        const duration = 1500;
+        if (target <= 0) { el.textContent = '0'; return; }
+
+        // For small integers (like 10), step per integer for smooth, predictable ticks
+        const stepTime = Math.max(60, Math.floor(duration / target));
+        let current = 0;
+        el.textContent = current.toString();
+        const timer = setInterval(() => {
+            current += 1;
+            if (current >= target) {
+                el.textContent = target.toString();
+                clearInterval(timer);
+            } else {
+                el.textContent = current.toString();
+            }
+        }, stepTime);
+    }
+
+    /**
+     * 작업 프로세스 순차 등장
+     */
+    function initProcessReveal() {
+        const $flow = $('.process-flow');
+        if (!$flow.length) return;
+
+        if ('IntersectionObserver' in window) {
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('reveal');
+                        io.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+            $flow.each(function() { io.observe(this); });
+        } else {
+            // Fallback
+            $flow.addClass('reveal');
         }
     }
 
@@ -459,7 +526,18 @@
             return style.display !== 'none' && style.visibility !== 'hidden' && style.opacity !== '0';
         }
 
-        function initOrDefer() {
+        function markImagesOnLoad() {
+            const $imgs = $carousel.find('img');
+            $imgs.each(function() {
+                if (this.complete) {
+                    $(this).addClass('is-loaded');
+                } else {
+                    $(this).one('load', function() { $(this).addClass('is-loaded'); });
+                }
+            });
+        }
+
+        function revealWhenReady() {
             // 이미지가 로드되지 않아도 슬라이드 컨테이너 폭이 0이면 지연
             slideWidth = $allSlides.eq(0).outerWidth(true);
             if (slideWidth === 0 || !isVisible($carousel)) {
@@ -470,21 +548,30 @@
                         if (isVisible($carousel)) {
                             mo.disconnect();
                             updateSizes();
+                            $carousel.addClass('is-ready');
                         }
                     });
                     mo.observe(section, { attributes: true, attributeFilter: ['class'] });
                 }
                 // 윈도우 로드 이후에도 재계산
-                $(window).on('load', updateSizes);
-                // 이미지 로드 시 재계산
-                $carousel.find('img').on('load', Utils.debounce(updateSizes, 50));
+                $(window).on('load', function() {
+                    updateSizes();
+                    $carousel.addClass('is-ready');
+                });
+                // 이미지 로드 시 재계산 및 점진적 표시
+                $carousel.find('img').on('load', Utils.debounce(function() {
+                    updateSizes();
+                    $carousel.addClass('is-ready');
+                }, 50));
             } else {
                 goTo(currentIndex, false);
                 updateCenterState();
+                $carousel.addClass('is-ready');
             }
         }
 
-        initOrDefer();
+        markImagesOnLoad();
+        revealWhenReady();
 
         // 이벤트 바인딩
         $next.on('click', function(e) { e.preventDefault(); next(); });

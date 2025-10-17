@@ -1470,11 +1470,57 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center; /* center the process steps and arrows */
     gap: 20px;
     margin-top: 60px;
     overflow-x: auto;
     padding: 20px 0;
+}
+
+/* Staggered reveal for process items */
+.process-flow > * {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.process-flow.reveal > * {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    opacity: 1;
+    transform: none;
+}
+
+/* Delay per item (supports up to 10 items) */
+.process-flow.reveal > *:nth-child(1) { transition-delay: 0s; }
+.process-flow.reveal > *:nth-child(2) { transition-delay: 0.08s; }
+.process-flow.reveal > *:nth-child(3) { transition-delay: 0.16s; }
+.process-flow.reveal > *:nth-child(4) { transition-delay: 0.24s; }
+.process-flow.reveal > *:nth-child(5) { transition-delay: 0.32s; }
+.process-flow.reveal > *:nth-child(6) { transition-delay: 0.40s; }
+.process-flow.reveal > *:nth-child(7) { transition-delay: 0.48s; }
+.process-flow.reveal > *:nth-child(8) { transition-delay: 0.56s; }
+.process-flow.reveal > *:nth-child(9) { transition-delay: 0.64s; }
+.process-flow.reveal > *:nth-child(10) { transition-delay: 0.72s; }
+
+.process-disclaimer {
+    margin-top: 14px;
+    text-align: center;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.process-average {
+    margin-top: 12px;
+    text-align: center;
+}
+
+.process-badge {
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 999px;
+    background: #009245;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.25rem;
 }
 
 .process-step {
@@ -1498,14 +1544,40 @@
 }
 
 .step-arrow {
-    position: absolute;
-    right: -30px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #009245;
-    font-size: 1.5rem;
-    z-index: 2;
+    display: none; /* legacy arrows disabled */
 }
+
+/* Independent arrows between steps */
+.process-arrow {
+    flex: 0 0 auto;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #009245;
+    background: transparent;
+    pointer-events: none; /* exclude from hover/focus */
+}
+
+.process-arrow i {
+    font-size: 1.25rem;
+    display: inline-block;
+}
+
+/* keep spacing tight on small screens */
+@media (max-width: 768px) {
+    .process-arrow {
+        width: 32px;
+        height: 32px;
+    }
+    .process-arrow i {
+        font-size: 1.1rem;
+    }
+}
+
+
 
 .step-number {
     width: 60px;
@@ -1524,6 +1596,25 @@
 .step-content {
     text-align: center;
     width: 100%;
+}
+
+/* small time note under each step */
+.step-note {
+    margin-top: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.step-note i {
+    color: #009245;
+}
+
+.step-note .note-sub {
+    font-size: 0.85em; /* smaller than the main text */
+    color: #888;
 }
 
 .step-title {
@@ -1581,24 +1672,20 @@
     flex-shrink: 0;
     height: 60px;
     width: auto;
-    opacity: 0.8;
-    transition: opacity 0.3s ease;
+    opacity: 1;
     display: flex;
     align-items: center;
     justify-content: center;
     min-width: 120px;
     padding: 10px 20px;
-    background: #b1c5a4;
+    background: #00b050;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(177, 197, 164, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 176, 80, 0.3);
     transform: translateZ(0);
     -webkit-transform: translateZ(0);
     will-change: transform;
 }
 
-.client-logo:hover {
-    opacity: 1;
-}
 
 .client-logo-img {
     max-height: 40px;

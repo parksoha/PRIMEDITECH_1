@@ -31,6 +31,105 @@ get_header();
         </div>
     </section>
 
+    <!-- Facilities 섹션 -->
+    <section id="facilities" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title"><?php _e('Our Facilities', 'prmtec'); ?></h2>
+            </div>
+
+            <div class="facilities-grid">
+                <div class="facility-card">
+                    <div class="facility-image placeholder-box">
+                        <span class="placeholder-label"><?php _e('Image', 'prmtec'); ?></span>
+                    </div>
+                    <div class="facility-info">
+                        <h3 class="facility-title">NTX 500 (5-Axis)</h3>
+                        <p class="facility-desc"><?php _e('Turn-mill Multitasking Machine', 'prmtec'); ?></p>
+                        <span class="facility-qty">1EA</span>
+                    </div>
+                </div>
+
+                <div class="facility-card">
+                    <div class="facility-image placeholder-box">
+                        <span class="placeholder-label"><?php _e('Image', 'prmtec'); ?></span>
+                    </div>
+                    <div class="facility-info">
+                        <h3 class="facility-title">SR-20RIV Type B</h3>
+                        <p class="facility-desc"><?php _e('Swiss-Type Automatic Lathe', 'prmtec'); ?></p>
+                        <span class="facility-qty">4EA</span>
+                    </div>
+                </div>
+
+                <div class="facility-card">
+                    <div class="facility-image placeholder-box">
+                        <span class="placeholder-label"><?php _e('Image', 'prmtec'); ?></span>
+                    </div>
+                    <div class="facility-info">
+                        <h3 class="facility-title">DT400</h3>
+                        <p class="facility-desc">Tapping Center</p>
+                        <span class="facility-qty">5EA</span>
+                    </div>
+                </div>
+
+                <div class="facility-card">
+                    <div class="facility-image placeholder-box">
+                        <span class="placeholder-label"><?php _e('Image', 'prmtec'); ?></span>
+                    </div>
+                    <div class="facility-info">
+                        <h3 class="facility-title">DT400DL</h3>
+                        <p class="facility-desc"><?php _e('Conventional Lathe', 'prmtec'); ?></p>
+                        <span class="facility-qty">1EA</span>
+                    </div>
+                </div>
+
+                <div class="facility-card">
+                    <div class="facility-image placeholder-box">
+                        <span class="placeholder-label"><?php _e('Image', 'prmtec'); ?></span>
+                    </div>
+                    <div class="facility-info">
+                        <h3 class="facility-title">B0325-II</h3>
+                        <p class="facility-desc"><?php _e('Swiss-Type Automatic Lathe', 'prmtec'); ?></p>
+                        <span class="facility-qty">2EA</span>
+                    </div>
+                </div>
+
+                <div class="facility-card">
+                    <div class="facility-image placeholder-box">
+                        <span class="placeholder-label"><?php _e('Image', 'prmtec'); ?></span>
+                    </div>
+                    <div class="facility-info">
+                        <h3 class="facility-title">DNM 5700</h3>
+                        <p class="facility-desc"><?php _e('Machining Center', 'prmtec'); ?></p>
+                        <span class="facility-qty">5EA</span>
+                    </div>
+                </div>
+
+                <div class="facility-card">
+                    <div class="facility-image placeholder-box">
+                        <span class="placeholder-label"><?php _e('Image', 'prmtec'); ?></span>
+                    </div>
+                    <div class="facility-info">
+                        <h3 class="facility-title">DNM 6700</h3>
+                        <p class="facility-desc"><?php _e('Machining Center', 'prmtec'); ?></p>
+                        <span class="facility-qty">3EA</span>
+                    </div>
+                </div>
+
+                <div class="facility-card">
+                    <div class="facility-image placeholder-box">
+                        <span class="placeholder-label"><?php _e('Image', 'prmtec'); ?></span>
+                    </div>
+                    <div class="facility-info">
+                        <h3 class="facility-title">DNM 750</h3>
+                        <p class="facility-desc"><?php _e('Machining Center', 'prmtec'); ?></p>
+                        <span class="facility-qty">1EA</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- 서브 네비게이션 -->
     <section class="sub-navigation">
         <div class="container">
@@ -39,8 +138,8 @@ get_header();
                     <li><a href="#about" class="sub-nav-link active" data-section="about"><?php _e('Introduction', 'prmtec'); ?></a></li>
                     <li><a href="#history" class="sub-nav-link" data-section="history"><?php _e('History', 'prmtec'); ?></a></li>
                     <li><a href="#certification" class="sub-nav-link" data-section="certification"><?php _e('Certifications', 'prmtec'); ?></a></li>
+                    <li><a href="#facilities" class="sub-nav-link" data-section="facilities"><?php _e('Facilities', 'prmtec'); ?></a></li>
                     <li><a href="#client" class="sub-nav-link" data-section="client"><?php _e('Clients', 'prmtec'); ?></a></li>
-                    <li><a href="<?php echo home_url('/facility/'); ?>" class="sub-nav-link"><?php _e('Facilities', 'prmtec'); ?></a></li>
                 </ul>
             </nav>
         </div>

@@ -11,12 +11,21 @@
     max-width: 100%;
     margin: 0 auto 40px;
     padding: 8px 12px; /* use more of the horizontal space */
+    opacity: 0; /* prevent awkward first paint */
+    transform: translateY(6px);
+    transition: opacity 260ms ease, transform 260ms ease;
 }
 
 .cert-track-wrapper {
     overflow: hidden;
     padding-top: 40px; /* space for scale-up without clipping */
     padding-bottom: 40px;
+}
+
+/* Reveal only when JS marks the carousel as ready */
+.cert-carousel.is-ready {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .cert-track {
@@ -55,12 +64,18 @@
     filter: grayscale(100%);
     transform: scale(0.96);
     transform-origin: center center;
-    transition: transform 0.3s ease, filter 0.3s ease;
+    opacity: 0; /* fade images in individually */
+    transition: transform 0.3s ease, filter 0.3s ease, opacity 240ms ease;
 }
 
 .cert-slide.is-center .cert-image {
     filter: grayscale(0%);
     transform: scale(1.1);
+}
+
+/* Mark image as loaded via JS */
+.cert-image.is-loaded {
+    opacity: 1;
 }
 
 .cert-nav {
@@ -130,6 +145,118 @@
     .cert-carousel { padding: 8px 16px; }
     .cert-slide { flex: 0 0 80%; }
     .cert-image { height: 280px; width: auto; }
+}
+
+/* ==========================================================================
+   Facilities Grid (About page)
+   ========================================================================== */
+
+.facilities-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4-column compact layout */
+    gap: 24px;
+}
+
+.facility-card {
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.facility-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 36px rgba(0,0,0,0.12);
+}
+
+.facility-image {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* enforce 1:1 square */
+    background: #f3f5f7;
+    display: grid; /* more robust centering */
+    place-items: center;
+    position: relative;
+}
+
+/* When real images are used later, keep them contained within the square */
+.facility-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center center; /* ensure centered inside square */
+    display: block;
+}
+
+.placeholder-box {
+    width: 88%;
+    height: 76%;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #e9ecef 0%, #f8f9fa 100%);
+    border: 1px dashed #cfd6dd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9aa7b2;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    margin: 0 auto; /* prevent visual left bias */
+}
+
+.placeholder-label { font-size: 0.9rem; }
+
+.facility-info {
+    padding: 14px 14px 16px; /* compact spacing */
+    display: grid;
+    grid-template-columns: 1fr auto; /* text + qty badge */
+    align-items: start;
+    row-gap: 6px;
+}
+
+.facility-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #222;
+    margin: 0;
+    line-height: 1.35;
+    grid-column: 1 / -1; /* span full width */
+    display: -webkit-box; /* 2-line clamp */
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.facility-desc {
+    margin: 0;
+    color: #667085;
+    font-size: 0.92rem;
+}
+
+.facility-qty {
+    display: inline-block;
+    font-weight: 700;
+    color: #009245;
+    background: #e6f4ec;
+    border-radius: 999px;
+    padding: 4px 10px;
+    font-size: 0.82rem;
+    grid-column: 2 / 3;
+    justify-self: end; /* right align */
+}
+
+@media (max-width: 1200px) {
+    .facilities-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 992px) {
+    .facilities-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+    .facilities-grid { grid-template-columns: 1fr; gap: 16px; }
 }
 
 /* ==========================================================================
