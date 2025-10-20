@@ -31,46 +31,43 @@ get_header(); ?>
                 </p>
             </div>
             
-            <div class="process-timeline">
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3><?php _e('Design & Planning', 'prmtec'); ?></h3>
-                        <p><?php _e('Initial design analysis and manufacturing planning to optimize production efficiency and quality.', 'prmtec'); ?></p>
-                    </div>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3><?php _e('Material Selection', 'prmtec'); ?></h3>
-                        <p><?php _e('Careful selection of high-grade materials that meet specific industry requirements and standards.', 'prmtec'); ?></p>
-                    </div>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3><?php _e('Precision Machining', 'prmtec'); ?></h3>
-                        <p><?php _e('Advanced CNC machining with state-of-the-art equipment for exceptional accuracy and consistency.', 'prmtec'); ?></p>
-                    </div>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <h3><?php _e('Quality Control', 'prmtec'); ?></h3>
-                        <p><?php _e('Comprehensive testing and inspection at every stage to ensure zero-defect production.', 'prmtec'); ?></p>
-                    </div>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-number">5</div>
-                    <div class="step-content">
-                        <h3><?php _e('Final Inspection', 'prmtec'); ?></h3>
-                        <p><?php _e('Thorough final inspection and certification before delivery to guarantee customer satisfaction.', 'prmtec'); ?></p>
-                    </div>
-                </div>
+            <div class="process-table-container">
+                <table class="process-table">
+                    <thead>
+                        <tr>
+                            <th class="process-header"><?php _e('PROCESS', 'prmtec'); ?></th>
+                            <th class="period-header"><?php _e('PERIOD', 'prmtec'); ?></th>
+                            <th class="detail-header"><?php _e('DETAIL', 'prmtec'); ?></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="process-cell"><?php _e('견적 및 상담', 'prmtec'); ?><br><span class="process-en"><?php _e('Quotation & Consultation', 'prmtec'); ?></span></td>
+                            <td class="period-cell"><?php _e('1~2일', 'prmtec'); ?><br><span class="period-en"><?php _e('1-2 days', 'prmtec'); ?></span></td>
+                            <td class="detail-cell"><?php _e('도면 검토 및 가공 가능성 분석, 정확한 견적서 제공', 'prmtec'); ?><br><span class="detail-en"><?php _e('Drawing review and machining feasibility analysis, accurate quotation provision', 'prmtec'); ?></span></td>
+                        </tr>
+                        <tr>
+                            <td class="process-cell"><?php _e('가공 계획 수립', 'prmtec'); ?><br><span class="process-en"><?php _e('Machining Planning', 'prmtec'); ?></span></td>
+                            <td class="period-cell"><?php _e('1~2일', 'prmtec'); ?><br><span class="period-en"><?php _e('1-2 days', 'prmtec'); ?></span></td>
+                            <td class="detail-cell"><?php _e('최적의 가공 경로 설계 및 공정 계획 수립', 'prmtec'); ?><br><span class="detail-en"><?php _e('Optimal machining path design and process planning', 'prmtec'); ?></span></td>
+                        </tr>
+                        <tr>
+                            <td class="process-cell"><?php _e('CNC 가공', 'prmtec'); ?><br><span class="process-en"><?php _e('CNC Machining', 'prmtec'); ?></span></td>
+                            <td class="period-cell"><?php _e('3~10일', 'prmtec'); ?><br><span class="period-en"><?php _e('3-10 days', 'prmtec'); ?></span></td>
+                            <td class="detail-cell"><?php _e('5축 CNC 장비를 이용한 고정밀 가공 (±0.001mm 정밀도)', 'prmtec'); ?><br><span class="detail-en"><?php _e('High-precision machining using 5-axis CNC equipment (±0.001mm accuracy)', 'prmtec'); ?></span></td>
+                        </tr>
+                        <tr>
+                            <td class="process-cell"><?php _e('표면처리', 'prmtec'); ?><br><span class="process-en"><?php _e('Surface Treatment', 'prmtec'); ?></span></td>
+                            <td class="period-cell"><?php _e('2~5일', 'prmtec'); ?><br><span class="period-en"><?php _e('2-5 days', 'prmtec'); ?></span></td>
+                            <td class="detail-cell"><?php _e('알루미나 블라스팅, 진공 열처리, 코팅 등 표면 처리', 'prmtec'); ?><br><span class="detail-en"><?php _e('Alumina blasting, vacuum heat treatment, coating and other surface treatments', 'prmtec'); ?></span></td>
+                        </tr>
+                        <tr>
+                            <td class="process-cell"><?php _e('품질검사 및 납품', 'prmtec'); ?><br><span class="process-en"><?php _e('Quality Inspection & Delivery', 'prmtec'); ?></span></td>
+                            <td class="period-cell"><?php _e('1~2일', 'prmtec'); ?><br><span class="period-en"><?php _e('1-2 days', 'prmtec'); ?></span></td>
+                            <td class="detail-cell"><?php _e('CMM을 이용한 정밀 치수 측정 및 품질 보고서 작성 후 안전 포장 납품', 'prmtec'); ?><br><span class="detail-en"><?php _e('Precise dimensional measurement using CMM, quality report preparation and safe packaging delivery', 'prmtec'); ?></span></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
@@ -81,7 +78,7 @@ get_header(); ?>
             <div class="section-header">
                 <h2 class="section-title"><?php _e('CNC Processing', 'prmtec'); ?></h2>
                 <p class="section-subtitle">
-                    <?php _e('Advanced CNC machining capabilities for complex precision components', 'prmtec'); ?>
+                    <?php _e('PRIMEDITECH은 최신 CNC 복합 가공 설비와 5축 정밀 장비를 기반으로, 의료·항공·로보틱스·반도체 산업 등 고정밀 부품 제작에 특화된 기술력을 보유하고 있습니다. CAD/CAM 통합 시스템을 통한 자동화된 공정 제어로, ±0.005mm 수준의 정밀도를 구현합니다.', 'prmtec'); ?>
                 </p>
             </div>
             
@@ -91,32 +88,15 @@ get_header(); ?>
                         <div class="capability-icon">
                             <i class="fas fa-cogs"></i>
                         </div>
-                        <h3><?php _e('5-Axis Machining', 'prmtec'); ?></h3>
-                        <p><?php _e('Complex geometries and intricate designs with our advanced 5-axis CNC machines.', 'prmtec'); ?></p>
-                    </div>
-                    
-                    <div class="capability-item">
-                        <div class="capability-icon">
-                            <i class="fas fa-microscope"></i>
-                        </div>
-                        <h3><?php _e('Micro Machining', 'prmtec'); ?></h3>
-                        <p><?php _e('Ultra-precise micro components with tolerances down to ±0.001mm for medical applications.', 'prmtec'); ?></p>
-                    </div>
-                    
-                    <div class="capability-item">
-                        <div class="capability-icon">
-                            <i class="fas fa-tools"></i>
-                        </div>
-                        <h3><?php _e('Swiss Turning', 'prmtec'); ?></h3>
-                        <p><?php _e('High-volume production of small, complex parts with exceptional precision and efficiency.', 'prmtec'); ?></p>
-                    </div>
-                    
-                    <div class="capability-item">
-                        <div class="capability-icon">
-                            <i class="fas fa-layer-group"></i>
-                        </div>
-                        <h3><?php _e('Multi-Material Processing', 'prmtec'); ?></h3>
-                        <p><?php _e('Expertise in machining various materials including titanium, stainless steel, and exotic alloys.', 'prmtec'); ?></p>
+                        <h3><?php _e('CNC 가공 공정', 'prmtec'); ?></h3>
+                        <ul>
+                            <li><strong><?php _e('선반 가공 (Turning)', 'prmtec'); ?></strong> — <?php _e('회전하는 소재를 절삭공구로 가공, 원통형·축형 부품에 적합 (샤프트, 노즐, 피팅류)', 'prmtec'); ?></li>
+                            <li><strong><?php _e('밀링 가공 (Milling)', 'prmtec'); ?></strong> — <?php _e('고정된 소재를 회전 커터로 절삭, 평면/곡면/구멍 등 다양한 형상 가공', 'prmtec'); ?></li>
+                            <li><strong><?php _e('드릴링 (Drilling)', 'prmtec'); ?></strong> — <?php _e('회전 드릴로 구멍 가공, 나사 가공 전 홀, 체결용 홀, 핀 홀 등', 'prmtec'); ?></li>
+                            <li><strong><?php _e('탭핑 (Tapping)', 'prmtec'); ?></strong> — <?php _e('내부 나사산 가공(Internal Thread), 조립용 나사 체결 부품 제작', 'prmtec'); ?></li>
+                            <li><strong><?php _e('복합 가공 (Turn‑Mill Complex)', 'prmtec'); ?></strong> — <?php _e('선반+밀링 동시 수행, 원통+평면 복합형 정밀 부품 및 의료/로봇 부품 제작', 'prmtec'); ?></li>
+                            <li><strong><?php _e('5축 가공 (5‑Axis Machining)', 'prmtec'); ?></strong> — <?php _e('X,Y,Z + 2회전축 동시 제어, 인체 곡면형/임플란트/항공부품 등 복잡 형상 제작', 'prmtec'); ?></li>
+                        </ul>
                     </div>
                 </div>
             </div>

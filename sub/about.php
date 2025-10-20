@@ -31,105 +31,6 @@ get_header();
         </div>
     </section>
 
-    <!-- Facilities 섹션 -->
-    <section id="facilities" class="about-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title"><?php _e('Our Facilities', 'prmtec'); ?></h2>
-            </div>
-
-            <div class="facilities-grid">
-                <div class="facility-card">
-                    <div class="facility-image placeholder-box">
-                        <span class="placeholder-label"><?php _e('Image', 'prmtec'); ?></span>
-                    </div>
-                    <div class="facility-info">
-                        <h3 class="facility-title">NTX 500 (5-Axis)</h3>
-                        <p class="facility-desc"><?php _e('Turn-mill Multitasking Machine', 'prmtec'); ?></p>
-                        <span class="facility-qty">1EA</span>
-                    </div>
-                </div>
-
-                <div class="facility-card">
-                    <div class="facility-image placeholder-box">
-                        <span class="placeholder-label"><?php _e('Image', 'prmtec'); ?></span>
-                    </div>
-                    <div class="facility-info">
-                        <h3 class="facility-title">SR-20RIV Type B</h3>
-                        <p class="facility-desc"><?php _e('Swiss-Type Automatic Lathe', 'prmtec'); ?></p>
-                        <span class="facility-qty">4EA</span>
-                    </div>
-                </div>
-
-                <div class="facility-card">
-                    <div class="facility-image placeholder-box">
-                        <span class="placeholder-label"><?php _e('Image', 'prmtec'); ?></span>
-                    </div>
-                    <div class="facility-info">
-                        <h3 class="facility-title">DT400</h3>
-                        <p class="facility-desc">Tapping Center</p>
-                        <span class="facility-qty">5EA</span>
-                    </div>
-                </div>
-
-                <div class="facility-card">
-                    <div class="facility-image placeholder-box">
-                        <span class="placeholder-label"><?php _e('Image', 'prmtec'); ?></span>
-                    </div>
-                    <div class="facility-info">
-                        <h3 class="facility-title">DT400DL</h3>
-                        <p class="facility-desc"><?php _e('Conventional Lathe', 'prmtec'); ?></p>
-                        <span class="facility-qty">1EA</span>
-                    </div>
-                </div>
-
-                <div class="facility-card">
-                    <div class="facility-image placeholder-box">
-                        <span class="placeholder-label"><?php _e('Image', 'prmtec'); ?></span>
-                    </div>
-                    <div class="facility-info">
-                        <h3 class="facility-title">B0325-II</h3>
-                        <p class="facility-desc"><?php _e('Swiss-Type Automatic Lathe', 'prmtec'); ?></p>
-                        <span class="facility-qty">2EA</span>
-                    </div>
-                </div>
-
-                <div class="facility-card">
-                    <div class="facility-image placeholder-box">
-                        <span class="placeholder-label"><?php _e('Image', 'prmtec'); ?></span>
-                    </div>
-                    <div class="facility-info">
-                        <h3 class="facility-title">DNM 5700</h3>
-                        <p class="facility-desc"><?php _e('Machining Center', 'prmtec'); ?></p>
-                        <span class="facility-qty">5EA</span>
-                    </div>
-                </div>
-
-                <div class="facility-card">
-                    <div class="facility-image placeholder-box">
-                        <span class="placeholder-label"><?php _e('Image', 'prmtec'); ?></span>
-                    </div>
-                    <div class="facility-info">
-                        <h3 class="facility-title">DNM 6700</h3>
-                        <p class="facility-desc"><?php _e('Machining Center', 'prmtec'); ?></p>
-                        <span class="facility-qty">3EA</span>
-                    </div>
-                </div>
-
-                <div class="facility-card">
-                    <div class="facility-image placeholder-box">
-                        <span class="placeholder-label"><?php _e('Image', 'prmtec'); ?></span>
-                    </div>
-                    <div class="facility-info">
-                        <h3 class="facility-title">DNM 750</h3>
-                        <p class="facility-desc"><?php _e('Machining Center', 'prmtec'); ?></p>
-                        <span class="facility-qty">1EA</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- 서브 네비게이션 -->
     <section class="sub-navigation">
         <div class="container">
@@ -211,6 +112,132 @@ get_header();
                         <div class="value-content">
                             <h4 class="value-title"><?php _e('Customer‑Centric Adaptability', 'prmtec'); ?></h4>
                             <p class="value-description"><?php _e('We deeply understand the diverse needs of our global clients. Our adaptive, creative, and flexible mindset ensures tailored precision solutions, significantly enhancing our clients\' competitiveness while staying closely aligned with their strategic vision.', 'prmtec'); ?></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities 섹션 -->
+    <section id="facilities" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title"><?php _e('Our Facilities', 'prmtec'); ?></h2>
+            </div>
+
+            <!-- 1공장 -->
+            <div class="factory-section">
+                <div class="factory-header">
+                    <h3 class="factory-title"><?php _e('Factory 1', 'prmtec'); ?></h3>
+                    <p class="factory-description"><?php _e('High-precision CNC machining dedicated factory', 'prmtec'); ?></p>
+                </div>
+                <div class="facilities-grid">
+                    <div class="facility-card">
+                        <div class="facility-image placeholder-box">
+                            <span class="placeholder-label"><?php _e('Image', 'prmtec'); ?></span>
+                        </div>
+                        <div class="facility-info">
+                            <h3 class="facility-title">NTX 500 (5-Axis)</h3>
+                            <p class="facility-desc"><?php _e('Turn-mill Multitasking Machine', 'prmtec'); ?></p>
+                            <span class="facility-qty">1EA</span>
+                        </div>
+                    </div>
+
+                    <div class="facility-card">
+                        <div class="facility-image placeholder-box">
+                            <span class="placeholder-label"><?php _e('Image', 'prmtec'); ?></span>
+                        </div>
+                        <div class="facility-info">
+                            <h3 class="facility-title">DNM 5700</h3>
+                            <p class="facility-desc"><?php _e('Machining Center', 'prmtec'); ?></p>
+                            <span class="facility-qty">5EA</span>
+                        </div>
+                    </div>
+
+                    <div class="facility-card">
+                        <div class="facility-image placeholder-box">
+                            <span class="placeholder-label"><?php _e('Image', 'prmtec'); ?></span>
+                        </div>
+                        <div class="facility-info">
+                            <h3 class="facility-title">DNM 6700</h3>
+                            <p class="facility-desc"><?php _e('Machining Center', 'prmtec'); ?></p>
+                            <span class="facility-qty">3EA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2공장 -->
+            <div class="factory-section">
+                <div class="factory-header">
+                    <h3 class="factory-title"><?php _e('Factory 2', 'prmtec'); ?></h3>
+                    <p class="factory-description"><?php _e('Swiss turn and special machining dedicated factory', 'prmtec'); ?></p>
+                </div>
+                <div class="facilities-grid">
+                    <div class="facility-card">
+                        <div class="facility-image placeholder-box">
+                            <span class="placeholder-label"><?php _e('Image', 'prmtec'); ?></span>
+                        </div>
+                        <div class="facility-info">
+                            <h3 class="facility-title">DNM 750</h3>
+                            <p class="facility-desc"><?php _e('Machining Center', 'prmtec'); ?></p>
+                            <span class="facility-qty">1EA</span>
+                        </div>
+                    </div>
+
+                    <div class="facility-card">
+                        <div class="facility-image placeholder-box">
+                            <span class="placeholder-label"><?php _e('Image', 'prmtec'); ?></span>
+                        </div>
+                        <div class="facility-info">
+                            <h3 class="facility-title">SR-20RIV Type B</h3>
+                            <p class="facility-desc"><?php _e('Swiss-Type Automatic Lathe', 'prmtec'); ?></p>
+                            <span class="facility-qty">4EA</span>
+                        </div>
+                    </div>
+
+                    <div class="facility-card">
+                        <div class="facility-image placeholder-box">
+                            <span class="placeholder-label"><?php _e('Image', 'prmtec'); ?></span>
+                        </div>
+                        <div class="facility-info">
+                            <h3 class="facility-title">B0325-II</h3>
+                            <p class="facility-desc"><?php _e('Swiss-Type Automatic Lathe', 'prmtec'); ?></p>
+                            <span class="facility-qty">2EA</span>
+                        </div>
+                    </div>
+
+                    <div class="facility-card">
+                        <div class="facility-image placeholder-box">
+                            <span class="placeholder-label"><?php _e('Image', 'prmtec'); ?></span>
+                        </div>
+                        <div class="facility-info">
+                            <h3 class="facility-title">DT400</h3>
+                            <p class="facility-desc">Tapping Center</p>
+                            <span class="facility-qty">5EA</span>
+                        </div>
+                    </div>
+
+                    <div class="facility-card">
+                        <div class="facility-image placeholder-box">
+                            <span class="placeholder-label"><?php _e('Image', 'prmtec'); ?></span>
+                        </div>
+                        <div class="facility-info">
+                            <h3 class="facility-title">DT400DL</h3>
+                            <p class="facility-desc"><?php _e('Conventional Lathe', 'prmtec'); ?></p>
+                            <span class="facility-qty">1EA</span>
+                        </div>
+                    </div>
+
+                    <div class="facility-card">
+                        <div class="facility-image placeholder-box">
+                            <span class="placeholder-label"><?php _e('Image', 'prmtec'); ?></span>
+                        </div>
+                        <div class="facility-info">
+                            <h3 class="facility-title"><?php _e('Additional Machine', 'prmtec'); ?></h3>
+                            <p class="facility-desc"><?php _e('Precision Machining Equipment', 'prmtec'); ?></p>
+                            <span class="facility-qty">1EA</span>
                         </div>
                     </div>
                 </div>

@@ -126,14 +126,16 @@
     <!-- 메인 콘텐츠 시작 -->
     <main class="main-content" id="main-content">
 
-        <!-- 히어로 슬라이드 배너 -->
-        <section class="hero-slider" id="hero">
-            <div class="slider-container">
-                <!-- 슬라이드 1 -->
-                <div class="slide active">
-                    <div class="slide-background slide-bg-1">
-                        <div class="slide-overlay"></div>
-                    </div>
+        <!-- 히어로 동영상 배너 -->
+        <section class="hero-video-slider" id="hero">
+            <div class="video-slider-container">
+                <!-- 동영상 슬라이드 1 -->
+                <div class="video-slide active">
+                    <video class="slide-video" autoplay muted loop playsinline>
+                        <source src="./img/banner1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="slide-overlay"></div>
                     <div class="container">
                         <div class="slide-content">
                             <h1 class="slide-title">
@@ -156,11 +158,13 @@
                     </div>
                 </div>
 
-                <!-- 슬라이드 2 -->
-                <div class="slide">
-                    <div class="slide-background slide-bg-2">
-                        <div class="slide-overlay"></div>
-                    </div>
+                <!-- 동영상 슬라이드 2 -->
+                <div class="video-slide">
+                    <video class="slide-video" autoplay muted loop playsinline>
+                        <source src="./img/banner2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="slide-overlay"></div>
                     <div class="container">
                         <div class="slide-content">
                             <h1 class="slide-title">
@@ -183,11 +187,13 @@
                     </div>
                 </div>
 
-                <!-- 슬라이드 3 -->
-                <div class="slide">
-                    <div class="slide-background slide-bg-3">
-                        <div class="slide-overlay"></div>
-                    </div>
+                <!-- 동영상 슬라이드 3 -->
+                <div class="video-slide">
+                    <video class="slide-video" autoplay muted loop playsinline>
+                        <source src="./img/banner3.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="slide-overlay"></div>
                     <div class="container">
                         <div class="slide-content">
                             <h1 class="slide-title">
@@ -213,19 +219,19 @@
 
             <!-- 슬라이드 네비게이션 -->
             <div class="slider-nav">
-                <button class="nav-btn prev-btn" onclick="changeSlide(-1)">
+                <button class="nav-btn prev-btn" onclick="previousVideoSlide()">
                     <i class="fas fa-chevron-left"></i>
                 </button>
-                <button class="nav-btn next-btn" onclick="changeSlide(1)">
+                <button class="nav-btn next-btn" onclick="nextVideoSlide()">
                     <i class="fas fa-chevron-right"></i>
                 </button>
             </div>
 
             <!-- 슬라이드 인디케이터 -->
             <div class="slider-indicators">
-                <span class="indicator active" onclick="currentSlide(1)"></span>
-                <span class="indicator" onclick="currentSlide(2)"></span>
-                <span class="indicator" onclick="currentSlide(3)"></span>
+                <span class="indicator active" onclick="currentVideoSlide(1)"></span>
+                <span class="indicator" onclick="currentVideoSlide(2)"></span>
+                <span class="indicator" onclick="currentVideoSlide(3)"></span>
             </div>
         </section>
 
@@ -262,7 +268,7 @@
                                 <i class="fas fa-info-circle"></i>
                                 회사 소개
                             </a>
-                            <a href="#" class="btn btn-secondary">
+                            <a href="./img/Primeditech_brochure.pdf" class="btn btn-brochure" download="Primeditech_brochure.pdf">
                                 <i class="fas fa-download"></i>
                                 브로셔 다운로드
                             </a>
@@ -520,6 +526,33 @@
             </div>
         </section>
 
+        <!-- 협력사 섹션 -->
+        <section class="partners-section" id="partners">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">협력사</h2>
+                    <p class="section-subtitle">
+                        신뢰할 수 있는 파트너들과 함께 성장하는 글로벌 네트워크
+                    </p>
+                </div>
+                
+                <div class="partners-grid">
+                    <a href="https://prilaser.com/" class="partner-logo" target="_blank">
+                        <img src="./img/Partner1.png" alt="Partner 1" class="partner-logo-img">
+                    </a>
+                    <a href="https://pricomma.com/" class="partner-logo" target="_blank">
+                        <img src="./img/Partner2.png" alt="Partner 2" class="partner-logo-img">
+                    </a>
+                    <a href="http://bslts.com/index2.php" class="partner-logo" target="_blank">
+                        <img src="./img/Partner3.png" alt="Partner 3" class="partner-logo-img">
+                    </a>
+                    <a href="https://wecorporation.kr/" class="partner-logo" target="_blank">
+                        <img src="./img/Partner4.png" alt="Partner 4" class="partner-logo-img">
+                    </a>
+                </div>
+            </div>
+        </section>
+
     </main>
     <!-- 메인 콘텐츠 끝 -->
 
@@ -653,49 +686,70 @@
         }
     });
 
-    // 슬라이드 배너 기능
-    let currentSlideIndex = 0;
-    const slides = document.querySelectorAll('.slide');
+    // 동영상 슬라이드 배너 기능
+    let currentVideoSlideIndex = 0;
+    const videoSlides = document.querySelectorAll('.video-slide');
     const indicators = document.querySelectorAll('.indicator');
-    const totalSlides = slides.length;
+    const totalVideoSlides = videoSlides.length;
     let slideInterval;
 
-    // 슬라이드 변경 함수
-    function showSlide(index) {
+    // 동영상 슬라이드 변경 함수
+    function showVideoSlide(index) {
         // 모든 슬라이드와 인디케이터에서 active 클래스 제거
-        slides.forEach(slide => slide.classList.remove('active'));
+        videoSlides.forEach(slide => slide.classList.remove('active'));
         indicators.forEach(indicator => indicator.classList.remove('active'));
         
         // 현재 슬라이드와 인디케이터에 active 클래스 추가
-        slides[index].classList.add('active');
+        videoSlides[index].classList.add('active');
         indicators[index].classList.add('active');
         
-        currentSlideIndex = index;
+        // 동영상 재생/일시정지
+        videoSlides.forEach((slide, i) => {
+            const video = slide.querySelector('video');
+            if (video) {
+                if (i === index) {
+                    video.play();
+                } else {
+                    video.pause();
+                }
+            }
+        });
+        
+        currentVideoSlideIndex = index;
     }
 
-    // 다음 슬라이드로 이동
-    function changeSlide(direction) {
-        let newIndex = currentSlideIndex + direction;
+    // 다음 동영상 슬라이드로 이동
+    function nextVideoSlide() {
+        let newIndex = currentVideoSlideIndex + 1;
         
-        if (newIndex >= totalSlides) {
+        if (newIndex >= totalVideoSlides) {
             newIndex = 0;
-        } else if (newIndex < 0) {
-            newIndex = totalSlides - 1;
         }
         
-        showSlide(newIndex);
+        showVideoSlide(newIndex);
+    }
+    
+    // 이전 동영상 슬라이드로 이동
+    function previousVideoSlide() {
+        let newIndex = currentVideoSlideIndex - 1;
+        
+        if (newIndex < 0) {
+            newIndex = totalVideoSlides - 1;
+        }
+        
+        showVideoSlide(newIndex);
     }
 
-    // 특정 슬라이드로 이동
-    function currentSlide(index) {
-        showSlide(index - 1);
+    // 특정 동영상 슬라이드로 이동
+    function currentVideoSlide(index) {
+        showVideoSlide(index - 1);
     }
 
     // 자동 슬라이드 시작
     function startAutoSlide() {
         slideInterval = setInterval(() => {
-            changeSlide(1);
-        }, 5000); // 5초마다 자동 변경
+            nextVideoSlide();
+        }, 4000); // 4초마다 자동 변경
     }
 
     // 자동 슬라이드 중지
@@ -703,17 +757,17 @@
         clearInterval(slideInterval);
     }
 
-    // 슬라이드 배너 초기화
+    // 동영상 슬라이드 배너 초기화
     document.addEventListener('DOMContentLoaded', function() {
         // 첫 번째 슬라이드 표시
-        if (slides.length > 0) {
-            showSlide(0);
+        if (videoSlides.length > 0) {
+            showVideoSlide(0);
             
             // 자동 슬라이드 시작
             startAutoSlide();
             
             // 마우스 호버 시 자동 슬라이드 중지
-            const slider = document.querySelector('.hero-slider');
+            const slider = document.querySelector('.hero-video-slider');
             if (slider) {
                 slider.addEventListener('mouseenter', stopAutoSlide);
                 slider.addEventListener('mouseleave', startAutoSlide);
@@ -738,10 +792,10 @@
                     if (Math.abs(diff) > swipeThreshold) {
                         if (diff > 0) {
                             // 왼쪽으로 스와이프 - 다음 슬라이드
-                            changeSlide(1);
+                            nextVideoSlide();
                         } else {
                             // 오른쪽으로 스와이프 - 이전 슬라이드
-                            changeSlide(-1);
+                            previousVideoSlide();
                         }
                     }
                 }
@@ -752,13 +806,13 @@
     // 키보드 네비게이션
     document.addEventListener('keydown', function(e) {
         if (e.key === 'ArrowLeft') {
-            changeSlide(-1);
+            previousVideoSlide();
             stopAutoSlide();
-            setTimeout(startAutoSlide, 10000); // 10초 후 자동 슬라이드 재시작
+            setTimeout(startAutoSlide, 8000); // 8초 후 자동 슬라이드 재시작
         } else if (e.key === 'ArrowRight') {
-            changeSlide(1);
+            nextVideoSlide();
             stopAutoSlide();
-            setTimeout(startAutoSlide, 10000); // 10초 후 자동 슬라이드 재시작
+            setTimeout(startAutoSlide, 8000); // 8초 후 자동 슬라이드 재시작
         }
     });
     </script>

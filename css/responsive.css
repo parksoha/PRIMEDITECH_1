@@ -26,6 +26,39 @@
     .contact-content {
         gap: 3rem;
     }
+    
+    /* 작업프로세스 섹션 태블릿 */
+    .process-flow {
+        gap: 12px;
+    }
+    
+    .process-step {
+        min-width: 140px;
+        max-width: 160px;
+        padding: 18px 12px;
+    }
+    
+    .step-title {
+        font-size: 1rem;
+        margin-bottom: 6px;
+    }
+    
+    .step-description {
+        font-size: 0.8rem;
+        line-height: 1.3;
+        margin-bottom: 8px;
+    }
+    
+    .step-note {
+        font-size: 0.75rem;
+    }
+    
+    .step-number {
+        width: 45px;
+        height: 45px;
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+    }
 }
 
 /* ==========================================================================
@@ -186,10 +219,10 @@
 }
 
 /* ==========================================================================
-   작은 모바일 스타일 (480px 이하)
+   작은 모바일 스타일 (468px 이하)
    ========================================================================== */
 
-@media (max-width: 480px) {
+@media (max-width: 468px) {
     .container {
         padding: 0 10px;
     }
@@ -295,6 +328,16 @@
         width: 35px;
         height: 35px;
         font-size: 0.9rem;
+    }
+    
+    /* 작업프로세스 섹션 작은 모바일 - main.css에서 처리 */
+    .process-section {
+        padding: 40px 0;
+    }
+    
+    .process-badge {
+        font-size: 1.1rem;
+        padding: 10px 16px;
     }
 }
 

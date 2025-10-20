@@ -3,6 +3,158 @@
    ========================================================================== */
 
 /* ==========================================================================
+   Process Table Styles
+   ========================================================================== */
+
+.process-table-container {
+    margin: 40px auto;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.process-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    font-size: 14px;
+    line-height: 1.6;
+    border: 1px solid #e9ecef;
+    table-layout: fixed;
+}
+
+.process-table thead {
+    background: #f8f9fa;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.process-table th {
+    padding: 18px 20px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+    color: #495057;
+    border: none;
+    vertical-align: middle;
+}
+
+.process-header {
+    width: 22%;
+    text-align: left;
+}
+
+.period-header {
+    width: 18%;
+    text-align: left;
+}
+
+.detail-header {
+    width: 60%;
+    text-align: left;
+}
+
+.process-table tbody tr {
+    border-bottom: 1px solid #e9ecef;
+}
+
+.process-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.process-table td {
+    padding: 18px 20px;
+    vertical-align: top;
+    border: none;
+    word-wrap: break-word;
+}
+
+.process-cell {
+    font-weight: 500;
+    color: #2c3e50;
+    text-align: left;
+    line-height: 1.5;
+}
+
+.period-cell {
+    font-weight: 500;
+    color: #28a745;
+    text-align: left;
+    vertical-align: top;
+}
+
+.detail-cell {
+    color: #6c757d;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.process-en,
+.period-en,
+.detail-en {
+    display: block;
+    font-size: 11px;
+    color: #adb5bd;
+    margin-top: 2px;
+    line-height: 1.3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .process-table-container {
+        margin: 30px 0;
+    }
+    
+    .process-table {
+        font-size: 13px;
+    }
+    
+    .process-table th,
+    .process-table td {
+        padding: 14px 16px;
+    }
+    
+    .process-table th {
+        font-size: 13px;
+    }
+    
+    .process-en,
+    .period-en,
+    .detail-en {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .process-table-container {
+        margin: 20px 0;
+    }
+    
+    .process-table {
+        font-size: 12px;
+    }
+    
+    .process-table th,
+    .process-table td {
+        padding: 12px 14px;
+    }
+    
+    .process-table th {
+        font-size: 12px;
+    }
+    
+    .process-header {
+        width: 25%;
+    }
+    
+    .period-header {
+        width: 20%;
+    }
+    
+    .detail-header {
+        width: 55%;
+    }
+}
+
+/* ==========================================================================
    Services Overview 섹션
    ========================================================================== */
 
@@ -963,8 +1115,8 @@
 
 .process-image .image-placeholder {
     width: 100%;
-    max-width: 400px;
-    height: 300px;
+    max-width: 480px;
+    height: 340px;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     border-radius: 12px;
     display: flex;
@@ -981,9 +1133,9 @@
 }
 
 .process-image .image-placeholder i {
-    font-size: 4rem;
+    font-size: 4.5rem;
     color: #009245;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 }
 
 .process-image .image-placeholder span {
