@@ -158,32 +158,35 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="process-cell">견적 및 상담<br><span class="process-en">Quotation & Consultation</span></td>
-                            <td class="period-cell">1~2일<br><span class="period-en">1-2 days</span></td>
-                            <td class="detail-cell">도면 검토 및 가공 가능성 분석, 정확한 견적서 제공<br><span class="detail-en">Drawing review and machining feasibility analysis, accurate quotation provision</span></td>
-                        </tr>
-                        <tr>
-                            <td class="process-cell">가공 계획 수립<br><span class="process-en">Machining Planning</span></td>
-                            <td class="period-cell">1~2일<br><span class="period-en">1-2 days</span></td>
-                            <td class="detail-cell">최적의 가공 경로 설계 및 공정 계획 수립<br><span class="detail-en">Optimal machining path design and process planning</span></td>
+                            <td class="process-cell">견적 및 상담<br><span class="process-en">Quotation and Consultation</span></td>
+                            <td class="period-cell">24시간 이내<br><span class="period-en">Within 24 hours</span></td>
+                            <td class="detail-cell">도면 검토 및 가공 가능성 분석<br><span class="detail-en">Drawing review and manufacturability analysis</span></td>
                         </tr>
                         <tr>
                             <td class="process-cell">CNC 가공<br><span class="process-en">CNC Machining</span></td>
-                            <td class="period-cell">3~10일<br><span class="period-en">3-10 days</span></td>
-                            <td class="detail-cell">5축 CNC 장비를 이용한 고정밀 가공 (±0.001mm 정밀도)<br><span class="detail-en">High-precision machining using 5-axis CNC equipment (±0.001mm accuracy)</span></td>
+                            <td class="period-cell">5일 (영업일기준)<br><span class="period-en">5 days (business days standard)</span></td>
+                            <td class="detail-cell">고정밀 CNC 장비를 이용한 정밀 가공<br><span class="detail-en">Precision machining using high-precision CNC equipment</span></td>
                         </tr>
                         <tr>
                             <td class="process-cell">표면처리<br><span class="process-en">Surface Treatment</span></td>
-                            <td class="period-cell">2~5일<br><span class="period-en">2-5 days</span></td>
-                            <td class="detail-cell">알루미나 블라스팅, 진공 열처리, 코팅 등 표면 처리<br><span class="detail-en">Alumina blasting, vacuum heat treatment, coating and other surface treatments</span></td>
+                            <td class="period-cell">2일 (영업일기준)<br><span class="period-en">2 days (business days standard)</span></td>
+                            <td class="detail-cell">다양한 표면 처리 기술 적용<br><span class="detail-en">Application of various surface treatment technologies</span></td>
                         </tr>
                         <tr>
-                            <td class="process-cell">품질검사 및 납품<br><span class="process-en">Quality Inspection & Delivery</span></td>
-                            <td class="period-cell">1~2일<br><span class="period-en">1-2 days</span></td>
-                            <td class="detail-cell">CMM을 이용한 정밀 치수 측정 및 품질 보고서 작성 후 안전 포장 납품<br><span class="detail-en">Precise dimensional measurement using CMM, quality report preparation and safe packaging delivery</span></td>
+                            <td class="process-cell">품질검사<br><span class="process-en">Quality Inspection</span></td>
+                            <td class="period-cell">1일 (영업일기준)<br><span class="period-en">1 day (business days standard)</span></td>
+                            <td class="detail-cell">CMM을 이용한 정밀 치수 측정<br><span class="detail-en">Precision dimensional measurement using CMM</span></td>
+                        </tr>
+                        <tr>
+                            <td class="process-cell">납품<br><span class="process-en">Delivery</span></td>
+                            <td class="period-cell">1일 (영업일기준)<br><span class="period-en">1 day (business days standard)</span></td>
+                            <td class="detail-cell">안전한 포장 및 정시 납품<br><span class="detail-en">Safe packaging and on-time delivery</span></td>
                         </tr>
                     </tbody>
                 </table>
+                <div class="process-disclaimer">
+                    <p>※ 제품 사양 및 작업 난이도에 따라 일정이 달라질 수 있습니다.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -837,6 +840,54 @@
                 if (cncSection) {
                     cncSection.classList.add('active');
                     cncSection.scrollIntoView({behavior: 'smooth'});
+                }
+            }, 200);
+        } else if (tab === 'surface-treatment' || hash === '#surface-treatment') {
+            // Surface Treatment 탭 활성화
+            setTimeout(() => {
+                // 모든 탭에서 active 클래스 제거
+                const allTabs = document.querySelectorAll('.sub-nav-link');
+                allTabs.forEach(tab => tab.classList.remove('active'));
+                
+                // 모든 섹션에서 active 클래스 제거
+                const allSections = document.querySelectorAll('.service-detail-section');
+                allSections.forEach(section => section.classList.remove('active'));
+                
+                // Surface Treatment 탭 활성화
+                const surfaceTab = document.querySelector('[data-section="surface-treatment"]');
+                if (surfaceTab) {
+                    surfaceTab.classList.add('active');
+                }
+                
+                // Surface Treatment 섹션 활성화
+                const surfaceSection = document.getElementById('surface-treatment');
+                if (surfaceSection) {
+                    surfaceSection.classList.add('active');
+                    surfaceSection.scrollIntoView({behavior: 'smooth'});
+                }
+            }, 200);
+        } else if (tab === 'quality-inspection' || hash === '#quality-inspection') {
+            // Quality Inspection 탭 활성화
+            setTimeout(() => {
+                // 모든 탭에서 active 클래스 제거
+                const allTabs = document.querySelectorAll('.sub-nav-link');
+                allTabs.forEach(tab => tab.classList.remove('active'));
+                
+                // 모든 섹션에서 active 클래스 제거
+                const allSections = document.querySelectorAll('.service-detail-section');
+                allSections.forEach(section => section.classList.remove('active'));
+                
+                // Quality Inspection 탭 활성화
+                const qualityTab = document.querySelector('[data-section="quality-inspection"]');
+                if (qualityTab) {
+                    qualityTab.classList.add('active');
+                }
+                
+                // Quality Inspection 섹션 활성화
+                const qualitySection = document.getElementById('quality-inspection');
+                if (qualitySection) {
+                    qualitySection.classList.add('active');
+                    qualitySection.scrollIntoView({behavior: 'smooth'});
                 }
             }, 200);
         }

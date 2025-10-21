@@ -16,7 +16,7 @@
     }
     
     .section-title {
-        font-size: 2.25rem;
+        font-size: 1.7rem;
     }
     
     .about-content {
@@ -122,7 +122,7 @@
     
     /* 섹션 타이틀 모바일 */
     .section-title {
-        font-size: 2rem;
+        font-size: 1.6rem;
     }
     
     .section-subtitle {
@@ -239,7 +239,7 @@
     
     /* 섹션 타이틀 작은 모바일 */
     .section-title {
-        font-size: 1.75rem;
+        font-size: 1.4rem;
     }
     
     /* 서비스 카드 작은 모바일 */
