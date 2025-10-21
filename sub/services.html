@@ -806,8 +806,40 @@
         }
     }
 
-    // 스크롤 투 탑 기능
+    // URL 파라미터로 탭 활성화
     document.addEventListener('DOMContentLoaded', function() {
+        // URL 파라미터 확인
+        const urlParams = new URLSearchParams(window.location.search);
+        const tab = urlParams.get('tab');
+        
+        // 해시 확인 (#cnc-processing)
+        const hash = window.location.hash;
+        
+        if (tab === 'cnc-processing' || hash === '#cnc-processing') {
+            // CNC Processing 탭 활성화
+            setTimeout(() => {
+                // 모든 탭에서 active 클래스 제거
+                const allTabs = document.querySelectorAll('.sub-nav-link');
+                allTabs.forEach(tab => tab.classList.remove('active'));
+                
+                // 모든 섹션에서 active 클래스 제거
+                const allSections = document.querySelectorAll('.service-detail-section');
+                allSections.forEach(section => section.classList.remove('active'));
+                
+                // CNC 탭 활성화
+                const cncTab = document.querySelector('[data-section="cnc-processing"]');
+                if (cncTab) {
+                    cncTab.classList.add('active');
+                }
+                
+                // CNC 섹션 활성화
+                const cncSection = document.getElementById('cnc-processing');
+                if (cncSection) {
+                    cncSection.classList.add('active');
+                    cncSection.scrollIntoView({behavior: 'smooth'});
+                }
+            }, 200);
+        }
         const scrollToTopBtn = document.getElementById('scroll-to-top');
         
         if (scrollToTopBtn) {

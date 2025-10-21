@@ -50,7 +50,8 @@
     }
     
     .step-note {
-        font-size: 0.75rem;
+        font-size: 0.9rem;
+        padding: 6px 12px;
     }
     
     .step-number {
@@ -336,8 +337,14 @@
     }
     
     .process-badge {
-        font-size: 1.1rem;
-        padding: 10px 16px;
+        font-size: 1.2rem;
+        padding: 14px 24px;
+        animation: badgePulse 2s ease-in-out infinite;
+    }
+    
+    .process-badge .avg-number {
+        font-size: 1.4rem;
+        animation: numberGlow 2s ease-in-out infinite alternate;
     }
 }
 

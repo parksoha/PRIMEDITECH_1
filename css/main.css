@@ -1500,14 +1500,6 @@ html, body {
     font-weight: bold;
 }
 
-/* ==========================================================================
-   작업 프로세스 섹션 (Home.css에서 추가)
-   ========================================================================== */
-
-.process-section {
-    padding: 100px 0;
-    background-color: #f8f9fa;
-}
 
 .process-flow {
     display: flex;
@@ -1561,12 +1553,63 @@ html, body {
 
 .process-badge {
     display: inline-block;
-    padding: 12px 20px;
+    padding: 16px 30px;
     border-radius: 999px;
-    background: #009245;
+    background: linear-gradient(135deg, #009245, #00b050);
     color: #fff;
-    font-weight: 700;
-    font-size: 1.25rem;
+    font-weight: 800;
+    font-size: 1.4rem;
+    box-shadow: 0 8px 25px rgba(0, 146, 69, 0.4);
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+    animation: badgePulse 2s ease-in-out infinite;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.process-badge::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+    animation: shimmer 3s infinite;
+}
+
+.process-badge .avg-number {
+    font-size: 1.6rem;
+    font-weight: 900;
+    animation: numberGlow 2s ease-in-out infinite alternate;
+    text-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+@keyframes badgePulse {
+    0%, 100% { 
+        transform: scale(1);
+        box-shadow: 0 8px 25px rgba(0, 146, 69, 0.4);
+    }
+    50% { 
+        transform: scale(1.05);
+        box-shadow: 0 12px 35px rgba(0, 146, 69, 0.6);
+    }
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+@keyframes numberGlow {
+    0% { 
+        text-shadow: 0 0 10px rgba(255,255,255,0.5);
+        transform: scale(1);
+    }
+    100% { 
+        text-shadow: 0 0 20px rgba(255,255,255,0.8), 0 0 30px rgba(255,255,255,0.4);
+        transform: scale(1.1);
+    }
 }
 
 .process-step {
@@ -1753,21 +1796,71 @@ html, body {
 
 /* small time note under each step */
 .step-note {
-    margin-top: 8px;
+    margin-top: 12px;
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    color: #666;
-    font-size: 0.95rem;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, #009245, #00b050);
+    padding: 8px 16px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 146, 69, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.step-note::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+    animation: shimmer 4s infinite;
 }
 
 .step-note i {
-    color: #009245;
+    color: #fff;
+    font-size: 1.1em;
+}
+
+.step-note span {
+    font-weight: 700;
 }
 
 .step-note .note-sub {
-    font-size: 0.85em; /* smaller than the main text */
-    color: #888;
+    font-size: 0.7em;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+}
+
+.step-note:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 146, 69, 0.4);
+}
+
+/* 프로세스 단계 링크 스타일 */
+.process-step-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.process-step-link:hover {
+    transform: translateY(-3px);
+}
+
+.process-step-link:hover .process-step {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 146, 69, 0.2);
+    border-color: #00b050;
 }
 
 .step-title {
