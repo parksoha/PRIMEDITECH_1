@@ -6,20 +6,94 @@
    Process Table Styles
    ========================================================================== */
 
+.average-time-highlight {
+    background: linear-gradient(135deg, #009245, #28a745);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    margin: 40px auto;
+    max-width: 1200px;
+    width: 100%;
+    box-shadow: 0 8px 25px rgba(0, 146, 69, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+
+.average-time-highlight h3 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin: 0 0 10px 0;
+    position: relative;
+    z-index: 2;
+}
+
+.highlight-time {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-size: 2.8rem;
+    font-weight: 900;
+    display: inline-block;
+    margin: 0 10px;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.average-time-highlight p {
+    font-size: 1.1rem;
+    margin: 0;
+    opacity: 0.9;
+    position: relative;
+    z-index: 2;
+    font-weight: 500;
+}
+
 .process-table-container {
     margin: 40px auto;
-    max-width: 100%;
+    max-width: 1200px;
+    width: 100%;
     overflow-x: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.process-footer {
+    margin-top: 40px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.process-disclaimer {
+    margin-top: 20px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.process-disclaimer p {
+    margin: 0;
+    color: #666;
+    font-size: 0.95rem;
+    font-style: italic;
 }
 
 .process-table {
     width: 100%;
+    max-width: 1200px;
     border-collapse: collapse;
     background: white;
     font-size: 14px;
     line-height: 1.6;
     border: 1px solid #e9ecef;
     table-layout: fixed;
+    margin: 0 auto;
 }
 
 .process-table thead {
@@ -99,6 +173,23 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+    .average-time-highlight {
+        padding: 25px 20px;
+        margin: 30px 0;
+    }
+    
+    .average-time-highlight h3 {
+        font-size: 1.8rem;
+    }
+    
+    .highlight-time {
+        font-size: 2.2rem;
+    }
+    
+    .average-time-highlight p {
+        font-size: 1rem;
+    }
+    
     .process-table-container {
         margin: 30px 0;
     }
@@ -124,6 +215,23 @@
 }
 
 @media (max-width: 480px) {
+    .average-time-highlight {
+        padding: 20px 15px;
+        margin: 25px 0;
+    }
+    
+    .average-time-highlight h3 {
+        font-size: 1.5rem;
+    }
+    
+    .highlight-time {
+        font-size: 1.8rem;
+    }
+    
+    .average-time-highlight p {
+        font-size: 0.9rem;
+    }
+    
     .process-table-container {
         margin: 20px 0;
     }

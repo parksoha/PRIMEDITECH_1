@@ -165,13 +165,9 @@
 .cert-gallery-name {
     text-align: center;
     margin-top: 8px;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     font-weight: 500;
     color: #666;
-    padding: 4px 8px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 4px;
-    backdrop-filter: blur(4px);
 }
 
 .cert-nav {
@@ -216,8 +212,9 @@
 
 .cert-gallery {
     display: none;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 16px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px 24px;
+    row-gap: 32px;
     margin-top: 28px; /* extra space from the button above */
 }
 
@@ -225,8 +222,10 @@
 
 .cert-gallery-image {
     width: 100%;
+    max-width: 280px;
     height: auto;
     display: block;
+    margin: 0 auto;
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.08);
@@ -237,10 +236,25 @@
     .cert-image { height: 360px; width: auto; }
 }
 
+@media (max-width: 992px) {
+    .cert-gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .cert-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 600px) {
     .cert-carousel { padding: 8px 16px; }
     .cert-slide { flex: 0 0 80%; }
     .cert-image { height: 280px; width: auto; }
+    .cert-gallery {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 
 /* ==========================================================================
