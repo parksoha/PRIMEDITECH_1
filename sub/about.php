@@ -55,9 +55,10 @@ get_header();
             
             <div class="about-intro-content">
                 <div class="about-intro-image">
-                    <div class="image-placeholder">
-                        <i class="fas fa-eye"></i>
-                    </div>
+                    <video class="about-video" autoplay muted loop playsinline>
+                        <source src="<?php echo get_template_directory_uri(); ?>/img/about.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
                 <div class="about-intro-text">
                     <h3><?php _e('About PRIMEDITECH', 'prmtec'); ?></h3>
@@ -268,6 +269,7 @@ get_header();
                         <div class="timeline-content left">
                             <h3><?php _e('Achieved Main-Biz Certification', 'prmtec'); ?></h3>
                             <p><?php _e('Pioneered domestic introduction of DMG MORI NTX500 machining center', 'prmtec'); ?></p>
+                            <p><?php _e('10.16 - Participated in KINTEX Metal Industry Exhibition', 'prmtec'); ?></p>
                         </div>
                         <div class="timeline-image right">
                             <div class="image-placeholder">
@@ -342,36 +344,51 @@ get_header();
                     <ul class="cert-track">
                         <li class="cert-slide">
                             <img src="<?php echo get_template_directory_uri(); ?>/img/certification1.png" alt="<?php _e('Certification 1', 'prmtec'); ?>" class="cert-image">
+                            <div class="cert-name">Certification1</div>
                         </li>
                         <li class="cert-slide">
                             <img src="<?php echo get_template_directory_uri(); ?>/img/certification2.png" alt="<?php _e('Certification 2', 'prmtec'); ?>" class="cert-image">
+                            <div class="cert-name">Certification2</div>
                         </li>
                         <li class="cert-slide">
                             <img src="<?php echo get_template_directory_uri(); ?>/img/certification3.png" alt="<?php _e('Certification 3', 'prmtec'); ?>" class="cert-image">
+                            <div class="cert-name">Certification3</div>
                         </li>
                         <li class="cert-slide">
                             <img src="<?php echo get_template_directory_uri(); ?>/img/certification4.png" alt="<?php _e('Certification 4', 'prmtec'); ?>" class="cert-image">
+                            <div class="cert-name">Certification4</div>
                         </li>
                         <li class="cert-slide">
                             <img src="<?php echo get_template_directory_uri(); ?>/img/certification5.png" alt="<?php _e('Certification 5', 'prmtec'); ?>" class="cert-image">
+                            <div class="cert-name">Certification5</div>
                         </li>
                         <li class="cert-slide">
                             <img src="<?php echo get_template_directory_uri(); ?>/img/certification6.png" alt="<?php _e('Certification 6', 'prmtec'); ?>" class="cert-image">
+                            <div class="cert-name">Certification6</div>
                         </li>
                         <li class="cert-slide">
                             <img src="<?php echo get_template_directory_uri(); ?>/img/certification7.png" alt="<?php _e('Certification 7', 'prmtec'); ?>" class="cert-image">
+                            <div class="cert-name">Certification7</div>
                         </li>
                         <li class="cert-slide">
                             <img src="<?php echo get_template_directory_uri(); ?>/img/certification8.png" alt="<?php _e('Certification 8', 'prmtec'); ?>" class="cert-image">
+                            <div class="cert-name">Certification8</div>
                         </li>
                         <li class="cert-slide">
                             <img src="<?php echo get_template_directory_uri(); ?>/img/certification9.png" alt="<?php _e('Certification 9', 'prmtec'); ?>" class="cert-image">
+                            <div class="cert-name">Certification9</div>
                         </li>
                         <li class="cert-slide">
                             <img src="<?php echo get_template_directory_uri(); ?>/img/certification10.png" alt="<?php _e('Certification 10', 'prmtec'); ?>" class="cert-image">
+                            <div class="cert-name">Certification10</div>
                         </li>
                         <li class="cert-slide">
                             <img src="<?php echo get_template_directory_uri(); ?>/img/certification11.png" alt="<?php _e('Certification 11', 'prmtec'); ?>" class="cert-image">
+                            <div class="cert-name">Certification11</div>
+                        </li>
+                        <li class="cert-slide">
+                            <img src="<?php echo get_template_directory_uri(); ?>/img/certification12.jpg" alt="<?php _e('Certification 12', 'prmtec'); ?>" class="cert-image">
+                            <div class="cert-name">Certification12</div>
                         </li>
                     </ul>
                 </div>
@@ -387,17 +404,54 @@ get_header();
 
             <!-- 전체 인증서 갤러리 (초기에 숨김) -->
             <div class="cert-gallery" id="cert-gallery" aria-hidden="true">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/certification1.png" alt="<?php _e('Certification 1', 'prmtec'); ?>" class="cert-gallery-image">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/certification2.png" alt="<?php _e('Certification 2', 'prmtec'); ?>" class="cert-gallery-image">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/certification3.png" alt="<?php _e('Certification 3', 'prmtec'); ?>" class="cert-gallery-image">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/certification4.png" alt="<?php _e('Certification 4', 'prmtec'); ?>" class="cert-gallery-image">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/certification5.png" alt="<?php _e('Certification 5', 'prmtec'); ?>" class="cert-gallery-image">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/certification6.png" alt="<?php _e('Certification 6', 'prmtec'); ?>" class="cert-gallery-image">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/certification7.png" alt="<?php _e('Certification 7', 'prmtec'); ?>" class="cert-gallery-image">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/certification8.png" alt="<?php _e('Certification 8', 'prmtec'); ?>" class="cert-gallery-image">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/certification9.png" alt="<?php _e('Certification 9', 'prmtec'); ?>" class="cert-gallery-image">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/certification10.png" alt="<?php _e('Certification 10', 'prmtec'); ?>" class="cert-gallery-image">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/certification11.png" alt="<?php _e('Certification 11', 'prmtec'); ?>" class="cert-gallery-image">
+                <div class="cert-gallery-item">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/certification1.png" alt="<?php _e('Certification 1', 'prmtec'); ?>" class="cert-gallery-image">
+                    <div class="cert-gallery-name">Certification1</div>
+                </div>
+                <div class="cert-gallery-item">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/certification2.png" alt="<?php _e('Certification 2', 'prmtec'); ?>" class="cert-gallery-image">
+                    <div class="cert-gallery-name">Certification2</div>
+                </div>
+                <div class="cert-gallery-item">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/certification3.png" alt="<?php _e('Certification 3', 'prmtec'); ?>" class="cert-gallery-image">
+                    <div class="cert-gallery-name">Certification3</div>
+                </div>
+                <div class="cert-gallery-item">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/certification4.png" alt="<?php _e('Certification 4', 'prmtec'); ?>" class="cert-gallery-image">
+                    <div class="cert-gallery-name">Certification4</div>
+                </div>
+                <div class="cert-gallery-item">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/certification5.png" alt="<?php _e('Certification 5', 'prmtec'); ?>" class="cert-gallery-image">
+                    <div class="cert-gallery-name">Certification5</div>
+                </div>
+                <div class="cert-gallery-item">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/certification6.png" alt="<?php _e('Certification 6', 'prmtec'); ?>" class="cert-gallery-image">
+                    <div class="cert-gallery-name">Certification6</div>
+                </div>
+                <div class="cert-gallery-item">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/certification7.png" alt="<?php _e('Certification 7', 'prmtec'); ?>" class="cert-gallery-image">
+                    <div class="cert-gallery-name">Certification7</div>
+                </div>
+                <div class="cert-gallery-item">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/certification8.png" alt="<?php _e('Certification 8', 'prmtec'); ?>" class="cert-gallery-image">
+                    <div class="cert-gallery-name">Certification8</div>
+                </div>
+                <div class="cert-gallery-item">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/certification9.png" alt="<?php _e('Certification 9', 'prmtec'); ?>" class="cert-gallery-image">
+                    <div class="cert-gallery-name">Certification9</div>
+                </div>
+                <div class="cert-gallery-item">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/certification10.png" alt="<?php _e('Certification 10', 'prmtec'); ?>" class="cert-gallery-image">
+                    <div class="cert-gallery-name">Certification10</div>
+                </div>
+                <div class="cert-gallery-item">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/certification11.png" alt="<?php _e('Certification 11', 'prmtec'); ?>" class="cert-gallery-image">
+                    <div class="cert-gallery-name">Certification11</div>
+                </div>
+                <div class="cert-gallery-item">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/certification12.jpg" alt="<?php _e('Certification 12', 'prmtec'); ?>" class="cert-gallery-image">
+                    <div class="cert-gallery-name">Certification12</div>
+                </div>
             </div>
             
             
@@ -608,6 +662,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 certNext.style.pointerEvents = currentSlide >= totalSlides - slidesToShow ? 'none' : 'auto';
             }
         }
+        
+        // 초기 상태 강제 설정
+        currentSlide = 0;
+        certTrack.style.transform = 'translateX(0%)';
         
         // 모두 보기 버튼
         if (certViewAll && certGallery) {

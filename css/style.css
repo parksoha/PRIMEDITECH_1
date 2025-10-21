@@ -503,6 +503,16 @@ body {
     box-shadow: 0 10px 30px rgba(0,0,0,0.12);
 }
 
+.about-page .about-intro-image .about-video {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    object-fit: cover;
+}
+
 .about-page .about-intro-text p {
     color: #666;
     line-height: 1.7;
@@ -518,6 +528,10 @@ body {
     .about-page .about-intro-image .image-placeholder {
         max-width: 100%;
         font-size: 48px;
+    }
+
+    .about-page .about-intro-image .about-video {
+        max-width: 100%;
     }
 }
 

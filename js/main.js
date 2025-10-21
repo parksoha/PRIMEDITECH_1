@@ -458,11 +458,20 @@
 
         if ($slides.length === 0) return;
 
+        // 기존 복제된 슬라이드 제거 (중복 초기화 방지)
+        $track.find('.cert-slide').each(function() {
+            if ($(this).hasClass('cloned')) {
+                $(this).remove();
+            }
+        });
+
         // 복제하여 무한 루프 느낌 제공
         const cloneCount = 2; // 앞뒤로 2개씩
         for (let i = 0; i < cloneCount; i++) {
-            $track.append($slides.eq(i).clone(true));
-            $track.prepend($slides.eq($slides.length - 1 - i).clone(true));
+            const $cloneAppend = $slides.eq(i).clone(true).addClass('cloned');
+            const $clonePrepend = $slides.eq($slides.length - 1 - i).clone(true).addClass('cloned');
+            $track.append($cloneAppend);
+            $track.prepend($clonePrepend);
         }
 
         const $allSlides = $track.find('.cert-slide');
@@ -572,6 +581,13 @@
 
         markImagesOnLoad();
         revealWhenReady();
+
+        // 초기 상태 강제 설정 (페이지 로드 시 캐러셀이 제대로 표시되도록)
+        setTimeout(function() {
+            currentIndex = cloneCount; // 첫 번째 실제 슬라이드로 설정
+            goTo(currentIndex, false);
+            updateCenterState();
+        }, 100);
 
         // 이벤트 바인딩
         $next.on('click', function(e) { e.preventDefault(); next(); });
