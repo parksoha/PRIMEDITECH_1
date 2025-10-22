@@ -54,6 +54,22 @@
         padding: 6px 12px;
     }
     
+    /* 프로세스 문의하기 섹션 모바일 */
+    .process-inquiry-section {
+        margin-top: 2.5rem;
+    }
+    
+    .inquiry-description {
+        font-size: 0.95rem;
+        margin-top: 0.8rem;
+        white-space: normal;
+    }
+    
+    .inquiry-buttons .btn {
+        padding: 10px 25px;
+        font-size: 0.95rem;
+    }
+    
     .step-number {
         width: 45px;
         height: 45px;
