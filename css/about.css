@@ -263,8 +263,8 @@
 
 .facilities-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4-column compact layout */
-    gap: 24px;
+    grid-template-columns: repeat(3, 1fr); /* 3-column layout for better balance */
+    gap: 28px;
 }
 
 .facility-card {
@@ -284,20 +284,22 @@
 
 .facility-image {
     width: 100%;
-    aspect-ratio: 1 / 1; /* enforce 1:1 square */
-    background: #f3f5f7;
+    height: 280px; /* increased height for better image display */
+    background: #ffffff; /* white background */
     display: grid; /* more robust centering */
     place-items: center;
     position: relative;
 }
 
-/* When real images are used later, keep them contained within the square */
-.facility-image img {
-    width: 100%;
-    height: 100%;
+/* When real images are used later, keep them contained within the area */
+.facility-image img,
+.facility-img {
+    max-width: 85%;
+    max-height: 85%;
     object-fit: contain;
-    object-position: center center; /* ensure centered inside square */
+    object-position: center center; /* ensure centered inside area */
     display: block;
+    border-radius: 0;
 }
 
 .placeholder-box {
@@ -319,20 +321,19 @@
 .placeholder-label { font-size: 0.9rem; }
 
 .facility-info {
-    padding: 14px 14px 16px; /* compact spacing */
-    display: grid;
-    grid-template-columns: 1fr auto; /* text + qty badge */
-    align-items: start;
-    row-gap: 6px;
+    padding: 20px 18px 22px; /* more spacing for better text visibility */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 120px; /* ensure adequate space for text */
 }
 
 .facility-title {
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 700;
     color: #222;
     margin: 0;
-    line-height: 1.35;
-    grid-column: 1 / -1; /* span full width */
+    line-height: 1.3;
     display: -webkit-box; /* 2-line clamp */
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -342,7 +343,9 @@
 .facility-desc {
     margin: 0;
     color: #667085;
-    font-size: 0.92rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    flex: 1;
 }
 
 .facility-qty {
@@ -353,12 +356,16 @@
     border-radius: 999px;
     padding: 4px 10px;
     font-size: 0.82rem;
-    grid-column: 2 / 3;
-    justify-self: end; /* right align */
+    align-self: flex-start;
+    margin-top: auto;
 }
 
 @media (max-width: 1200px) {
-    .facilities-grid { grid-template-columns: repeat(3, 1fr); }
+    .facilities-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .facilities-grid { grid-template-columns: repeat(1, 1fr); }
 }
 
 @media (max-width: 992px) {
@@ -370,68 +377,165 @@
 }
 
 /* ==========================================================================
-   Core Values 섹션
+   Core Values 섹션 - 카드 스타일
    ========================================================================== */
 
 .core-values {
     padding: 80px 0;
-    background-color: #f8f9fa;
     position: relative;
 }
 
-/* 상단 원형 요소들 */
-.values-visual {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 60px;
-    position: relative;
-    height: 250px;
+/* Core Values 그리드 */
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.value-circle {
+/* 각 가치 카드 */
+.value-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.value-card::before {
+    content: '';
     position: absolute;
-    width: 160px;
-    height: 160px;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    border-radius: 16px 16px 0 0;
+}
+
+.value-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
+}
+
+/* 각 카드의 색상 테마 */
+.excellence-card::before {
+    background: linear-gradient(90deg, #f39c12, #e67e22);
+}
+
+.innovation-card::before {
+    background: linear-gradient(90deg, #3498db, #2980b9);
+}
+
+.agility-card::before {
+    background: linear-gradient(90deg, #27ae60, #2ecc71);
+}
+
+/* 카드 아이콘 */
+.card-icon {
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 3px solid #ffffff;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-    cursor: pointer;
+    margin: 0 auto 25px;
+    font-size: 2.5rem;
     transition: all 0.3s ease;
 }
 
-
-.circle-text {
-    font-size: 1.1rem;
-    font-weight: 700;
+.excellence-card .card-icon {
+    background: linear-gradient(135deg, #f39c12, #e67e22);
     color: #ffffff;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.innovation-card .card-icon {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: #ffffff;
+}
+
+.agility-card .card-icon {
+    background: linear-gradient(135deg, #27ae60, #2ecc71);
+    color: #ffffff;
+}
+
+.value-card:hover .card-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* 카드 내용 */
+.card-content {
     text-align: center;
 }
 
-/* Innovation Circle - 상단 중앙, 파란색 계열 */
-.innovation-circle {
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #3b82f6 100%);
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    line-height: 1.3;
 }
 
-/* Excellence Circle - 하단 좌측, 금색 계열 */
-.excellence-circle {
-    bottom: 20px;
-    left: 25%;
-    background: linear-gradient(135deg, #ffd700 0%, #ffed4a 50%, #fbbf24 100%);
+.card-description {
+    font-size: 1rem;
+    color: #7f8c8d;
+    line-height: 1.6;
+    margin: 0;
 }
 
-/* Agility Circle - 하단 우측, 주황/빨강 계열 */
-.agility-circle {
-    bottom: 20px;
-    right: 25%;
-    background: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #ff4500 100%);
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .values-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 15px;
+    }
+    
+    .value-card {
+        padding: 30px 20px;
+    }
+    
+    .card-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 2rem;
+    }
+    
+    .card-title {
+        font-size: 1.3rem;
+    }
+    
+    .card-description {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .core-values {
+        padding: 60px 0;
+    }
+    
+    .value-card {
+        padding: 25px 15px;
+    }
+    
+    .card-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.8rem;
+    }
+    
+    .card-title {
+        font-size: 1.2rem;
+    }
+    
+    .card-description {
+        font-size: 0.85rem;
+    }
 }
 
 /* 하단 번호 리스트 */
@@ -439,40 +543,41 @@
     max-width: 1000px;
     margin: 0 auto;
     position: relative;
+    padding: 80px 20px 0;
 }
 
-
-.value-item {
+.values-list .value-item {
     display: flex;
     align-items: flex-start;
     gap: 30px;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     position: relative;
     z-index: 1;
 }
 
 .value-number {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 700;
-    color: #009245;
-    min-width: 60px;
+    color: #27ae60;
+    min-width: 80px;
     line-height: 1;
     flex-shrink: 0;
 }
 
-.value-content {
+.values-list .value-content {
     flex: 1;
+    max-width: 800px;
 }
 
-.value-title {
-    font-size: 1.5rem;
+.values-list .value-title {
+    font-size: 1.4rem;
     font-weight: 700;
     color: #333333;
     margin-bottom: 15px;
     line-height: 1.3;
 }
 
-.value-description {
+.values-list .value-description {
     font-size: 1rem;
     color: #666666;
     line-height: 1.6;
@@ -580,7 +685,10 @@
 .timeline-image {
     flex: 1;
     max-width: 45%;
-    padding: 20px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .timeline-image .image-placeholder {
@@ -610,38 +718,33 @@
     color: #666;
 }
 
+.timeline-logo {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    display: block;
+    margin: 0 auto 0 0;
+    border-radius: 8px;
+    background: transparent;
+    padding: 15px;
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-history-img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
 /* 반응형 디자인 */
 @media (max-width: 768px) {
     .core-values {
         padding: 60px 0;
-    }
-    
-    .values-visual {
-        height: 200px;
-        margin-bottom: 40px;
-    }
-    
-    .value-circle {
-        width: 120px;
-        height: 120px;
-    }
-    
-    .circle-text {
-        font-size: 1rem;
-    }
-    
-    .innovation-circle {
-        top: 10px;
-    }
-    
-    .excellence-circle {
-        bottom: 10px;
-        left: 15%;
-    }
-    
-    .agility-circle {
-        bottom: 10px;
-        right: 15%;
     }
     
     .values-list {
@@ -661,13 +764,6 @@
     
     .value-title {
         font-size: 1.3rem;
-    }
-    
-    .values-list::before {
-        width: 200px;
-        height: 200px;
-        top: -30px;
-        right: -30px;
     }
     
     /* Timeline 모바일 스타일 */
@@ -700,15 +796,6 @@
 }
 
 @media (max-width: 480px) {
-    .value-circle {
-        width: 100px;
-        height: 100px;
-    }
-    
-    .circle-text {
-        font-size: 0.9rem;
-    }
-    
     .value-number {
         font-size: 1.8rem;
     }

@@ -612,6 +612,540 @@
 }
 
 /* ==========================================================================
+   Pre/Post-treatment 섹션
+   ========================================================================== */
+
+.treatment-selection {
+    margin: 60px 0;
+    text-align: center;
+}
+
+.treatment-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.treatment-button {
+    flex: 0 0 300px;
+    height: 300px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.treatment-button-bg {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 2px solid #dee2e6;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.treatment-button:hover .treatment-button-bg {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    border-color: #009245;
+}
+
+.treatment-button.active .treatment-button-bg {
+    background: linear-gradient(135deg, #009245, #28a745);
+    border-color: #009245;
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 146, 69, 0.3);
+}
+
+.treatment-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(0, 146, 69, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+}
+
+.treatment-button.active .treatment-icon {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.treatment-icon i {
+    font-size: 2.5rem;
+    color: #009245;
+    transition: all 0.3s ease;
+}
+
+.treatment-button.active .treatment-icon i {
+    color: white;
+}
+
+.treatment-button h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.treatment-button.active h3 {
+    color: white;
+}
+
+.treatment-button p {
+    font-size: 1.1rem;
+    color: #666;
+    margin: 0;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.treatment-button.active p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.treatment-content {
+    display: none;
+    margin-top: 60px;
+}
+
+.treatment-content.active {
+    display: block;
+}
+
+/* Pre/Post-treatment 반응형 디자인 */
+@media (max-width: 768px) {
+    .treatment-buttons {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+    
+    .treatment-button {
+        flex: none;
+        width: 100%;
+        max-width: 350px;
+        height: 250px;
+    }
+    
+    .treatment-button-bg {
+        padding: 30px 20px;
+    }
+    
+    .treatment-icon {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 20px;
+    }
+    
+    .treatment-icon i {
+        font-size: 2rem;
+    }
+    
+    .treatment-button h3 {
+        font-size: 1.5rem;
+    }
+    
+    .treatment-button p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .treatment-button {
+        height: 200px;
+        max-width: 300px;
+    }
+    
+    .treatment-button-bg {
+        padding: 25px 15px;
+    }
+    
+    .treatment-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 15px;
+    }
+    
+    .treatment-icon i {
+        font-size: 1.8rem;
+    }
+    
+    .treatment-button h3 {
+        font-size: 1.3rem;
+    }
+    
+    .treatment-button p {
+        font-size: 0.9rem;
+    }
+}
+
+/* 열처리 공정 디자인 */
+.heat-treatment-process {
+    margin: 60px 0;
+    text-align: center;
+}
+
+.process-header h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.process-header p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.heat-treatment-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.heat-treatment-category {
+    background: white;
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 2px solid #f0f0f0;
+    transition: all 0.3s ease;
+}
+
+.heat-treatment-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    border-color: #009245;
+}
+
+.category-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.category-header h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 5px 0;
+}
+
+.category-header p {
+    font-size: 1rem;
+    color: #666;
+    margin: 0;
+    font-weight: 500;
+}
+
+.process-methods {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.method-item {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid #e9ecef;
+    text-decoration: none;
+    color: inherit;
+}
+
+.method-item:hover {
+    background: #e9ecef;
+    transform: translateY(-3px);
+    border-color: #009245;
+    text-decoration: none;
+    color: inherit;
+}
+
+.method-item h5 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 5px 0;
+    line-height: 1.2;
+}
+
+.method-item p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.method-english {
+    font-size: 0.85rem !important;
+    color: #888 !important;
+    margin: 0 !important;
+    font-weight: 400 !important;
+    line-height: 1.1 !important;
+    font-style: italic;
+}
+
+/* 열처리 공정 반응형 디자인 */
+@media (max-width: 768px) {
+    .heat-treatment-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .heat-treatment-category {
+        padding: 30px 20px;
+    }
+    
+    .category-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .category-icon {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    
+    .method-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 15px;
+    }
+    
+    .method-icon {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .heat-treatment-category {
+        padding: 25px 15px;
+    }
+    
+    .category-header h4 {
+        font-size: 1.3rem;
+    }
+    
+    .method-item h5 {
+        font-size: 1rem;
+    }
+    
+    .method-item p {
+        font-size: 0.85rem;
+    }
+}
+
+/* 열처리 상세 공정 설명 */
+.heat-treatment-details {
+    margin-top: 60px;
+}
+
+.heat-process-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px;
+    background: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.heat-process-item:hover {
+    border-color: #009245;
+    box-shadow: 0 2px 10px rgba(0, 146, 69, 0.1);
+}
+
+.heat-process-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.heat-process-item .process-image-section {
+    flex: 0 0 40%;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    background: #f8f9fa;
+    margin: 15px;
+    border-radius: 8px;
+}
+
+.heat-process-item .process-image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid #e5e5e5;
+}
+
+.heat-process-item:nth-child(even) .process-image-placeholder {
+    border-right: none;
+    border-left: 1px solid #e5e5e5;
+}
+
+.heat-process-item .process-image-placeholder i {
+    font-size: 3.5rem;
+    color: #009245;
+}
+
+.heat-process-item .process-text-section {
+    flex: 0 0 60%;
+    padding: 40px 50px;
+    position: relative;
+}
+
+.heat-process-item .process-category {
+    display: inline-block;
+    background: #009245;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 3px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.heat-process-content h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.heat-process-content p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.heat-process-content p:last-of-type {
+    margin-bottom: 0;
+}
+
+/* 열처리 상세 공정 반응형 디자인 */
+@media (max-width: 768px) {
+    .heat-process-item {
+        flex-direction: column !important;
+        margin-bottom: 40px;
+    }
+    
+    .heat-process-item:nth-child(even) {
+        flex-direction: column !important;
+    }
+    
+    .heat-process-item .process-image-section {
+        flex: none;
+        height: 220px;
+        width: calc(100% - 20px);
+        margin: 10px;
+    }
+    
+    .heat-process-item .process-text-section {
+        flex: none;
+        padding: 30px 35px;
+        width: calc(100% - 20px);
+        margin: 10px;
+    }
+    
+    .heat-process-item .process-image-placeholder {
+        border-right: none !important;
+        border-left: none !important;
+        border-bottom: 1px solid #e5e5e5;
+        margin: 15px;
+        padding: 15px;
+    }
+    
+    .heat-process-content h3 {
+        font-size: 1.3rem;
+    }
+    
+    .heat-process-content p {
+        font-size: 0.9rem;
+    }
+    
+    .heat-process-item .process-image-placeholder i {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .heat-process-item {
+        margin-bottom: 35px;
+        border-radius: 6px;
+    }
+    
+    .heat-process-item .process-image-section {
+        height: 180px;
+        width: calc(100% - 16px);
+        margin: 8px;
+    }
+    
+    .heat-process-item .process-text-section {
+        padding: 25px 30px;
+        width: calc(100% - 16px);
+        margin: 8px;
+    }
+    
+    .heat-process-content h3 {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+    
+    .heat-process-content p {
+        font-size: 0.85rem;
+        margin-bottom: 12px;
+    }
+    
+    .heat-process-item .process-category {
+        font-size: 0.8rem;
+        padding: 5px 12px;
+        margin-bottom: 15px;
+    }
+    
+    .heat-process-item .process-image-placeholder i {
+        font-size: 2.5rem;
+    }
+}
+
+/* ==========================================================================
    Surface Treatment 섹션
    ========================================================================== */
 
@@ -1184,6 +1718,285 @@
     }
     
     .step-arrow i { padding: 6px; font-size: 0.95rem; }
+}
+
+/* ==========================================================================
+   DFM Support Section
+   ========================================================================== */
+
+.dfm-process-flow {
+    margin: 60px 0;
+    text-align: center;
+}
+
+.dfm-process-flow h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 50px;
+}
+
+.dfm-steps {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.dfm-step {
+    background: white;
+    border-radius: 15px;
+    padding: 30px 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    flex: 0 0 200px;
+    min-width: 200px;
+    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0;
+}
+
+.dfm-step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.dfm-step .step-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #009245, #28a745);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: white;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 146, 69, 0.3);
+    transition: all 0.3s ease;
+}
+
+.dfm-step:hover .step-icon {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 146, 69, 0.4);
+}
+
+.dfm-step h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.dfm-step p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.dfm-arrow {
+    font-size: 1.5rem;
+    color: #009245;
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.dfm-support-areas {
+    margin: 80px 0;
+}
+
+.dfm-support-areas h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.dfm-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.dfm-item {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0;
+}
+
+.dfm-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.dfm-item .dfm-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #009245, #28a745);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    color: white;
+    font-size: 2rem;
+    transition: all 0.3s ease;
+}
+
+.dfm-item:hover .dfm-icon {
+    transform: scale(1.1);
+}
+
+.dfm-item h4 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.dfm-item p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* DFM Support 반응형 디자인 */
+@media (max-width: 1200px) {
+    .dfm-steps {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    .dfm-step {
+        flex: 0 0 calc(45% - 10px);
+        min-width: 250px;
+    }
+    
+    .dfm-arrow {
+        font-size: 1.3rem;
+        margin: 10px 5px;
+    }
+    
+    .dfm-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .dfm-process-flow {
+        margin: 40px 0;
+    }
+    
+    .dfm-process-flow h3 {
+        font-size: 1.6rem;
+        margin-bottom: 30px;
+    }
+    
+    .dfm-steps {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .dfm-step {
+        flex: none;
+        width: 100%;
+        max-width: 300px;
+        min-width: auto;
+    }
+    
+    .dfm-arrow {
+        transform: rotate(90deg);
+        margin: 10px 0;
+    }
+    
+    .dfm-support-areas {
+        margin: 60px 0;
+    }
+    
+    .dfm-support-areas h3 {
+        font-size: 1.6rem;
+        margin-bottom: 30px;
+    }
+    
+    .dfm-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .dfm-item {
+        padding: 30px 20px;
+    }
+    
+    .dfm-item .dfm-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+    
+    .dfm-item h4 {
+        font-size: 1.2rem;
+    }
+    
+    .dfm-item p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .dfm-step {
+        padding: 25px 15px;
+    }
+    
+    .dfm-step .step-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+    
+    .dfm-step h4 {
+        font-size: 1.1rem;
+    }
+    
+    .dfm-step p {
+        font-size: 0.85rem;
+    }
+    
+    .dfm-item {
+        padding: 25px 15px;
+    }
+    
+    .dfm-item .dfm-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+    
+    .dfm-item h4 {
+        font-size: 1.1rem;
+    }
+    
+    .dfm-item p {
+        font-size: 0.9rem;
+    }
 }
 
 /* ==========================================================================
