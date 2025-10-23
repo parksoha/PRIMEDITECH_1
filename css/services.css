@@ -875,7 +875,7 @@
 .method-item {
     background: #f8f9fa;
     border-radius: 15px;
-    padding: 25px 20px;
+    padding: 16px 10px !important;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -884,10 +884,30 @@
     border: 1px solid #e9ecef;
     text-decoration: none;
     color: inherit;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+}
+
+.method-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.method-item:hover::before {
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .method-item:hover {
-    background: #e9ecef;
     transform: translateY(-3px);
     border-color: #009245;
     text-decoration: none;
@@ -895,28 +915,37 @@
 }
 
 .method-item h5 {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
-    color: #333;
-    margin: 0 0 5px 0;
+    color: white;
+    margin: 0 0 3px 0;
     line-height: 1.2;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 2;
 }
 
 .method-item p {
-    font-size: 0.9rem;
-    color: #666;
+    font-size: 0.8rem;
+    color: white;
     margin: 0;
     font-weight: 500;
     line-height: 1.2;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 2;
 }
 
 .method-english {
     font-size: 0.85rem !important;
-    color: #888 !important;
+    color: white !important;
     margin: 0 !important;
     font-weight: 400 !important;
     line-height: 1.1 !important;
     font-style: italic;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) !important;
+    position: relative;
+    z-index: 2;
 }
 
 /* 열처리 공정 반응형 디자인 */
@@ -943,7 +972,7 @@
     .method-item {
         flex-direction: column;
         text-align: center;
-        padding: 20px 15px;
+        padding: 16px 12px;
     }
     
     .method-icon {
@@ -962,17 +991,22 @@
     }
     
     .method-item h5 {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
     
     .method-item p {
-        font-size: 0.85rem;
+        font-size: 0.75rem;
     }
 }
 
 /* 열처리 상세 공정 설명 */
 .heat-treatment-details {
     margin-top: 60px;
+}
+
+/* 열처리 섹션의 method-item만 더 작게 */
+#heat-treatment-content .method-item {
+    padding: 18px 12px !important;
 }
 
 .heat-process-item {
