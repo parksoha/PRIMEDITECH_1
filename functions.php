@@ -393,6 +393,32 @@ function prmtec_admin_page() {
 }
 
 /**
+ * 페이지별 body 클래스 추가
+ */
+function prmtec_add_page_body_class($classes) {
+    if (is_page('about') || is_page_template('sub/about.php')) {
+        $classes[] = 'about-page';
+    }
+    if (is_page('services') || is_page_template('sub/services.php')) {
+        $classes[] = 'services-page';
+    }
+    if (is_page('industries') || is_page_template('sub/industries.php')) {
+        $classes[] = 'industries-page';
+    }
+    if (is_page('contact') || is_page_template('sub/contact.php')) {
+        $classes[] = 'contact-page';
+    }
+    if (is_page('facility') || is_page_template('sub/facility.php')) {
+        $classes[] = 'facility-page';
+    }
+    if (is_page('products') || is_page_template('sub/products.php')) {
+        $classes[] = 'products-page';
+    }
+    return $classes;
+}
+add_filter('body_class', 'prmtec_add_page_body_class');
+
+/**
  * 커스터마이저 설정
  */
 function prmtec_customize_register($wp_customize) {

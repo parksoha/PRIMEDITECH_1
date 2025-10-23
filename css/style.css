@@ -244,13 +244,89 @@ body {
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><defs><pattern id="medical" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="1200" height="400" fill="url(%23medical)"/></svg>') center/cover;
 }
 
+/* 페이지별 서브 배너 이미지 */
+.about-page .hero-background {
+    background: url('../img/subbanner1.png') center/cover;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.services-page .hero-background {
+    background: url('../img/subbanner2.png') center/cover;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.industries-page .hero-background {
+    background: url('../img/subbanner3.png') center/cover;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.contact-page .hero-background {
+    background: url('../img/subbanner1.png') center/cover;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.facility-page .hero-background {
+    background: url('../img/subbanner2.png') center/cover;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.products-page .hero-background {
+    background: url('../img/subbanner3.png') center/cover;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/* 서브 배너 이미지 최적화 */
+.hero-background {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    image-rendering: optimize-contrast;
+    -ms-interpolation-mode: nearest-neighbor;
+}
+
+/* 반응형 이미지 조정 */
+@media (max-width: 768px) {
+    .hero-background {
+        background-size: cover;
+        background-position: center center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-background {
+        background-size: cover;
+        background-position: center center;
+    }
+}
+
 .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 146, 69, 0.9);
+    background: rgba(0, 146, 69, 0.7);
+}
+
+/* 서브 배너 이미지가 있는 페이지의 오버레이 조정 */
+.about-page .hero-overlay,
+.services-page .hero-overlay,
+.industries-page .hero-overlay,
+.contact-page .hero-overlay,
+.facility-page .hero-overlay,
+.products-page .hero-overlay {
+    background: rgba(0, 146, 69, 0.5);
 }
 
 .hero-banner .hero-content {
@@ -483,7 +559,7 @@ body {
 /* About 소개 상단 레이아웃: 좌측 아이콘/이미지, 우측 텍스트 */
 .about-page .about-intro-content {
     display: grid;
-    grid-template-columns: 1fr 1.4fr;
+    grid-template-columns: 1.4fr 1fr;
     gap: 16px;
     align-items: center;
 }
@@ -505,9 +581,9 @@ body {
 
 .about-page .about-intro-image .about-video {
     width: 100%;
-    max-width: 600px;
+    max-width: 800px;
     height: auto;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 16 / 9;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.12);
     object-fit: cover;

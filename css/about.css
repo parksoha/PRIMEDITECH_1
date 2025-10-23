@@ -74,8 +74,8 @@
     max-width: 100%;
     margin: 0 auto 40px;
     padding: 8px 12px; /* use more of the horizontal space */
-    opacity: 0; /* prevent awkward first paint */
-    transform: translateY(6px);
+    opacity: 1; /* always visible */
+    transform: translateY(0);
     transition: opacity 260ms ease, transform 260ms ease;
 }
 
@@ -254,6 +254,171 @@
     .cert-image { height: 280px; width: auto; }
     .cert-gallery {
         grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* ==========================================================================
+   Directions 섹션
+   ========================================================================== */
+
+.directions-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.directions-info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.address-card, .transport-info {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+}
+
+.address-card h3, .transport-info h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #009245;
+}
+
+.address-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.address-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+}
+
+.address-item i {
+    color: #009245;
+    font-size: 1.2rem;
+    width: 20px;
+    text-align: center;
+}
+
+.address-item span {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+.transport-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.transport-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+.transport-item:hover {
+    background: #e9ecef;
+}
+
+.transport-icon {
+    width: 50px;
+    height: 50px;
+    background: #009245;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+}
+
+.transport-content h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.transport-content p {
+    font-size: 0.95rem;
+    color: #666;
+    margin: 0;
+}
+
+.map-container {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+.map-placeholder {
+    height: 400px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #009245;
+    border: 2px dashed #dee2e6;
+}
+
+.map-placeholder i {
+    font-size: 4rem;
+    margin-bottom: 15px;
+    opacity: 0.7;
+}
+
+.map-placeholder span {
+    font-size: 1.2rem;
+    font-weight: 600;
+    opacity: 0.8;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .directions-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .address-card, .transport-info {
+        padding: 20px;
+    }
+    
+    .map-placeholder {
+        height: 300px;
+    }
+    
+    .map-placeholder i {
+        font-size: 3rem;
+    }
+    
+    .transport-item {
+        padding: 12px;
+    }
+    
+    .transport-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
     }
 }
 

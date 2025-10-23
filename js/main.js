@@ -547,36 +547,37 @@
         }
 
         function revealWhenReady() {
-            // 이미지가 로드되지 않아도 슬라이드 컨테이너 폭이 0이면 지연
-            slideWidth = $allSlides.eq(0).outerWidth(true);
-            if (slideWidth === 0 || !isVisible($carousel)) {
-                // 섹션 활성화 감지 후 재시도
-                const section = document.getElementById('certification');
-                if (section) {
-                    const mo = new MutationObserver(() => {
-                        if (isVisible($carousel)) {
-                            mo.disconnect();
-                            updateSizes();
+            // 강제로 초기화 시도
+            setTimeout(function() {
+                slideWidth = $allSlides.eq(0).outerWidth(true);
+                if (slideWidth > 0) {
+                    goTo(currentIndex, false);
+                    updateCenterState();
+                    $carousel.addClass('is-ready');
+                } else {
+                    // 폭이 0이면 DOM이 준비될 때까지 대기
+                    const checkReady = setInterval(function() {
+                        slideWidth = $allSlides.eq(0).outerWidth(true);
+                        if (slideWidth > 0) {
+                            clearInterval(checkReady);
+                            goTo(currentIndex, false);
+                            updateCenterState();
                             $carousel.addClass('is-ready');
                         }
-                    });
-                    mo.observe(section, { attributes: true, attributeFilter: ['class'] });
+                    }, 100);
+                    
+                    // 최대 5초 후 강제 초기화
+                    setTimeout(function() {
+                        clearInterval(checkReady);
+                        if (slideWidth === 0) {
+                            slideWidth = 300; // 기본값 설정
+                        }
+                        goTo(currentIndex, false);
+                        updateCenterState();
+                        $carousel.addClass('is-ready');
+                    }, 5000);
                 }
-                // 윈도우 로드 이후에도 재계산
-                $(window).on('load', function() {
-                    updateSizes();
-                    $carousel.addClass('is-ready');
-                });
-                // 이미지 로드 시 재계산 및 점진적 표시
-                $carousel.find('img').on('load', Utils.debounce(function() {
-                    updateSizes();
-                    $carousel.addClass('is-ready');
-                }, 50));
-            } else {
-                goTo(currentIndex, false);
-                updateCenterState();
-                $carousel.addClass('is-ready');
-            }
+            }, 200);
         }
 
         markImagesOnLoad();
@@ -585,8 +586,13 @@
         // 초기 상태 강제 설정 (페이지 로드 시 캐러셀이 제대로 표시되도록)
         setTimeout(function() {
             currentIndex = cloneCount; // 첫 번째 실제 슬라이드로 설정
+            slideWidth = $allSlides.eq(0).outerWidth(true);
+            if (slideWidth === 0) {
+                slideWidth = 300; // 기본값 설정
+            }
             goTo(currentIndex, false);
             updateCenterState();
+            $carousel.addClass('is-ready');
         }, 100);
 
         // 이벤트 바인딩

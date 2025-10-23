@@ -636,12 +636,15 @@
     border-radius: 20px;
     overflow: hidden;
     position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .treatment-button-bg {
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    background: linear-gradient(135deg, rgba(248, 249, 250, 0.8) 0%, rgba(233, 236, 239, 0.8) 100%);
     border: 2px solid #dee2e6;
     border-radius: 20px;
     display: flex;
@@ -662,7 +665,7 @@
 }
 
 .treatment-button.active .treatment-button-bg {
-    background: linear-gradient(135deg, #009245, #28a745);
+    background: linear-gradient(135deg, rgba(0, 146, 69, 0.8), rgba(40, 167, 69, 0.8));
     border-color: #009245;
     color: white;
     transform: translateY(-5px);
@@ -2225,6 +2228,27 @@
     transition: all 0.3s ease;
     cursor: pointer;
     text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.nav-item:hover::before {
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .nav-item:hover {
@@ -2264,27 +2288,32 @@
 
 .nav-content {
     width: 100%;
+    position: relative;
+    z-index: 2;
 }
 
 .nav-content h4 {
     font-size: 0.95rem;
     font-weight: 700;
-    color: #333;
+    color: white;
     margin: 0 0 4px 0;
     transition: all 0.3s ease;
     line-height: 1.2;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .nav-item:hover .nav-content h4 {
-    color: #009245;
+    color: white;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .nav-content p {
     font-size: 0.8rem;
-    color: #666;
+    color: rgba(255, 255, 255, 0.9);
     margin: 0;
     font-weight: 500;
     line-height: 1.2;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 /* ==========================================================================
@@ -2343,6 +2372,13 @@
 .process-image-placeholder i {
     font-size: 3.5rem;
     color: #009245;
+}
+
+.process-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
 .process-text-section {

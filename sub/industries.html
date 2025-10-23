@@ -128,9 +128,9 @@
             <nav class="sub-nav">
                 <ul class="sub-nav-menu">
                     <li><a href="#medical" class="sub-nav-link active" data-section="medical">Medical</a></li>
-                    <li><a href="#industrial" class="sub-nav-link" data-section="industrial">Industrial</a></li>
                     <li><a href="#robotics" class="sub-nav-link" data-section="robotics">Robotics</a></li>
-                    <li><a href="#aerospace" class="sub-nav-link" data-section="aerospace">Aerospace Components</a></li>
+                    <li><a href="#aerospace" class="sub-nav-link" data-section="aerospace">Aerospace</a></li>
+                    <li><a href="#industrial" class="sub-nav-link" data-section="industrial">Industrial</a></li>
                 </ul>
             </nav>
         </div>
@@ -140,7 +140,7 @@
     <section id="medical" class="industries-section active">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Medical Industry</h2>
+                <h2 class="section-title sub-page-title">Medical Industry</h2>
                 <p class="section-subtitle">
                     Precision components for life-saving medical devices and equipment
                 </p>
@@ -148,6 +148,9 @@
             
             <div class="industry-overview">
                 <div class="overview-content">
+                    <div class="overview-image">
+                        <img src="../img/medical.jpeg" alt="Medical Industry" class="industry-image">
+                    </div>
                     <div class="overview-text">
                         <h3>Medical Device Manufacturing</h3>
                         <p>We specialize in manufacturing precision components for medical devices that require the highest levels of accuracy and reliability. Our medical-grade components are used in surgical instruments, diagnostic equipment, and implantable devices.</p>
@@ -161,12 +164,6 @@
                                 <li>FDA and CE compliance</li>
                                 <li>Traceability and documentation</li>
                             </ul>
-                        </div>
-                    </div>
-                    <div class="overview-image">
-                        <div class="image-placeholder">
-                            <i class="fas fa-heartbeat"></i>
-                            <span>Medical Components</span>
                         </div>
                     </div>
                 </div>
@@ -212,7 +209,7 @@
     <section id="industrial" class="industries-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Industrial Applications</h2>
+                <h2 class="section-title sub-page-title">Industrial Applications</h2>
                 <p class="section-subtitle">
                     Robust components for demanding industrial environments
                 </p>
@@ -220,6 +217,9 @@
             
             <div class="industry-overview">
                 <div class="overview-content">
+                    <div class="overview-image">
+                        <img src="../img/Industrial.jpeg" alt="Industrial Industry" class="industry-image">
+                    </div>
                     <div class="overview-text">
                         <h3>Industrial Manufacturing</h3>
                         <p>Our industrial components are designed to withstand harsh operating conditions while maintaining precision and reliability. We serve various industrial sectors with custom-engineered solutions.</p>
@@ -233,12 +233,6 @@
                                 <li>Heavy-duty construction</li>
                                 <li>Custom engineering solutions</li>
                             </ul>
-                        </div>
-                    </div>
-                    <div class="overview-image">
-                        <div class="image-placeholder">
-                            <i class="fas fa-industry"></i>
-                            <span>Industrial Components</span>
                         </div>
                     </div>
                 </div>
@@ -284,7 +278,7 @@
     <section id="robotics" class="industries-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Robotics & Automation</h2>
+                <h2 class="section-title sub-page-title">Robotics & Automation</h2>
                 <p class="section-subtitle">
                     Precision components for next-generation robotic systems
                 </p>
@@ -292,6 +286,9 @@
             
             <div class="industry-overview">
                 <div class="overview-content">
+                    <div class="overview-image">
+                        <img src="../img/robotics.jpeg" alt="Robotics Industry" class="industry-image">
+                    </div>
                     <div class="overview-text">
                         <h3>Robotic Systems</h3>
                         <p>We manufacture critical components for robotic systems that require exceptional precision and reliability. Our components enable advanced automation in various industries.</p>
@@ -305,12 +302,6 @@
                                 <li>Modular design capabilities</li>
                                 <li>Real-time quality monitoring</li>
                             </ul>
-                        </div>
-                    </div>
-                    <div class="overview-image">
-                        <div class="image-placeholder">
-                            <i class="fas fa-robot"></i>
-                            <span>Robotic Components</span>
                         </div>
                     </div>
                 </div>
@@ -352,11 +343,11 @@
         </div>
     </section>
 
-    <!-- Aerospace Components 섹션 -->
+    <!-- Aerospace 섹션 -->
     <section id="aerospace" class="industries-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Aerospace Components</h2>
+                <h2 class="section-title sub-page-title">Aerospace</h2>
                 <p class="section-subtitle">
                     Mission-critical components for aerospace and defense applications
                 </p>
@@ -364,6 +355,9 @@
             
             <div class="industry-overview">
                 <div class="overview-content">
+                    <div class="overview-image">
+                        <img src="../img/aerospace.jpg" alt="Aerospace Industry" class="industry-image">
+                    </div>
                     <div class="overview-text">
                         <h3>Aerospace Manufacturing</h3>
                         <p>We manufacture aerospace-grade components that meet the most stringent requirements for safety, reliability, and performance. Our components are used in commercial aircraft, defense systems, and space applications.</p>
@@ -377,12 +371,6 @@
                                 <li>Full traceability documentation</li>
                                 <li>Environmental testing capabilities</li>
                             </ul>
-                        </div>
-                    </div>
-                    <div class="overview-image">
-                        <div class="image-placeholder">
-                            <i class="fas fa-plane"></i>
-                            <span>Aerospace Components</span>
                         </div>
                     </div>
                 </div>
@@ -613,13 +601,72 @@
             });
         });
         
-        // 초기 로드 시 첫 번째 섹션 활성화
-        if (industriesSections.length > 0) {
+        // URL 해시 처리 - 특정 섹션으로 스크롤
+        function handleHashNavigation() {
+            const hash = window.location.hash.substring(1);
+            if (hash) {
+                const targetSection = document.getElementById(hash);
+                if (targetSection) {
+                    // 모든 섹션 비활성화
+                    industriesSections.forEach(section => {
+                        section.classList.remove('active');
+                    });
+                    
+                    // 해당 섹션 활성화
+                    targetSection.classList.add('active');
+                    
+                    // 해당 섹션으로 스크롤
+                    targetSection.scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // 네비게이션 링크 업데이트
+                    const correspondingLink = document.querySelector(`[data-section="${hash}"]`);
+                    if (correspondingLink) {
+                        subNavLinks.forEach(l => l.classList.remove('active'));
+                        correspondingLink.classList.add('active');
+                    }
+                }
+            }
+        }
+        
+        // 페이지 로드 시 해시 처리
+        handleHashNavigation();
+        
+        // 해시 변경 감지
+        window.addEventListener('hashchange', handleHashNavigation);
+        
+        // 초기 로드 시 첫 번째 섹션 활성화 (해시가 없는 경우)
+        if (!window.location.hash && industriesSections.length > 0) {
             industriesSections.forEach((section, index) => {
                 if (index === 0) {
                     section.classList.add('active');
                 } else {
                     section.classList.remove('active');
+                }
+            });
+        }
+    });
+    </script>
+
+    <!-- 문의하기 고정 버튼 -->
+    <a href="contact.html" class="fixed-inquiry-btn" id="fixed-inquiry-btn" aria-label="문의하기">
+        <i class="fas fa-envelope"></i>
+        <span class="btn-text">문의하기</span>
+    </a>
+
+    <!-- 문의하기 버튼 스크롤 기능 -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const fixedInquiryBtn = document.getElementById('fixed-inquiry-btn');
+        
+        if (fixedInquiryBtn) {
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    fixedInquiryBtn.classList.add('show');
+                } else {
+                    fixedInquiryBtn.classList.remove('show');
                 }
             });
         }
