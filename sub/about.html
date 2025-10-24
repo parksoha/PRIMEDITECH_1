@@ -34,7 +34,7 @@
             <div class="header-content">
                 <!-- 로고 -->
                 <div class="logo-section">
-                    <a href="../index-standalone.html" class="logo">
+                    <a href="../index.html" class="logo">
                         <img src="../img/mainlogo.png" alt="PRIMEDITECH" class="logo-image">
                     </a>
                 </div>
@@ -51,16 +51,14 @@
                 
                 <!-- 언어 전환 및 유틸리티 -->
                 <div class="header-utilities">
-                    <!-- 언어 전환 -->
+                    <!-- 언어 전환 버튼 -->
                     <div class="language-switcher">
-                        <select class="language-select" onchange="changeLanguage(this.value)">
-                            <option value="ko" selected>한국어</option>
-                            <option value="en">English</option>
-                            <option value="zh">中文</option>
-                            <option value="ja">日本語</option>
-                            <option value="de">Deutsch</option>
-                            <option value="fr">Français</option>
-                        </select>
+                        <button class="lang-btn" data-lang="ko" onclick="changeLanguage('ko')">
+                            <span class="lang-text">한국어</span>
+                        </button>
+                        <button class="lang-btn active" data-lang="en" onclick="changeLanguage('en')">
+                            <span class="lang-text">English</span>
+                        </button>
                     </div>
                     
                     <!-- 모바일 메뉴 토글 버튼 -->
@@ -87,14 +85,12 @@
                 
                 <!-- 모바일 언어 전환 -->
                 <div class="mobile-language-switcher">
-                    <select class="mobile-language-select" onchange="changeLanguage(this.value)">
-                        <option value="ko" selected>한국어</option>
-                        <option value="en">English</option>
-                        <option value="zh">中文</option>
-                        <option value="ja">日本語</option>
-                        <option value="de">Deutsch</option>
-                        <option value="fr">Français</option>
-                    </select>
+                    <button class="lang-btn" data-lang="ko" onclick="changeLanguage('ko')">
+                        <span class="lang-text">한국어</span>
+                    </button>
+                    <button class="lang-btn active" data-lang="en" onclick="changeLanguage('en')">
+                        <span class="lang-text">English</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -112,7 +108,7 @@
             <div class="hero-content">
                 <h1 class="hero-title">About</h1>
                 <nav class="breadcrumb">
-                    <a href="../index-standalone.html" class="breadcrumb-item">
+                    <a href="../index.html" class="breadcrumb-item">
                         <i class="fas fa-home"></i> Home
                     </a>
                     <span class="breadcrumb-separator">></span>
@@ -155,13 +151,13 @@
                     <div class="about-intro-text">
                         <h3>About PRIMEDITECH</h3>
                         <p>
-                            프리메디텍은 의료, 항공우주, 고급 산업 분야의 글로벌 리더들로부터 신뢰받는 한국 정밀공학 산업의 선도적 기업입니다.
+                            PRIMEDITECH is a leading company in Korea's precision engineering industry, trusted by global leaders in medical, aerospace, and advanced industrial sectors.
                         </p>
                         <p>
-                            기술적 전문성과 끊임없는 혁신을 바탕으로 구축된 기반을 통해, 우리는 가장 까다로운 국제 표준을 충족하는 고정밀 부품 제공에 특화되어 있습니다.
+                            Through a foundation built on technical expertise and continuous innovation, we specialize in providing high-precision components that meet the most demanding international standards.
                         </p>
                         <p>
-                            숙련된 엔지니어 팀과 최첨단 제조 역량을 통해 우리가 생산하는 모든 부품이 최고 수준의 품질, 신뢰성, 성능을 반영하도록 보장합니다.
+                            Through our skilled engineering team and state-of-the-art manufacturing capabilities, we ensure that every component we produce reflects the highest levels of quality, reliability, and performance.
                         </p>
                     </div>
                 </div>
@@ -209,22 +205,22 @@
                         <div class="value-item">
                             <div class="value-number">1</div>
                             <div class="value-content">
-                                <h4 class="value-title">절대적 품질, 타협 없는 완벽</h4>
-                                <p class="value-description">프리메디텍에서 품질은 절대 타협할 수 없는 영역입니다. 엄격하고 포괄적인 품질 관리 시스템과 끊임없는 개선 실천을 통해 무결점 정밀도를 보장하며, 납품되는 모든 부품이 최고의 글로벌 표준을 뛰어넘도록 보장합니다.</p>
+                                <h4 class="value-title">Absolute Quality, Uncompromising Perfection</h4>
+                                <p class="value-description">At PRIMEDITECH, quality is an absolute non-negotiable area. Through rigorous and comprehensive quality management systems and continuous improvement practices, we ensure flawless precision and guarantee that every delivered component exceeds the highest global standards.</p>
                             </div>
                         </div>
                         <div class="value-item">
                             <div class="value-number">2</div>
                             <div class="value-content">
-                                <h4 class="value-title">혁신 주도 정밀공학</h4>
-                                <p class="value-description">최첨단 기술과 지속적인 연구개발을 통합하여 프리메디텍은 비교할 수 없는 정밀도를 달성합니다. 우리의 혁신적 접근법은 지속적으로 진화하며, 의료, 항공우주, 산업 분야의 끊임없이 변화하는 도전 과제에 대응합니다.</p>
+                                <h4 class="value-title">Innovation-Driven Precision Engineering</h4>
+                                <p class="value-description">By integrating cutting-edge technology and continuous R&D, PRIMEDITECH achieves unparalleled precision. Our innovative approach continuously evolves to address the ever-changing challenges in medical, aerospace, and industrial sectors.</p>
                             </div>
                         </div>
                         <div class="value-item">
                             <div class="value-number">3</div>
                             <div class="value-content">
-                                <h4 class="value-title">고객 중심의 적응성</h4>
-                                <p class="value-description">우리는 글로벌 고객들의 다양한 니즈를 깊이 이해합니다. 적응적이고 창의적이며 유연한 사고방식으로 맞춤형 정밀 솔루션을 제공하여, 고객의 전략적 비전과 밀접하게 연계되면서 고객의 경쟁력을 크게 향상시킵니다.</p>
+                                <h4 class="value-title">Customer-Centric Adaptability</h4>
+                                <p class="value-description">We deeply understand the diverse needs of global customers. Through adaptive, creative, and flexible thinking, we provide customized precision solutions that are closely linked to customers' strategic vision and significantly enhance their competitiveness.</p>
                             </div>
                         </div>
                     </div>
@@ -239,10 +235,10 @@
                     <h2 class="section-title sub-page-title">Our Facilities</h2>
                 </div>
 
-                <!-- 1공장 -->
+                <!-- Factory 1 -->
                 <div class="factory-section">
                     <div class="factory-header">
-                        <h3 class="factory-title">1공장</h3>
+                        <h3 class="factory-title">Factory 1</h3>
                     </div>
                     <div class="facilities-grid">
                         <div class="facility-card">
@@ -280,10 +276,10 @@
                     </div>
                 </div>
 
-                <!-- 2공장 -->
+                <!-- Factory 2 -->
                 <div class="factory-section">
                     <div class="factory-header">
-                        <h3 class="factory-title">2공장</h3>
+                        <h3 class="factory-title">Factory 2</h3>
                     </div>
                     <div class="facilities-grid">
                         <div class="facility-card">
@@ -445,7 +441,7 @@
                         <ul class="cert-track">
                         <li class="cert-slide">
                             <img src="../img/certification1.png" alt="Certification 1" class="cert-image">
-                            <div class="cert-name">2024.04.18 중소기업 확인서</div>
+                            <div class="cert-name">2024.04.18 Small Business Certificate</div>
                         </li>
                         <li class="cert-slide">
                             <img src="../img/certification2.png" alt="Certification 2" class="cert-image">
@@ -457,7 +453,7 @@
                         </li>
                         <li class="cert-slide">
                             <img src="../img/certification4.png" alt="Certification 4" class="cert-image">
-                            <div class="cert-name">2023.07.10 뿌리기업확인서</div>
+                            <div class="cert-name">2023.07.10 Root Industry Certificate</div>
                         </li>
                         <li class="cert-slide">
                             <img src="../img/certification5.png" alt="Certification 5" class="cert-image">
@@ -469,27 +465,27 @@
                         </li>
                         <li class="cert-slide">
                             <img src="../img/certification7.png" alt="Certification 7" class="cert-image">
-                            <div class="cert-name">2021.07.22 창업기업확인서</div>
+                            <div class="cert-name">2021.07.22 Startup Company Certificate</div>
                         </li>
                         <li class="cert-slide">
                             <img src="../img/certification8.png" alt="Certification 8" class="cert-image">
-                            <div class="cert-name">2021.06.30 벤처기업확인서</div>
+                            <div class="cert-name">2021.06.30 Venture Company Certificate</div>
                         </li>
                         <li class="cert-slide">
                             <img src="../img/certification9.png" alt="Certification 9" class="cert-image">
-                            <div class="cert-name">2021.06.15 우수기술인증서</div>
+                            <div class="cert-name">2021.06.15 Excellent Technology Certificate</div>
                         </li>
                         <li class="cert-slide">
                             <img src="../img/certification10.png" alt="Certification 10" class="cert-image">
-                            <div class="cert-name">2020.08.05 기업부설연구소인정서</div>
+                            <div class="cert-name">2020.08.05 Corporate Research Institute Certificate</div>
                         </li>
                         <li class="cert-slide">
                             <img src="../img/certification11.png" alt="Certification 11" class="cert-image">
-                            <div class="cert-name">2020.07.21 소재/부품/장비 전문기업확인서</div>
+                            <div class="cert-name">2020.07.21 Materials/Parts/Equipment Specialist Certificate</div>
                         </li>
                         <li class="cert-slide">
                             <img src="../img/certification12.jpg" alt="Certification 12" class="cert-image">
-                            <div class="cert-name">2023.12.5 백만불 수출의탑</div>
+                            <div class="cert-name">2023.12.5 Million Dollar Export Tower</div>
                         </li>
                         </ul>
                     </div>
@@ -507,51 +503,51 @@
                 <div class="cert-gallery" id="cert-gallery" aria-hidden="true">
                 <div class="cert-gallery-item">
                     <img src="../img/certification1.png" alt="Certification 1" class="cert-gallery-image">
-                    <div class="cert-gallery-name">Certification1</div>
+                    <div class="cert-gallery-name">2024.04.18 Small Business Certificate</div>
                 </div>
                 <div class="cert-gallery-item">
                     <img src="../img/certification2.png" alt="Certification 2" class="cert-gallery-image">
-                    <div class="cert-gallery-name">Certification2</div>
+                    <div class="cert-gallery-name">2024.01.04 Main-Biz</div>
                 </div>
                 <div class="cert-gallery-item">
                     <img src="../img/certification3.png" alt="Certification 3" class="cert-gallery-image">
-                    <div class="cert-gallery-name">Certification3</div>
+                    <div class="cert-gallery-name">2023.12.26 Inno-Biz</div>
                 </div>
                 <div class="cert-gallery-item">
                     <img src="../img/certification4.png" alt="Certification 4" class="cert-gallery-image">
-                    <div class="cert-gallery-name">Certification4</div>
+                    <div class="cert-gallery-name">2023.07.10 Root Industry Certificate</div>
                 </div>
                 <div class="cert-gallery-item">
                     <img src="../img/certification5.png" alt="Certification 5" class="cert-gallery-image">
-                    <div class="cert-gallery-name">Certification5</div>
+                    <div class="cert-gallery-name">2021.09.24 ISO 9001:2015</div>
                 </div>
                 <div class="cert-gallery-item">
                     <img src="../img/certification6.png" alt="Certification 6" class="cert-gallery-image">
-                    <div class="cert-gallery-name">Certification6</div>
+                    <div class="cert-gallery-name">2021.09.24 ISO 14001:2015</div>
                 </div>
                 <div class="cert-gallery-item">
                     <img src="../img/certification7.png" alt="Certification 7" class="cert-gallery-image">
-                    <div class="cert-gallery-name">Certification7</div>
+                    <div class="cert-gallery-name">2021.07.22 Startup Company Certificate</div>
                 </div>
                 <div class="cert-gallery-item">
                     <img src="../img/certification8.png" alt="Certification 8" class="cert-gallery-image">
-                    <div class="cert-gallery-name">Certification8</div>
+                    <div class="cert-gallery-name">2021.06.30 Venture Company Certificate</div>
                 </div>
                 <div class="cert-gallery-item">
                     <img src="../img/certification9.png" alt="Certification 9" class="cert-gallery-image">
-                    <div class="cert-gallery-name">Certification9</div>
+                    <div class="cert-gallery-name">2021.06.15 Excellent Technology Certificate</div>
                 </div>
                 <div class="cert-gallery-item">
                     <img src="../img/certification10.png" alt="Certification 10" class="cert-gallery-image">
-                    <div class="cert-gallery-name">Certification10</div>
+                    <div class="cert-gallery-name">2020.08.05 Corporate Research Institute Certificate</div>
                 </div>
                 <div class="cert-gallery-item">
                     <img src="../img/certification11.png" alt="Certification 11" class="cert-gallery-image">
-                    <div class="cert-gallery-name">Certification11</div>
+                    <div class="cert-gallery-name">2020.07.21 Materials/Parts/Equipment Specialist Certificate</div>
                 </div>
                 <div class="cert-gallery-item">
                     <img src="../img/certification12.jpg" alt="Certification 12" class="cert-gallery-image">
-                    <div class="cert-gallery-name">Certification12</div>
+                    <div class="cert-gallery-name">2023.12.5 Million Dollar Export Tower</div>
                 </div>
                 </div>
                 
@@ -577,20 +573,20 @@
                         </div>
                         <div class="client-intro-text">
                             <p>
-                                PRIMEDITECH은 국내외 다양한 산업군의 고객사와 함께 성장하고 있습니다.
+                                PRIMEDITECH is growing together with customers from various domestic and international industries.
                             </p>
                             <p>
-                                의료기기, 항공우주, 반도체, 로보틱스 등 고정밀 가공이 요구되는 산업 분야에서
-                                축적된 기술력과 노하우를 바탕으로, 고객의 요구를 정확히 이해하고 최적의 솔루션을 제공합니다.
+                                In industrial sectors requiring high-precision machining such as medical devices, aerospace, semiconductors, and robotics,
+                                we provide optimal solutions by accurately understanding customer requirements based on accumulated technical expertise and know-how.
                             </p>
                             <p>
-                                단순한 가공을 넘어, 제품의 목적과 사용 환경을 고려한 정밀한 품질과 안정적인 납기로
-                                고객의 기대를 뛰어넘는 결과를 만들어갑니다.
+                                Beyond simple machining, we create results that exceed customer expectations through precise quality and stable delivery
+                                considering the product's purpose and usage environment.
                             </p>
                             <p>
-                                PRIMEDITECH은 신뢰를 기반으로 한 장기적 파트너십을 목표로 합니다.
-                                각 산업의 기술적 과제를 함께 해결하며, 고객의 성장과 함께 발전하는
-                                글로벌 정밀가공 전문 기업으로 나아가고 있습니다.
+                                PRIMEDITECH aims for long-term partnerships based on trust.
+                                We solve technical challenges in each industry together and advance as a global precision machining specialist
+                                that develops alongside customer growth.
                             </p>
                         </div>
                     </div>
@@ -650,68 +646,111 @@
                     </p>
                 </div>
                 
-                <div class="directions-content">
-                    <div class="directions-info">
-                        <div class="address-card">
-                            <h3>Company Address</h3>
-                            <div class="address-details">
-                                <div class="address-item">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <span>경기도 의왕시 옻우물길 31</span>
-                                </div>
-                                <div class="address-item">
-                                    <i class="fas fa-phone"></i>
-                                    <span>+82 31-455-2770</span>
-                                </div>
-                                <div class="address-item">
-                                    <i class="fas fa-mobile-alt"></i>
-                                    <span>+82 10-5956-7284</span>
-                                </div>
-                                <div class="address-item">
-                                    <i class="fas fa-envelope"></i>
-                                    <span>pmkt@prmtec.com</span>
+                <!-- 지도 섹션 -->
+                <div class="map-section">
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3171.393751059682!2d126.9633712763985!3d37.35685903612264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b5d9293f59ef9%3A0x2e6523d76aadfadf!2z6rK96riw64-EIOydmOyZleyLnCDsmLvsmrDrrLzquLggMzE!5e0!3m2!1sko!2skr!4v1761270183754!5m2!1sko!2skr"
+                            width="100%" 
+                            height="450" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="PRIMEDITECH 위치">
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- 연락처 및 교통 정보 섹션 -->
+                <div class="contact-transport-section">
+                    <!-- 간단한 연락처 정보 -->
+                    <div class="contact-summary">
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <span>경기도 의왕시 옻우물길 31</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📞</span>
+                            <span>+82 31-455-2770</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📱</span>
+                            <span>+82 10-5956-7284</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">✉️</span>
+                            <span>pmkt@prmtec.com</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 교통 정보 가로 배치 -->
+                    <div class="transport-grid">
+                        <!-- 지하철 정보 -->
+                        <div class="transport-card subway-card">
+                            <div class="transport-icon">
+                                <i class="fas fa-subway"></i>
+                            </div>
+                            <div class="transport-content">
+                                <h4>🚇 지하철로 오시는 길</h4>
+                                <div class="transport-details">
+                                    <div class="route-option">
+                                        <strong>1호선 군포역</strong>
+                                        <p>하차 → 도보 약 20분 또는 택시 약 5분 거리</p>
+                                    </div>
+                                    <div class="route-option">
+                                        <strong>1호선 당정역</strong>
+                                        <p>하차 → 택시 약 8분 거리 (약 2.5km)</p>
+                                    </div>
+                                    <div class="route-option">
+                                        <strong>4호선 인덕원역</strong>
+                                        <p>하차 → 버스 64번 또는 502번 이용 시 약 25분 소요</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="transport-info">
-                            <h3>Transportation</h3>
-                            <div class="transport-methods">
-                                <div class="transport-item">
-                                    <div class="transport-icon">
-                                        <i class="fas fa-subway"></i>
+                        <!-- 버스 정보 -->
+                        <div class="transport-card bus-card">
+                            <div class="transport-icon">
+                                <i class="fas fa-bus"></i>
+                            </div>
+                            <div class="transport-content">
+                                <h4>🚍 By Bus</h4>
+                                <div class="transport-details">
+                                    <div class="bus-stop">
+                                        <strong>Nearest Bus Stop</strong>
+                                        <p>Shinan Apartment·Global Library Bus Stop (2 minutes walk)</p>
                                     </div>
-                                    <div class="transport-content">
-                                        <h4>Subway</h4>
-                                        <p>의왕역에서 도보 10분</p>
-                                    </div>
-                                </div>
-                                <div class="transport-item">
-                                    <div class="transport-icon">
-                                        <i class="fas fa-bus"></i>
-                                    </div>
-                                    <div class="transport-content">
-                                        <h4>Bus</h4>
-                                        <p>의왕시내버스 이용 가능</p>
-                                    </div>
-                                </div>
-                                <div class="transport-item">
-                                    <div class="transport-icon">
-                                        <i class="fas fa-car"></i>
-                                    </div>
-                                    <div class="transport-content">
-                                        <h4>Car</h4>
-                                        <p>건물 지하 주차장 이용 가능</p>
+                                    <div class="bus-routes">
+                                        <strong>Main Bus Routes</strong>
+                                        <ul class="route-list">
+                                            <li><span class="route-number">64번</span> 인덕원역 ↔ 의왕역 ↔ 오전동 ↔ 군포역</li>
+                                            <li><span class="route-number">441번</span> 안양역 ↔ 의왕시청 ↔ 오전동 (직행버스)</li>
+                                            <li><span class="route-number">502번</span> 금정역 ↔ 군포역 ↔ 오전동</li>
+                                            <li><span class="route-number">777번</span> 병점역 ↔ 화성방면 ↔ 의왕 (광역버스)</li>
+                                            <li><span class="route-number">900번</span> 수원역 ↔ 군포 ↔ 의왕 (광역버스)</li>
+                                        </ul>
+                                        <p class="route-note">※ Get off at 'Shinan Apartment Bus Stop' or 'Global Library Bus Stop' and walk to our location.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div class="map-container">
-                        <div class="map-placeholder">
-                            <i class="fas fa-map"></i>
-                            <span>Interactive Map</span>
+                        
+                        <!-- 자가용 정보 -->
+                        <div class="transport-card car-card">
+                            <div class="transport-icon">
+                                <i class="fas fa-car"></i>
+                            </div>
+                            <div class="transport-content">
+                                <h4>🚗 자가용으로 오시는 길</h4>
+                                <div class="transport-details">
+                                    <div class="route-option">
+                                        <strong>주차 안내</strong>
+                                        <p>건물 지하 주차장 이용 가능</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -799,149 +838,17 @@
         <i class="fas fa-chevron-up"></i>
     </button>
 
-    <!-- JavaScript 파일들 -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="../js/main.js?v=20251016"></script>
-    <script src="../js/gtranslate.js"></script>
-
-    <!-- 언어 전환 JavaScript -->
-    <script>
-    function changeLanguage(lang) {
-        // 언어 변경 로직 (로컬 경로 고려)
-        if (lang === 'ko') {
-            window.location.href = 'about.html';
-        } else {
-            window.location.href = 'about.html?lang=' + lang;
-        }
-    }
-
-    // 스크롤 투 탑 기능
-    document.addEventListener('DOMContentLoaded', function() {
-        const scrollToTopBtn = document.getElementById('scroll-to-top');
-        
-        if (scrollToTopBtn) {
-            window.addEventListener('scroll', function() {
-                if (window.pageYOffset > 300) {
-                    scrollToTopBtn.classList.add('show');
-                } else {
-                    scrollToTopBtn.classList.remove('show');
-                }
-            });
-            
-            scrollToTopBtn.addEventListener('click', function() {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-        }
-        
-        // 모바일 메뉴 토글
-        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        if (mobileMenuToggle && mobileMenu) {
-            mobileMenuToggle.addEventListener('click', function() {
-                mobileMenu.classList.toggle('active');
-                this.classList.toggle('active');
-            });
-        }
-        
-        // 서브 네비게이션 기능
-        const subNavLinks = document.querySelectorAll('.sub-nav-link');
-        const aboutSections = document.querySelectorAll('.about-section');
-        
-        // 서브 네비게이션 클릭 이벤트
-        subNavLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetSection = this.getAttribute('data-section');
-                
-                // 활성 클래스 업데이트
-                subNavLinks.forEach(l => l.classList.remove('active'));
-                this.classList.add('active');
-                
-                // 섹션 표시/숨김
-                aboutSections.forEach(section => {
-                    section.classList.remove('active');
-                    if (section.id === targetSection) {
-                        section.classList.add('active');
-                    }
-                });
-                
-                // 부드러운 스크롤
-                const targetElement = document.getElementById(targetSection);
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-        
-        // 스크롤에 따른 자동 네비게이션 업데이트
-        let isScrolling = false;
-        window.addEventListener('scroll', function() {
-            if (isScrolling) return;
-            
-            const scrollPosition = window.scrollY + 200; // 헤더 높이 고려
-            
-            aboutSections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.offsetHeight;
-                
-                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                    const sectionId = section.id;
-                    const correspondingLink = document.querySelector(`[data-section="${sectionId}"]`);
-                    
-                    if (correspondingLink && !correspondingLink.classList.contains('active')) {
-                        subNavLinks.forEach(l => l.classList.remove('active'));
-                        correspondingLink.classList.add('active');
-                        
-                        aboutSections.forEach(s => s.classList.remove('active'));
-                        section.classList.add('active');
-                    }
-                }
-            });
-        });
-        
-        // 초기 로드 시 첫 번째 섹션 활성화
-        if (aboutSections.length > 0) {
-            aboutSections.forEach((section, index) => {
-                if (index === 0) {
-                    section.classList.add('active');
-                } else {
-                    section.classList.remove('active');
-                }
-            });
-        }
-    });
-    </script>
-
     <!-- 문의하기 고정 버튼 -->
     <a href="contact.html" class="fixed-inquiry-btn" id="fixed-inquiry-btn" aria-label="문의하기">
         <i class="fas fa-envelope"></i>
         <span class="btn-text">문의하기</span>
     </a>
 
-    <!-- 문의하기 버튼 스크롤 기능 -->
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const fixedInquiryBtn = document.getElementById('fixed-inquiry-btn');
-        
-        if (fixedInquiryBtn) {
-            window.addEventListener('scroll', function() {
-                if (window.pageYOffset > 300) {
-                    fixedInquiryBtn.classList.add('show');
-                } else {
-                    fixedInquiryBtn.classList.remove('show');
-                }
-            });
-        }
-    });
-    </script>
+    <!-- JavaScript 파일들 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/language.js"></script>
 
 </body>
 </html>

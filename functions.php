@@ -291,6 +291,18 @@ function prmtec_custom_post_types() {
         'supports' => array('title', 'editor', 'thumbnail'),
         'menu_icon' => 'dashicons-building',
     ));
+    
+    // 제품 포스트 타입
+    register_post_type('products', array(
+        'labels' => array(
+            'name' => __('Products', 'prmtec'),
+            'singular_name' => __('Product', 'prmtec'),
+        ),
+        'public' => true,
+        'has_archive' => true,
+        'supports' => array('title', 'editor', 'thumbnail'),
+        'menu_icon' => 'dashicons-products',
+    ));
 }
 add_action('init', 'prmtec_custom_post_types');
 

@@ -27,43 +27,30 @@
      * 모바일 메뉴 초기화
      */
     function initMobileMenu() {
-        const mobileMenuToggle = $('#mobile-menu-toggle');
-        const mobileMenu = $('#mobile-menu');
-        const body = $('body');
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-        if (mobileMenuToggle.length && mobileMenu.length) {
-            mobileMenuToggle.on('click', function(e) {
+        if (mobileMenuToggle && mobileMenu) {
+            mobileMenuToggle.addEventListener('click', function(e) {
                 e.preventDefault();
-                $(this).toggleClass('active');
-                mobileMenu.toggleClass('active');
-                body.toggleClass('menu-open');
+                console.log('햄버거 버튼 클릭됨!');
                 
-                // 접근성 개선
-                const isOpen = mobileMenu.hasClass('active');
-                $(this).attr('aria-expanded', isOpen);
-                $(this).attr('aria-label', isOpen ? '메뉴 닫기' : '메뉴 열기');
-            });
-
-            // 메뉴 외부 클릭 시 닫기
-            $(document).on('click', function(e) {
-                if (!$(e.target).closest('.header').length) {
-                    mobileMenu.removeClass('active');
-                    mobileMenuToggle.removeClass('active');
-                    body.removeClass('menu-open');
-                    mobileMenuToggle.attr('aria-expanded', 'false');
-                    mobileMenuToggle.attr('aria-label', '메뉴 열기');
-                }
-            });
-
-            // ESC 키로 메뉴 닫기
-            $(document).on('keydown', function(e) {
-                if (e.key === 'Escape' && mobileMenu.hasClass('active')) {
-                    mobileMenu.removeClass('active');
-                    mobileMenuToggle.removeClass('active');
-                    body.removeClass('menu-open');
-                    mobileMenuToggle.attr('aria-expanded', 'false');
-                    mobileMenuToggle.attr('aria-label', '메뉴 열기');
-                    mobileMenuToggle.focus();
+                if (mobileMenu.classList.contains('show')) {
+                    // 메뉴 닫기
+                    mobileMenu.classList.remove('show');
+                    mobileMenuToggle.classList.remove('active');
+                    setTimeout(() => {
+                        mobileMenu.style.display = 'none';
+                    }, 300);
+                    console.log('메뉴 닫힘');
+                } else {
+                    // 메뉴 열기
+                    mobileMenu.style.display = 'block';
+                    setTimeout(() => {
+                        mobileMenu.classList.add('show');
+                        mobileMenuToggle.classList.add('active');
+                    }, 10);
+                    console.log('메뉴 열림');
                 }
             });
         }
@@ -93,22 +80,39 @@
 
     function countUpElement(el) {
         const target = parseInt(el.getAttribute('data-target'), 10) || 0;
-        const duration = 1500;
-        if (target <= 0) { el.textContent = '0'; return; }
+        const duration = 800; // 0.8초
+        if (target <= 0) { 
+            el.textContent = '0'; 
+            return; 
+        }
 
-        // For small integers (like 10), step per integer for smooth, predictable ticks
-        const stepTime = Math.max(60, Math.floor(duration / target));
+        // 더 안정적인 애니메이션을 위해 requestAnimationFrame 사용
+        const startTime = performance.now();
         let current = 0;
-        el.textContent = current.toString();
-        const timer = setInterval(() => {
-            current += 1;
-            if (current >= target) {
-                el.textContent = target.toString();
-                clearInterval(timer);
-            } else {
+        
+        function updateCount(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            
+            // 이징 함수 (easeOutCubic)
+            const easedProgress = 1 - Math.pow(1 - progress, 3);
+            const newValue = Math.floor(easedProgress * target);
+            
+            // 값이 변경되었을 때만 업데이트
+            if (newValue !== current) {
+                current = newValue;
                 el.textContent = current.toString();
             }
-        }, stepTime);
+            
+            if (progress < 1) {
+                requestAnimationFrame(updateCount);
+            } else {
+                // 최종 값 보장
+                el.textContent = target.toString();
+            }
+        }
+        
+        requestAnimationFrame(updateCount);
     }
 
     /**
@@ -359,28 +363,70 @@
      * 숫자 카운트업 애니메이션
      */
     function animateCountUp(element) {
-        const finalValue = parseInt(element.textContent.replace(/\D/g, ''));
-        const duration = 2000;
-        const startTime = performance.now();
+        // 단위가 있는 경우와 없는 경우를 구분하여 처리
+        const mainNumberElement = element.querySelector('.stat-main-number');
         
-        function updateCount(currentTime) {
-            const elapsed = currentTime - startTime;
-            const progress = Math.min(elapsed / duration, 1);
+        if (mainNumberElement) {
+            // 단위가 있는 경우 (예: 3억)
+            const finalValue = parseInt(mainNumberElement.textContent);
+            const duration = 1500;
+            const startTime = performance.now();
+            let currentValue = 0;
             
-            // 이징 함수 (easeOutCubic)
-            const easedProgress = 1 - Math.pow(1 - progress, 3);
-            const currentValue = Math.floor(easedProgress * finalValue);
-            
-            element.textContent = currentValue.toLocaleString();
-            
-            if (progress < 1) {
-                requestAnimationFrame(updateCount);
-            } else {
-                element.textContent = finalValue.toLocaleString();
+            function updateCount(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                
+                // 이징 함수 (easeOutCubic)
+                const easedProgress = 1 - Math.pow(1 - progress, 3);
+                const newValue = Math.floor(easedProgress * finalValue);
+                
+                // 값이 변경되었을 때만 업데이트
+                if (newValue !== currentValue) {
+                    currentValue = newValue;
+                    mainNumberElement.textContent = currentValue.toString();
+                }
+                
+                if (progress < 1) {
+                    requestAnimationFrame(updateCount);
+                } else {
+                    // 최종 값 보장
+                    mainNumberElement.textContent = finalValue.toString();
+                }
             }
+            
+            requestAnimationFrame(updateCount);
+        } else {
+            // 단위가 없는 경우 (기존 로직)
+            const finalValue = parseInt(element.textContent.replace(/\D/g, ''));
+            const duration = 1500;
+            const startTime = performance.now();
+            let currentValue = 0;
+            
+            function updateCount(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                
+                // 이징 함수 (easeOutCubic)
+                const easedProgress = 1 - Math.pow(1 - progress, 3);
+                const newValue = Math.floor(easedProgress * finalValue);
+                
+                // 값이 변경되었을 때만 업데이트
+                if (newValue !== currentValue) {
+                    currentValue = newValue;
+                    element.textContent = newValue.toString();
+                }
+                
+                if (progress < 1) {
+                    requestAnimationFrame(updateCount);
+                } else {
+                    // 최종 값 보장
+                    element.textContent = finalValue.toString();
+                }
+            }
+            
+            requestAnimationFrame(updateCount);
         }
-        
-        requestAnimationFrame(updateCount);
     }
 
     /**

@@ -383,6 +383,55 @@
     text-transform: uppercase;
 }
 
+/* 모바일에서 보안 번호 입력 필드 개선 */
+@media (max-width: 768px) {
+    .spam-check-container {
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
+    }
+    
+    .captcha-display {
+        width: 100%;
+        font-size: 1.8rem;
+        padding: 15px;
+        margin-bottom: 10px;
+    }
+    
+    .spam-check-container input[type="text"] {
+        width: 100%;
+        padding: 15px;
+        font-size: 1.1rem;
+        text-align: center;
+        min-height: 50px;
+    }
+    
+    .refresh-btn {
+        width: 100%;
+        padding: 15px;
+        font-size: 1rem;
+        min-height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .captcha-display {
+        font-size: 1.6rem;
+        padding: 12px;
+    }
+    
+    .spam-check-container input[type="text"] {
+        padding: 12px;
+        font-size: 1rem;
+        min-height: 45px;
+    }
+    
+    .refresh-btn {
+        padding: 12px;
+        min-height: 45px;
+    }
+}
+
 .spam-check-container input[type="text"]:focus {
     outline: none;
     border-color: #009245;
@@ -567,6 +616,85 @@
     line-height: 1.6;
     margin: 0;
     font-size: 0.95rem;
+}
+
+/* 모바일에서 연락처 정보 정리 */
+@media (max-width: 768px) {
+    .contact-detail-card {
+        padding: 15px;
+        margin-bottom: 15px;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .detail-icon {
+        width: 40px;
+        height: 40px;
+        margin: 0 auto 10px auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .detail-content {
+        text-align: center;
+        width: 100%;
+    }
+    
+    .detail-content h3 {
+        font-size: 1rem;
+        margin-bottom: 5px;
+        text-align: center;
+    }
+    
+    .detail-content p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3px;
+    }
+    
+    .detail-content p span {
+        display: block;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-detail-card {
+        padding: 12px;
+        margin-bottom: 12px;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .detail-content {
+        text-align: center;
+    }
+    
+    .detail-content h3 {
+        font-size: 0.95rem;
+        text-align: center;
+    }
+    
+    .detail-content p {
+        font-size: 0.85rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .detail-content p span {
+        display: block;
+        text-align: center;
+    }
 }
 
 .detail-content a {
@@ -1093,7 +1221,7 @@
 
 @media (max-width: 768px) {
     .page-title {
-        font-size: 2.5rem;
+        font-size: 1.8rem;
     }
     
     .page-subtitle {
@@ -1172,7 +1300,7 @@
     }
     
     .page-title {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
     
     .page-subtitle {

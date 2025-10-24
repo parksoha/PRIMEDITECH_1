@@ -2,7 +2,7 @@
 <!-- 메인 콘텐츠 끝 -->
 
 <!-- 푸터 영역 -->
-<footer class="footer" id="footer">
+<footer class="footer" id="footer" role="contentinfo">
     <div class="container">
         <div class="footer-content">
             <!-- 회사 정보 -->
@@ -14,13 +14,13 @@
                 
                 <!-- 소셜 미디어 링크 -->
                 <div class="social-links">
-                    <a href="#" class="social-link" aria-label="Instagram">
+                    <a href="#" class="social-link" aria-label="<?php _e('Instagram', 'prmtec'); ?>">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="#" class="social-link" aria-label="YouTube">
+                    <a href="#" class="social-link" aria-label="<?php _e('YouTube', 'prmtec'); ?>">
                         <i class="fab fa-youtube"></i>
                     </a>
-                    <a href="#" class="social-link" aria-label="Blog">
+                    <a href="#" class="social-link" aria-label="<?php _e('Blog', 'prmtec'); ?>">
                         <i class="fas fa-blog"></i>
                     </a>
                 </div>
@@ -95,8 +95,6 @@
 
 <?php wp_footer(); ?>
 
-<!-- Font Awesome 아이콘은 header.php에서 이미 로드됨 -->
-
 <!-- 언어 전환 JavaScript -->
 <script>
 function changeLanguage(lang) {
@@ -137,8 +135,41 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileMenuToggle.addEventListener('click', function() {
             mobileMenu.classList.toggle('active');
             this.classList.toggle('active');
+            
+            // 접근성 개선
+            const isOpen = mobileMenu.classList.contains('active');
+            this.setAttribute('aria-expanded', isOpen);
+            this.setAttribute('aria-label', isOpen ? '<?php _e('Close Menu', 'prmtec'); ?>' : '<?php _e('Open Menu', 'prmtec'); ?>');
+        });
+        
+        // ESC 키로 메뉴 닫기
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                mobileMenu.classList.remove('active');
+                mobileMenuToggle.classList.remove('active');
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                mobileMenuToggle.setAttribute('aria-label', '<?php _e('Open Menu', 'prmtec'); ?>');
+            }
         });
     }
+    
+    // 스무스 스크롤
+    const links = document.querySelectorAll('a[href^="#"]');
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === '#') return;
+            
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
 });
 </script>
 
@@ -155,6 +186,8 @@ function prmtec_footer_fallback_menu() {
         <li><a href="<?php echo home_url('/about/'); ?>"><?php _e('About', 'prmtec'); ?></a></li>
         <li><a href="<?php echo home_url('/services/'); ?>"><?php _e('Services', 'prmtec'); ?></a></li>
         <li><a href="<?php echo home_url('/industries/'); ?>"><?php _e('Industries', 'prmtec'); ?></a></li>
+        <li><a href="<?php echo home_url('/products/'); ?>"><?php _e('Products', 'prmtec'); ?></a></li>
+        <li><a href="<?php echo home_url('/facility/'); ?>"><?php _e('Facility', 'prmtec'); ?></a></li>
         <li><a href="<?php echo home_url('/contact/'); ?>"><?php _e('Contact', 'prmtec'); ?></a></li>
     </ul>
     <?php

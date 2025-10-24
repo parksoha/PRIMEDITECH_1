@@ -34,7 +34,7 @@
             <div class="header-content">
                 <!-- 로고 -->
                 <div class="logo-section">
-                    <a href="../index-standalone.html" class="logo">
+                    <a href="../index.html" class="logo">
                         <img src="../img/mainlogo.png" alt="PRIMEDITECH" class="logo-image">
                     </a>
                 </div>
@@ -51,16 +51,14 @@
                 
                 <!-- 언어 전환 및 유틸리티 -->
                 <div class="header-utilities">
-                    <!-- 언어 전환 -->
+                    <!-- 언어 전환 버튼 -->
                     <div class="language-switcher">
-                        <select class="language-select" onchange="changeLanguage(this.value)">
-                            <option value="ko" selected>한국어</option>
-                            <option value="en">English</option>
-                            <option value="zh">中文</option>
-                            <option value="ja">日本語</option>
-                            <option value="de">Deutsch</option>
-                            <option value="fr">Français</option>
-                        </select>
+                        <button class="lang-btn" data-lang="ko" onclick="changeLanguage('ko')">
+                            <span class="lang-text">한국어</span>
+                        </button>
+                        <button class="lang-btn active" data-lang="en" onclick="changeLanguage('en')">
+                            <span class="lang-text">English</span>
+                        </button>
                     </div>
                     
                     <!-- 모바일 메뉴 토글 버튼 -->
@@ -87,14 +85,12 @@
                 
                 <!-- 모바일 언어 전환 -->
                 <div class="mobile-language-switcher">
-                    <select class="mobile-language-select" onchange="changeLanguage(this.value)">
-                        <option value="ko" selected>한국어</option>
-                        <option value="en">English</option>
-                        <option value="zh">中文</option>
-                        <option value="ja">日本語</option>
-                        <option value="de">Deutsch</option>
-                        <option value="fr">Français</option>
-                    </select>
+                    <button class="lang-btn" data-lang="ko" onclick="changeLanguage('ko')">
+                        <span class="lang-text">한국어</span>
+                    </button>
+                    <button class="lang-btn active" data-lang="en" onclick="changeLanguage('en')">
+                        <span class="lang-text">English</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -134,7 +130,7 @@
                             </div>
                             <div class="detail-content">
                                 <h3>Visit Our Office</h3>
-                                <p>경기도 의왕시 옻우물길 31</p>
+                                <p>31 Ottulmul-gil, Uiwang-si, Gyeonggi-do, South Korea</p>
                             </div>
                         </div>
                         
@@ -145,9 +141,9 @@
                             <div class="detail-content">
                                 <h3>Call Us</h3>
                                 <p>
-                                    KR Mob : <a href="tel:010-6364-7284">010-6364-7284</a><br>
-                                    Mob : <a href="tel:+821059567284">+82 10-5956-7284</a><br>
-                                    Tel : <a href="tel:+82314552770">+82 31-455-2770</a>
+                                    <span>KR Mob : <a href="tel:010-6364-7284">010-6364-7284</a></span>
+                                    <span>Mob : <a href="tel:+821059567284">+82 10-5956-7284</a></span>
+                                    <span>Tel : <a href="tel:+82314552770">+82 31-455-2770</a></span>
                                 </p>
                             </div>
                         </div>
@@ -593,16 +589,46 @@
     <!-- 언어 전환 JavaScript -->
     <script>
     function changeLanguage(lang) {
-        // 언어 변경 로직
-        if (lang === 'ko') {
-            window.location.href = '../index-standalone.html';
+        // localStorage에 선택된 언어 저장
+        localStorage.setItem('selectedLanguage', lang);
+        
+        // 모든 언어 버튼에서 active 클래스 제거
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        
+        // 클릭된 버튼에 active 클래스 추가
+        document.querySelector(`[data-lang="${lang}"]`).classList.add('active');
+        
+        // 모든 텍스트 요소의 언어 변경
+        const elements = document.querySelectorAll('[data-ko][data-en]');
+        elements.forEach(element => {
+            if (lang === 'ko') {
+                element.textContent = element.getAttribute('data-ko');
+            } else if (lang === 'en') {
+                element.textContent = element.getAttribute('data-en');
+            }
+        });
+        
+        console.log(`${lang === 'ko' ? '한국어' : 'English'}로 전환`);
+    }
+    
+    // 저장된 언어 불러오기
+    function loadSavedLanguage() {
+        const savedLang = localStorage.getItem('selectedLanguage');
+        if (savedLang) {
+            changeLanguage(savedLang);
         } else {
-            window.location.href = '../index-standalone.html?lang=' + lang;
+            // 기본값은 영어
+            changeLanguage('en');
         }
     }
 
     // 스크롤 투 탑 기능
     document.addEventListener('DOMContentLoaded', function() {
+        // 저장된 언어 불러오기
+        loadSavedLanguage();
+        
         const scrollToTopBtn = document.getElementById('scroll-to-top');
         
         if (scrollToTopBtn) {
@@ -701,7 +727,7 @@
         <div class="footer-bottom">
             <div class="footer-bottom-content">
                 <div class="copyright">
-                    <p>&copy; 2024 PRIMEDITECH. All rights reserved.</p>
+                    <p>&copy; 2025 PRIMEDITECH. All rights reserved.</p>
                 </div>
             </div>
         </div>
@@ -712,6 +738,9 @@
 <button class="scroll-to-top" id="scroll-to-top" aria-label="Scroll to top">
     <i class="fas fa-chevron-up"></i>
 </button>
+
+<!-- JavaScript 파일들 -->
+<script src="../js/main.js"></script>
 
 </body>
 </html>
